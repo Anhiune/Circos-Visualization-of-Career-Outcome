@@ -1,8 +1,9 @@
-m_Social_Sciences 0 2 j_Social_Service 0 2 color=cm6
-m_Social_Sciences 2 6 j_Legal_AND_Policy 0 4 color=cm6
-m_Social_Sciences 6 8 j_IT_AND_Infrastructure 0 2 color=cm6
-m_Social_Sciences 8 9 j_Education 0 1 color=cm6
-m_Social_Sciences 9 13 j_Research_AND_Science 0 4 color=cm6
-m_Social_Sciences 13 19 j_Clinical_Care 0 6 color=cm6
-m_Social_Sciences 19 21 j_Leadership_General 0 2 color=cm6
-m_Social_Sciences 21 26 j_Management_AND_Operations 0 5 color=cm6
+m_Social_Sciences 0 7 j_Management_AND_Operations 301 308 color=cm5_a
+m_Social_Sciences 7 16 j_Leadership_General 164 173 color=cm5_a
+m_Social_Sciences 16 18 j_Finance_AND_Investment 201 203 color=cm5_a
+m_Social_Sciences 18 24 j_Education 5 11 color=cm5_a
+m_Social_Sciences 24 32 j_Research_AND_Science 22 30 color=cm5_a
+m_Social_Sciences 32 69 j_Clinical_Care 6 43 color=cm5_a
+m_Social_Sciences 69 88 j_Social_Service 1 20 color=cm5_a
+m_Social_Sciences 88 91 j_IT_AND_Infrastructure 11 14 color=cm5_a
+m_Social_Sciences 91 98 j_Legal_AND_Policy 29 36 color=cm5_a

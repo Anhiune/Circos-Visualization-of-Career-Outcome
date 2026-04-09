@@ -1,5 +1,10 @@
-j_Accounting_AND_Audit 0 1 m_Biological_Sciences 0 1 color=cm19
-j_Accounting_AND_Audit 1 3 m_Economics 0 2 color=cm5
-j_Accounting_AND_Audit 3 8 m_Operations_AND_Analytics 0 5 color=cm3
-j_Accounting_AND_Audit 8 14 m_General_Business 0 6 color=cm2
-j_Accounting_AND_Audit 14 74 m_Finance_AND_Accounting 0 60 color=cm0
+m_Finance_AND_Accounting 247 336 j_Accounting_AND_Audit 0 89 color=cm0_a
+m_General_Business 294 308 j_Accounting_AND_Audit 89 103 color=cm1_a
+m_Marketing_AND_Communication 183 184 j_Accounting_AND_Audit 103 104 color=cm2_a
+m_Operations_AND_Analytics 130 137 j_Accounting_AND_Audit 104 111 color=cm3_a
+m_Specialized_Business 71 75 j_Accounting_AND_Audit 111 115 color=cm4_a
+m_Economics 33 35 j_Accounting_AND_Audit 115 117 color=cm6_a
+m_Social_Work 56 57 j_Accounting_AND_Audit 117 118 color=cm9_a
+m_Arts_AND_Theology 27 28 j_Accounting_AND_Audit 118 119 color=cm16_a
+m_Biological_Sciences 82 83 j_Accounting_AND_Audit 119 120 color=cm19_a
+m_Engineering_Disciplines 270 272 j_Accounting_AND_Audit 120 122 color=cm23_a

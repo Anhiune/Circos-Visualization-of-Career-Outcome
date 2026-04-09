@@ -1,0 +1,12 @@
+Metric,Value
+raw_rows,4129
+filtered_rows,2244
+major_matched_rows,4129
+major_unmatched_rows,0
+job_exact_match_rows,1078
+job_normalized_match_rows,10
+job_heuristic_match_rows,1703
+job_blank_rows,1338
+job_unclassified_rows,0
+distinct_unmatched_job_titles,0
+distinct_unmatched_majors,0

@@ -1,3 +1,8 @@
-j_Social_Service 0 1 m_Health_AND_Wellness 0 1 color=cm20
-j_Social_Service 1 5 m_Social_Work 0 4 color=cm10
-j_Social_Service 5 7 m_Social_Sciences 0 2 color=cm6
+m_General_Business 308 309 j_Social_Service 0 1 color=cm1_a
+m_Social_Sciences 69 88 j_Social_Service 1 20 color=cm5_a
+m_Economics 35 49 j_Social_Service 20 34 color=cm6_a
+m_Humanities_AND_Liberal_Arts 14 21 j_Social_Service 34 41 color=cm7_a
+m_International_Studies 4 6 j_Social_Service 41 43 color=cm8_a
+m_Social_Work 57 93 j_Social_Service 43 79 color=cm9_a
+m_Creative_Writing 4 5 j_Social_Service 79 80 color=cm15_a
+m_Health_AND_Wellness 34 35 j_Social_Service 80 81 color=cm20_a

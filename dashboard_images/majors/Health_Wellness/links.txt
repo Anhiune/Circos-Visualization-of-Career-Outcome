@@ -1,6 +1,8 @@
-m_Health_AND_Wellness 0 1 j_Social_Service 0 1 color=cm20
-m_Health_AND_Wellness 1 4 j_IT_AND_Infrastructure 0 3 color=cm20
-m_Health_AND_Wellness 4 8 j_Clinical_Care 0 4 color=cm20
-m_Health_AND_Wellness 8 9 j_Leadership_General 0 1 color=cm20
-m_Health_AND_Wellness 9 11 j_Sales_AND_Marketing 0 2 color=cm20
-m_Health_AND_Wellness 11 14 j_Management_AND_Operations 0 3 color=cm20
+m_Health_AND_Wellness 0 5 j_Management_AND_Operations 350 355 color=cm20_a
+m_Health_AND_Wellness 5 8 j_Leadership_General 206 209 color=cm20_a
+m_Health_AND_Wellness 8 11 j_Sales_AND_Marketing 212 215 color=cm20_a
+m_Health_AND_Wellness 11 12 j_Education 147 148 color=cm20_a
+m_Health_AND_Wellness 12 25 j_Research_AND_Science 88 101 color=cm20_a
+m_Health_AND_Wellness 25 34 j_Clinical_Care 121 130 color=cm20_a
+m_Health_AND_Wellness 34 35 j_Social_Service 80 81 color=cm20_a
+m_Health_AND_Wellness 35 38 j_IT_AND_Infrastructure 32 35 color=cm20_a

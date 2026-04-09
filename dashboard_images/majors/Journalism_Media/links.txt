@@ -1,3 +1,6 @@
-m_Journalism_AND_Media 0 2 j_Clinical_Care 0 2 color=cm14
-m_Journalism_AND_Media 2 4 j_Sales_AND_Marketing 0 2 color=cm14
-m_Journalism_AND_Media 4 9 j_Management_AND_Operations 0 5 color=cm14
+m_Journalism_AND_Media 0 5 j_Management_AND_Operations 332 337 color=cm14_a
+m_Journalism_AND_Media 5 7 j_Leadership_General 193 195 color=cm14_a
+m_Journalism_AND_Media 7 13 j_Sales_AND_Marketing 197 203 color=cm14_a
+m_Journalism_AND_Media 13 14 j_Finance_AND_Investment 219 220 color=cm14_a
+m_Journalism_AND_Media 14 15 j_Education 139 140 color=cm14_a
+m_Journalism_AND_Media 15 17 j_Clinical_Care 88 90 color=cm14_a

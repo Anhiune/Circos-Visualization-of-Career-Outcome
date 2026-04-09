@@ -1,6 +1,11 @@
-j_Finance_AND_Investment 0 10 m_Economics 0 10 color=cm5
-j_Finance_AND_Investment 10 12 m_Specialized_Business 0 2 color=cm4
-j_Finance_AND_Investment 12 14 m_Operations_AND_Analytics 0 2 color=cm3
-j_Finance_AND_Investment 14 22 m_General_Business 0 8 color=cm2
-j_Finance_AND_Investment 22 25 m_Marketing_AND_Communication 0 3 color=cm1
-j_Finance_AND_Investment 25 131 m_Finance_AND_Accounting 0 106 color=cm0
+m_Finance_AND_Accounting 89 234 j_Finance_AND_Investment 0 145 color=cm0_a
+m_General_Business 251 281 j_Finance_AND_Investment 145 175 color=cm1_a
+m_Marketing_AND_Communication 165 176 j_Finance_AND_Investment 175 186 color=cm2_a
+m_Operations_AND_Analytics 96 106 j_Finance_AND_Investment 186 196 color=cm3_a
+m_Specialized_Business 59 64 j_Finance_AND_Investment 196 201 color=cm4_a
+m_Social_Sciences 16 18 j_Finance_AND_Investment 201 203 color=cm5_a
+m_Economics 10 25 j_Finance_AND_Investment 203 218 color=cm6_a
+m_Communication_Studies 27 28 j_Finance_AND_Investment 218 219 color=cm13_a
+m_Journalism_AND_Media 13 14 j_Finance_AND_Investment 219 220 color=cm14_a
+m_English_AND_Writing 5 6 j_Finance_AND_Investment 220 221 color=cm17_a
+m_Biological_Sciences 10 11 j_Finance_AND_Investment 221 222 color=cm19_a
