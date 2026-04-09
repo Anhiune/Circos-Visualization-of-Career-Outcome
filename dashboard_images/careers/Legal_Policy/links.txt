@@ -1,0 +1,5 @@
+j_Legal_AND_Policy 0 1 m_Creative_Writing 0 1 color=cm15
+j_Legal_AND_Policy 1 5 m_Social_Sciences 0 4 color=cm6
+j_Legal_AND_Policy 5 10 m_Specialized_Business 0 5 color=cm4
+j_Legal_AND_Policy 10 11 m_Operations_AND_Analytics 0 1 color=cm3
+j_Legal_AND_Policy 11 12 m_Finance_AND_Accounting 0 1 color=cm0

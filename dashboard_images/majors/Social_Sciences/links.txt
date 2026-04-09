@@ -1,0 +1,8 @@
+m_Social_Sciences 0 2 j_Social_Service 0 2 color=cm6
+m_Social_Sciences 2 6 j_Legal_AND_Policy 0 4 color=cm6
+m_Social_Sciences 6 8 j_IT_AND_Infrastructure 0 2 color=cm6
+m_Social_Sciences 8 9 j_Education 0 1 color=cm6
+m_Social_Sciences 9 13 j_Research_AND_Science 0 4 color=cm6
+m_Social_Sciences 13 19 j_Clinical_Care 0 6 color=cm6
+m_Social_Sciences 19 21 j_Leadership_General 0 2 color=cm6
+m_Social_Sciences 21 26 j_Management_AND_Operations 0 5 color=cm6

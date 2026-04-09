@@ -1,0 +1,14 @@
+j_Sales_AND_Marketing 0 1 m_Engineering_Disciplines 0 1 color=cm23
+j_Sales_AND_Marketing 1 2 m_Physical_Sciences 0 1 color=cm21
+j_Sales_AND_Marketing 2 4 m_Health_AND_Wellness 0 2 color=cm20
+j_Sales_AND_Marketing 4 7 m_Biological_Sciences 0 3 color=cm19
+j_Sales_AND_Marketing 7 9 m_Journalism_AND_Media 0 2 color=cm14
+j_Sales_AND_Marketing 9 14 m_Communication_Studies 0 5 color=cm13
+j_Sales_AND_Marketing 14 15 m_International_Studies 0 1 color=cm8
+j_Sales_AND_Marketing 15 17 m_Humanities_AND_Liberal_Arts 0 2 color=cm7
+j_Sales_AND_Marketing 17 18 m_Economics 0 1 color=cm5
+j_Sales_AND_Marketing 18 22 m_Specialized_Business 0 4 color=cm4
+j_Sales_AND_Marketing 22 26 m_Operations_AND_Analytics 0 4 color=cm3
+j_Sales_AND_Marketing 26 35 m_General_Business 0 9 color=cm2
+j_Sales_AND_Marketing 35 71 m_Marketing_AND_Communication 0 36 color=cm1
+j_Sales_AND_Marketing 71 80 m_Finance_AND_Accounting 0 9 color=cm0

@@ -1,0 +1,6 @@
+j_Finance_AND_Investment 0 10 m_Economics 0 10 color=cm5
+j_Finance_AND_Investment 10 12 m_Specialized_Business 0 2 color=cm4
+j_Finance_AND_Investment 12 14 m_Operations_AND_Analytics 0 2 color=cm3
+j_Finance_AND_Investment 14 22 m_General_Business 0 8 color=cm2
+j_Finance_AND_Investment 22 25 m_Marketing_AND_Communication 0 3 color=cm1
+j_Finance_AND_Investment 25 131 m_Finance_AND_Accounting 0 106 color=cm0

@@ -1,0 +1,7 @@
+j_Education 0 1 m_English_AND_Writing 0 1 color=cm17
+j_Education 1 4 m_Arts_AND_Theology 0 3 color=cm16
+j_Education 4 9 m_Special_Education_AND_Counseling 0 5 color=cm11
+j_Education 9 38 m_Teacher_Education 0 29 color=cm9
+j_Education 38 39 m_Social_Sciences 0 1 color=cm6
+j_Education 39 40 m_Specialized_Business 0 1 color=cm4
+j_Education 40 41 m_General_Business 0 1 color=cm2

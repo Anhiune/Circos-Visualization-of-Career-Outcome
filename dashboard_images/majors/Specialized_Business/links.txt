@@ -1,0 +1,8 @@
+m_Specialized_Business 0 5 j_Legal_AND_Policy 0 5 color=cm4
+m_Specialized_Business 5 6 j_Education 0 1 color=cm4
+m_Specialized_Business 6 9 j_Research_AND_Science 0 3 color=cm4
+m_Specialized_Business 9 11 j_Clinical_Care 0 2 color=cm4
+m_Specialized_Business 11 15 j_Leadership_General 0 4 color=cm4
+m_Specialized_Business 15 19 j_Sales_AND_Marketing 0 4 color=cm4
+m_Specialized_Business 19 25 j_Management_AND_Operations 0 6 color=cm4
+m_Specialized_Business 25 27 j_Finance_AND_Investment 0 2 color=cm4

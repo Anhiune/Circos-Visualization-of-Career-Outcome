@@ -1,0 +1,6 @@
+j_IT_AND_Infrastructure 0 3 m_Health_AND_Wellness 0 3 color=cm20
+j_IT_AND_Infrastructure 3 16 m_Biological_Sciences 0 13 color=cm19
+j_IT_AND_Infrastructure 16 17 m_Arts_AND_Theology 0 1 color=cm16
+j_IT_AND_Infrastructure 17 19 m_Social_Sciences 0 2 color=cm6
+j_IT_AND_Infrastructure 19 20 m_General_Business 0 1 color=cm2
+j_IT_AND_Infrastructure 20 21 m_Marketing_AND_Communication 0 1 color=cm1

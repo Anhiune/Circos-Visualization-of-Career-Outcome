@@ -1,0 +1,10 @@
+m_General_Business 0 1 j_IT_AND_Infrastructure 0 1 color=cm2
+m_General_Business 1 2 j_Education 0 1 color=cm2
+m_General_Business 2 3 j_Research_AND_Science 0 1 color=cm2
+m_General_Business 3 20 j_Leadership_General 0 17 color=cm2
+m_General_Business 20 26 j_Accounting_AND_Audit 0 6 color=cm2
+m_General_Business 26 35 j_Sales_AND_Marketing 0 9 color=cm2
+m_General_Business 35 37 j_Software_AND_Data 0 2 color=cm2
+m_General_Business 37 52 j_Management_AND_Operations 0 15 color=cm2
+m_General_Business 52 60 j_Finance_AND_Investment 0 8 color=cm2
+m_General_Business 60 64 j_Engineering 0 4 color=cm2

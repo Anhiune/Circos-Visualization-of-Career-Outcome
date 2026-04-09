@@ -1,0 +1,6 @@
+m_Biological_Sciences 0 13 j_IT_AND_Infrastructure 0 13 color=cm19
+m_Biological_Sciences 13 28 j_Research_AND_Science 0 15 color=cm19
+m_Biological_Sciences 28 54 j_Clinical_Care 0 26 color=cm19
+m_Biological_Sciences 54 55 j_Accounting_AND_Audit 0 1 color=cm19
+m_Biological_Sciences 55 58 j_Sales_AND_Marketing 0 3 color=cm19
+m_Biological_Sciences 58 61 j_Management_AND_Operations 0 3 color=cm19

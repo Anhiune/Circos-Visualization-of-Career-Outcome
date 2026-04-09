@@ -1,0 +1,5 @@
+m_Humanities_AND_Liberal_Arts 0 2 j_Research_AND_Science 0 2 color=cm7
+m_Humanities_AND_Liberal_Arts 2 6 j_Clinical_Care 0 4 color=cm7
+m_Humanities_AND_Liberal_Arts 6 7 j_Leadership_General 0 1 color=cm7
+m_Humanities_AND_Liberal_Arts 7 9 j_Sales_AND_Marketing 0 2 color=cm7
+m_Humanities_AND_Liberal_Arts 9 10 j_Management_AND_Operations 0 1 color=cm7

@@ -1,0 +1,15 @@
+j_Research_AND_Science 0 4 m_Engineering_Disciplines 0 4 color=cm23
+j_Research_AND_Science 4 5 m_Environmental_Sciences 0 1 color=cm22
+j_Research_AND_Science 5 9 m_Physical_Sciences 0 4 color=cm21
+j_Research_AND_Science 9 24 m_Biological_Sciences 0 15 color=cm19
+j_Research_AND_Science 24 29 m_Arts_AND_Theology 0 5 color=cm16
+j_Research_AND_Science 29 31 m_Creative_Writing 0 2 color=cm15
+j_Research_AND_Science 31 32 m_Social_Work 0 1 color=cm10
+j_Research_AND_Science 32 34 m_International_Studies 0 2 color=cm8
+j_Research_AND_Science 34 36 m_Humanities_AND_Liberal_Arts 0 2 color=cm7
+j_Research_AND_Science 36 40 m_Social_Sciences 0 4 color=cm6
+j_Research_AND_Science 40 43 m_Specialized_Business 0 3 color=cm4
+j_Research_AND_Science 43 44 m_Operations_AND_Analytics 0 1 color=cm3
+j_Research_AND_Science 44 45 m_General_Business 0 1 color=cm2
+j_Research_AND_Science 45 46 m_Marketing_AND_Communication 0 1 color=cm1
+j_Research_AND_Science 46 52 m_Finance_AND_Accounting 0 6 color=cm0

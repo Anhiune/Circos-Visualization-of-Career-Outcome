@@ -1,0 +1,12 @@
+j_Clinical_Care 0 1 m_Engineering_Disciplines 0 1 color=cm23
+j_Clinical_Care 1 5 m_Health_AND_Wellness 0 4 color=cm20
+j_Clinical_Care 5 31 m_Biological_Sciences 0 26 color=cm19
+j_Clinical_Care 31 33 m_Arts_AND_Theology 0 2 color=cm16
+j_Clinical_Care 33 35 m_Journalism_AND_Media 0 2 color=cm14
+j_Clinical_Care 35 36 m_Communication_Studies 0 1 color=cm13
+j_Clinical_Care 36 37 m_Social_Work 0 1 color=cm10
+j_Clinical_Care 37 39 m_Teacher_Education 0 2 color=cm9
+j_Clinical_Care 39 43 m_Humanities_AND_Liberal_Arts 0 4 color=cm7
+j_Clinical_Care 43 49 m_Social_Sciences 0 6 color=cm6
+j_Clinical_Care 49 51 m_Specialized_Business 0 2 color=cm4
+j_Clinical_Care 51 53 m_Marketing_AND_Communication 0 2 color=cm1

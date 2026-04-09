@@ -1,0 +1,8 @@
+j_Software_AND_Data 0 52 m_Computer_Science_AND_IT 0 52 color=cm24
+j_Software_AND_Data 52 61 m_Engineering_Disciplines 0 9 color=cm23
+j_Software_AND_Data 61 62 m_English_AND_Writing 0 1 color=cm17
+j_Software_AND_Data 62 64 m_Economics 0 2 color=cm5
+j_Software_AND_Data 64 77 m_Operations_AND_Analytics 0 13 color=cm3
+j_Software_AND_Data 77 79 m_General_Business 0 2 color=cm2
+j_Software_AND_Data 79 80 m_Marketing_AND_Communication 0 1 color=cm1
+j_Software_AND_Data 80 81 m_Finance_AND_Accounting 0 1 color=cm0

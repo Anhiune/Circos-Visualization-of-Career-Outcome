@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major to Career Path - Interactive Circos Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background: #fff;
+            border-bottom: 1px solid #ddd;
+            padding: 24px 0;
+        }
+
+        .header .inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .header h1 {
+            font-size: 26px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+            max-width: 900px;
+        }
+
+        .dashboard {
+            max-width: 1400px;
+            margin: 24px auto;
+            padding: 0 32px;
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+        }
+
+        .main-display {
+            flex: 0 0 auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+            padding: 20px;
+            position: sticky;
+            top: 20px;
+        }
+
+        .main-display h2 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 12px;
+            min-height: 24px;
+            transition: color 0.2s;
+        }
+
+        .main-display h2 .cluster-tag {
+            font-size: 12px;
+            font-weight: 500;
+            padding: 2px 8px;
+            border-radius: 10px;
+            color: #fff;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        #big-image {
+            display: block;
+            width: 700px;
+            height: 700px;
+            border-radius: 4px;
+            transition: opacity 0.15s ease;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .sidebar .info {
+            font-size: 13px;
+            color: #888;
+            margin-bottom: 16px;
+            line-height: 1.5;
+        }
+
+        .thumb-group {
+            margin-bottom: 20px;
+        }
+
+        .thumb-group h3 {
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 6px 0;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        .thumb-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .thumb {
+            cursor: pointer;
+            text-align: center;
+            width: 90px;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border-radius: 6px;
+            padding: 4px;
+            border: 2px solid transparent;
+        }
+
+        .thumb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            background: #fff;
+        }
+
+        .thumb.active {
+            border-color: #333;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+
+        .thumb img {
+            width: 80px;
+            height: 80px;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .thumb label {
+            display: block;
+            font-size: 10px;
+            color: #555;
+            margin-top: 3px;
+            line-height: 1.2;
+            pointer-events: none;
+        }
+
+        .compilation-btn {
+            display: inline-block;
+            cursor: pointer;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 6px;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            transition: background 0.15s;
+        }
+
+        .compilation-btn:hover {
+            background: #333;
+            color: #fff;
+        }
+
+        .compilation-btn.active {
+            background: #333;
+            color: #fff;
+        }
+
+        .stats {
+            font-size: 12px;
+            color: #999;
+            margin-top: 8px;
+        }
+
+        #cursor-tooltip {
+            position: fixed;
+            pointer-events: none;
+            background: rgba(30, 30, 30, 0.92);
+            color: #fff;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 8px 14px;
+            border-radius: 6px;
+            white-space: nowrap;
+            z-index: 9999;
+            display: none;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.25);
+            transform: translate(16px, -50%);
+        }
+
+        #cursor-tooltip .tooltip-count {
+            font-size: 11px;
+            font-weight: 400;
+            opacity: 0.8;
+            margin-left: 6px;
+        }
+
+        /* Color tags for each cluster */
+        .tag-business { background: rgb(42, 98, 180); }
+        .tag-engineering { background: rgb(22, 118, 50); }
+        .tag-natural { background: rgb(88, 40, 138); }
+        .tag-education { background: rgb(175, 35, 42); }
+        .tag-social { background: rgb(200, 108, 30); }
+        .tag-communication { background: rgb(0, 130, 142); }
+        .tag-arts { background: rgb(180, 45, 112); }
+
+        .group-business h3 { color: rgb(42, 98, 180); border-color: rgb(42, 98, 180); }
+        .group-engineering h3 { color: rgb(22, 118, 50); border-color: rgb(22, 118, 50); }
+        .group-natural h3 { color: rgb(88, 40, 138); border-color: rgb(88, 40, 138); }
+        .group-education h3 { color: rgb(175, 35, 42); border-color: rgb(175, 35, 42); }
+        .group-social h3 { color: rgb(200, 108, 30); border-color: rgb(200, 108, 30); }
+        .group-communication h3 { color: rgb(0, 130, 142); border-color: rgb(0, 130, 142); }
+        .group-arts h3 { color: rgb(180, 45, 112); border-color: rgb(180, 45, 112); }
+
+        .tag-career { background: rgb(120, 120, 120); }
+        .group-careers h3 { color: rgb(100, 100, 100); border-color: rgb(100, 100, 100); }
+
+        .section-divider {
+            border: none;
+            border-top: 3px solid #ccc;
+            margin: 28px 0 20px;
+        }
+
+        .section-label {
+            font-size: 15px;
+            font-weight: 700;
+            color: #444;
+            margin-bottom: 14px;
+            letter-spacing: 0.3px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="inner">
+        <h1>Impact of Major on Career Path - 856 Graduates</h1>
+        <p>This interactive visualization shows the relationship between 25 academic majors (left side, colored) and 13 career destinations (right side, gray). Each ribbon traces the flow of graduates from a major into a career field - wider ribbons mean more graduates took that path. Hover over the thumbnails on the right to explore each major individually, or click to lock the view.</p>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="main-display">
+        <h2 id="title">All Majors - Compilation</h2>
+        <img id="big-image" src="dashboard_images/main.png?v=3" alt="Circos Diagram">
+        <p class="stats" id="stats">25 majors &middot; 13 career fields &middot; 856 graduates &middot; 120 connections</p>
+    </div>
+
+    <div class="sidebar">
+        <p class="info">Hover over thumbnails or the diagram itself to preview individual major-to-career or career-to-major connections. Click to lock the selection. Click "Show All Majors" to return to the compilation view.</p>
+
+        <div class="compilation-btn active" id="comp-btn" onclick="showCompilation()">Show All Majors</div>
+
+        <!-- Business & Management -->
+        <div class="thumb-group group-business">
+            <h3>Business &amp; Management</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/majors/Finance_Accounting/Finance_Accounting.png?v=3" data-title="Finance &amp; Accounting" data-tag="tag-business" data-count="191">
+                    <img src="dashboard_images/majors/Finance_Accounting/Finance_Accounting.png?v=3" alt="Finance &amp; Accounting"><label>Finance/Accounting</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Marketing_Communication/Marketing_Communication.png?v=3" data-title="Marketing &amp; Communication" data-tag="tag-business" data-count="79">
+                    <img src="dashboard_images/majors/Marketing_Communication/Marketing_Communication.png?v=3" alt="Marketing &amp; Communication"><label>Marketing/Comm</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/General_Business/General_Business.png?v=3" data-title="General Business" data-tag="tag-business" data-count="64">
+                    <img src="dashboard_images/majors/General_Business/General_Business.png?v=3" alt="General Business"><label>General Business</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Operations_Analytics/Operations_Analytics.png?v=3" data-title="Operations &amp; Analytics" data-tag="tag-business" data-count="58">
+                    <img src="dashboard_images/majors/Operations_Analytics/Operations_Analytics.png?v=3" alt="Operations &amp; Analytics"><label>Operations/Analytics</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Specialized_Business/Specialized_Business.png?v=3" data-title="Specialized Business" data-tag="tag-business" data-count="27">
+                    <img src="dashboard_images/majors/Specialized_Business/Specialized_Business.png?v=3" alt="Specialized Business"><label>Specialized Business</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Economics/Economics.png?v=3" data-title="Economics" data-tag="tag-business" data-count="17">
+                    <img src="dashboard_images/majors/Economics/Economics.png?v=3" alt="Economics"><label>Economics</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Engineering & Technology -->
+        <div class="thumb-group group-engineering">
+            <h3>Engineering &amp; Technology</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/majors/Engineering_Disciplines/Engineering_Disciplines.png?v=3" data-title="Engineering Disciplines" data-tag="tag-engineering" data-count="153">
+                    <img src="dashboard_images/majors/Engineering_Disciplines/Engineering_Disciplines.png?v=3" alt="Engineering Disciplines"><label>Engineering</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Computer_Science_IT/Computer_Science_IT.png?v=3" data-title="Computer Science &amp; IT" data-tag="tag-engineering" data-count="56">
+                    <img src="dashboard_images/majors/Computer_Science_IT/Computer_Science_IT.png?v=3" alt="Computer Science &amp; IT"><label>Computer Sci/IT</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Natural & Health Sciences -->
+        <div class="thumb-group group-natural">
+            <h3>Natural &amp; Health Sciences</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/majors/Biological_Sciences/Biological_Sciences.png?v=3" data-title="Biological Sciences" data-tag="tag-natural" data-count="61">
+                    <img src="dashboard_images/majors/Biological_Sciences/Biological_Sciences.png?v=3" alt="Biological Sciences"><label>Biological Sciences</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Health_Wellness/Health_Wellness.png?v=3" data-title="Health &amp; Wellness" data-tag="tag-natural" data-count="14">
+                    <img src="dashboard_images/majors/Health_Wellness/Health_Wellness.png?v=3" alt="Health &amp; Wellness"><label>Health/Wellness</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Physical_Sciences/Physical_Sciences.png?v=3" data-title="Physical Sciences" data-tag="tag-natural" data-count="7">
+                    <img src="dashboard_images/majors/Physical_Sciences/Physical_Sciences.png?v=3" alt="Physical Sciences"><label>Physical Sciences</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Environmental_Sciences/Environmental_Sciences.png?v=3" data-title="Environmental Sciences" data-tag="tag-natural" data-count="1">
+                    <img src="dashboard_images/majors/Environmental_Sciences/Environmental_Sciences.png?v=3" alt="Environmental Sciences"><label>Environmental Sci</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education & Social Services -->
+        <div class="thumb-group group-education">
+            <h3>Education &amp; Social Services</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/majors/Teacher_Education/Teacher_Education.png?v=3" data-title="Teacher Education" data-tag="tag-education" data-count="31">
+                    <img src="dashboard_images/majors/Teacher_Education/Teacher_Education.png?v=3" alt="Teacher Education"><label>Teacher Education</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Social_Work/Social_Work.png?v=3" data-title="Social Work" data-tag="tag-education" data-count="7">
+                    <img src="dashboard_images/majors/Social_Work/Social_Work.png?v=3" alt="Social Work"><label>Social Work</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Special_Education/Special_Education.png?v=3" data-title="Special Education &amp; Counseling" data-tag="tag-education" data-count="6">
+                    <img src="dashboard_images/majors/Special_Education/Special_Education.png?v=3" alt="Special Education"><label>Special Education</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Educational_Leadership/Educational_Leadership.png?v=3" data-title="Educational Leadership" data-tag="tag-education" data-count="1">
+                    <img src="dashboard_images/majors/Educational_Leadership/Educational_Leadership.png?v=3" alt="Educational Leadership"><label>Ed Leadership</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Sciences & Humanities -->
+        <div class="thumb-group group-social">
+            <h3>Social Sciences &amp; Humanities</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/majors/Social_Sciences/Social_Sciences.png?v=3" data-title="Social Sciences" data-tag="tag-social" data-count="26">
+                    <img src="dashboard_images/majors/Social_Sciences/Social_Sciences.png?v=3" alt="Social Sciences"><label>Social Sciences</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Humanities_Liberal_Arts/Humanities_Liberal_Arts.png?v=3" data-title="Humanities &amp; Liberal Arts" data-tag="tag-social" data-count="10">
+                    <img src="dashboard_images/majors/Humanities_Liberal_Arts/Humanities_Liberal_Arts.png?v=3" alt="Humanities &amp; Liberal Arts"><label>Humanities</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/International_Studies/International_Studies.png?v=3" data-title="International Studies" data-tag="tag-social" data-count="3">
+                    <img src="dashboard_images/majors/International_Studies/International_Studies.png?v=3" alt="International Studies"><label>Intl Studies</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Communication & Media -->
+        <div class="thumb-group group-communication">
+            <h3>Communication &amp; Media</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/majors/Communication_Studies/Communication_Studies.png?v=3" data-title="Communication Studies" data-tag="tag-communication" data-count="14">
+                    <img src="dashboard_images/majors/Communication_Studies/Communication_Studies.png?v=3" alt="Communication Studies"><label>Comm Studies</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Journalism_Media/Journalism_Media.png?v=3" data-title="Journalism &amp; Media" data-tag="tag-communication" data-count="9">
+                    <img src="dashboard_images/majors/Journalism_Media/Journalism_Media.png?v=3" alt="Journalism &amp; Media"><label>Journalism/Media</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Creative_Writing/Creative_Writing.png?v=3" data-title="Creative Writing" data-tag="tag-communication" data-count="3">
+                    <img src="dashboard_images/majors/Creative_Writing/Creative_Writing.png?v=3" alt="Creative Writing"><label>Creative Writing</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Arts, Languages & Theology -->
+        <div class="thumb-group group-arts">
+            <h3>Arts, Languages &amp; Theology</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/majors/Arts_Theology/Arts_Theology.png?v=3" data-title="Arts &amp; Theology" data-tag="tag-arts" data-count="15">
+                    <img src="dashboard_images/majors/Arts_Theology/Arts_Theology.png?v=3" alt="Arts &amp; Theology"><label>Arts/Theology</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/English_Writing/English_Writing.png?v=3" data-title="English &amp; Writing" data-tag="tag-arts" data-count="2">
+                    <img src="dashboard_images/majors/English_Writing/English_Writing.png?v=3" alt="English &amp; Writing"><label>English/Writing</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/majors/Languages/Languages.png?v=3" data-title="Languages" data-tag="tag-arts" data-count="1">
+                    <img src="dashboard_images/majors/Languages/Languages.png?v=3" alt="Languages"><label>Languages</label>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+        <p class="section-label">Career Destinations</p>
+
+        <!-- Careers -->
+        <div class="thumb-group group-careers">
+            <h3>Career Fields (13)</h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-src="dashboard_images/careers/Engineering/Engineering.png?v=3" data-title="Engineering (Career)" data-tag="tag-career" data-count="144">
+                    <img src="dashboard_images/careers/Engineering/Engineering.png?v=3" alt="Engineering"><label>Engineering</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Finance_Investment/Finance_Investment.png?v=3" data-title="Finance &amp; Investment" data-tag="tag-career" data-count="131">
+                    <img src="dashboard_images/careers/Finance_Investment/Finance_Investment.png?v=3" alt="Finance &amp; Investment"><label>Finance/Investment</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Management_Operations/Management_Operations.png?v=3" data-title="Management &amp; Operations" data-tag="tag-career" data-count="103">
+                    <img src="dashboard_images/careers/Management_Operations/Management_Operations.png?v=3" alt="Management &amp; Operations"><label>Management/Ops</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Software_Data/Software_Data.png?v=3" data-title="Software &amp; Data" data-tag="tag-career" data-count="81">
+                    <img src="dashboard_images/careers/Software_Data/Software_Data.png?v=3" alt="Software &amp; Data"><label>Software/Data</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Sales_Marketing/Sales_Marketing.png?v=3" data-title="Sales &amp; Marketing" data-tag="tag-career" data-count="80">
+                    <img src="dashboard_images/careers/Sales_Marketing/Sales_Marketing.png?v=3" alt="Sales &amp; Marketing"><label>Sales/Marketing</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Accounting_Audit/Accounting_Audit.png?v=3" data-title="Accounting &amp; Audit" data-tag="tag-career" data-count="74">
+                    <img src="dashboard_images/careers/Accounting_Audit/Accounting_Audit.png?v=3" alt="Accounting &amp; Audit"><label>Accounting/Audit</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Leadership/Leadership.png?v=3" data-title="Leadership (General)" data-tag="tag-career" data-count="57">
+                    <img src="dashboard_images/careers/Leadership/Leadership.png?v=3" alt="Leadership"><label>Leadership</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Clinical_Care/Clinical_Care.png?v=3" data-title="Clinical Care" data-tag="tag-career" data-count="53">
+                    <img src="dashboard_images/careers/Clinical_Care/Clinical_Care.png?v=3" alt="Clinical Care"><label>Clinical Care</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Research_Science/Research_Science.png?v=3" data-title="Research &amp; Science" data-tag="tag-career" data-count="52">
+                    <img src="dashboard_images/careers/Research_Science/Research_Science.png?v=3" alt="Research &amp; Science"><label>Research/Science</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Education/Education.png?v=3" data-title="Education" data-tag="tag-career" data-count="41">
+                    <img src="dashboard_images/careers/Education/Education.png?v=3" alt="Education"><label>Education</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/IT_Infrastructure/IT_Infrastructure.png?v=3" data-title="IT &amp; Infrastructure" data-tag="tag-career" data-count="21">
+                    <img src="dashboard_images/careers/IT_Infrastructure/IT_Infrastructure.png?v=3" alt="IT &amp; Infrastructure"><label>IT/Infrastructure</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Legal_Policy/Legal_Policy.png?v=3" data-title="Legal &amp; Policy" data-tag="tag-career" data-count="12">
+                    <img src="dashboard_images/careers/Legal_Policy/Legal_Policy.png?v=3" alt="Legal &amp; Policy"><label>Legal/Policy</label>
+                </div>
+                <div class="thumb" data-src="dashboard_images/careers/Social_Service/Social_Service.png?v=3" data-title="Social Service" data-tag="tag-career" data-count="7">
+                    <img src="dashboard_images/careers/Social_Service/Social_Service.png?v=3" alt="Social Service"><label>Social Service</label>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="cursor-tooltip"></div>
+
+<script>
+(function() {
+    var bigImg = document.getElementById('big-image');
+    var titleEl = document.getElementById('title');
+    var statsEl = document.getElementById('stats');
+    var compBtn = document.getElementById('comp-btn');
+    var thumbs = document.querySelectorAll('.thumb');
+    var tooltip = document.getElementById('cursor-tooltip');
+    var locked = null;
+    var compilationSrc = 'dashboard_images/main.png?v=3';
+    var currentSrc = compilationSrc;
+
+    // ── Circos segment layout (from karyotype.txt) ──
+    // k = directory name matching dashboard_images/majors/ or dashboard_images/careers/
+    var segments = [
+        {t:'j',s:144,g:0.004,k:'Engineering'},
+        {t:'j',s:131,g:0.004,k:'Finance_Investment'},
+        {t:'j',s:103,g:0.004,k:'Management_Operations'},
+        {t:'j',s:81,g:0.004,k:'Software_Data'},
+        {t:'j',s:80,g:0.004,k:'Sales_Marketing'},
+        {t:'j',s:74,g:0.004,k:'Accounting_Audit'},
+        {t:'j',s:57,g:0.004,k:'Leadership'},
+        {t:'j',s:53,g:0.004,k:'Clinical_Care'},
+        {t:'j',s:52,g:0.004,k:'Research_Science'},
+        {t:'j',s:41,g:0.004,k:'Education'},
+        {t:'j',s:21,g:0.004,k:'IT_Infrastructure'},
+        {t:'j',s:12,g:0.004,k:'Legal_Policy'},
+        {t:'j',s:7,g:0.006,k:'Social_Service'},
+        {t:'m',s:191,g:0.004,k:'Finance_Accounting'},
+        {t:'m',s:79,g:0.004,k:'Marketing_Communication'},
+        {t:'m',s:64,g:0.004,k:'General_Business'},
+        {t:'m',s:58,g:0.004,k:'Operations_Analytics'},
+        {t:'m',s:27,g:0.004,k:'Specialized_Business'},
+        {t:'m',s:17,g:0.006,k:'Economics'},
+        {t:'m',s:26,g:0.004,k:'Social_Sciences'},
+        {t:'m',s:10,g:0.004,k:'Humanities_Liberal_Arts'},
+        {t:'m',s:3,g:0.006,k:'International_Studies'},
+        {t:'m',s:31,g:0.004,k:'Teacher_Education'},
+        {t:'m',s:7,g:0.004,k:'Social_Work'},
+        {t:'m',s:6,g:0.004,k:'Special_Education'},
+        {t:'m',s:1,g:0.006,k:'Educational_Leadership'},
+        {t:'m',s:14,g:0.004,k:'Communication_Studies'},
+        {t:'m',s:9,g:0.004,k:'Journalism_Media'},
+        {t:'m',s:3,g:0.006,k:'Creative_Writing'},
+        {t:'m',s:15,g:0.004,k:'Arts_Theology'},
+        {t:'m',s:2,g:0.004,k:'English_Writing'},
+        {t:'m',s:1,g:0.006,k:'Languages'},
+        {t:'m',s:61,g:0.004,k:'Biological_Sciences'},
+        {t:'m',s:14,g:0.004,k:'Health_Wellness'},
+        {t:'m',s:7,g:0.004,k:'Physical_Sciences'},
+        {t:'m',s:1,g:0.006,k:'Environmental_Sciences'},
+        {t:'m',s:153,g:0.004,k:'Engineering_Disciplines'},
+        {t:'m',s:56,g:0.006,k:'Computer_Science_IT'}
+    ];
+
+    // Compute angular positions (degrees clockwise from 12 o'clock)
+    var totalSize = 0, totalGapFrac = 0;
+    segments.forEach(function(seg) { totalSize += seg.s; totalGapFrac += seg.g; });
+    var dpu = (360 - totalGapFrac * 360) / totalSize;
+
+    var angle = 0;
+    var hoverZones = [];
+    segments.forEach(function(seg, i) {
+        var span = seg.s * dpu;
+        seg.a0 = angle;
+        seg.a1 = angle + span;
+        if (seg.k) {
+            hoverZones.push({start: seg.a0, end: seg.a1, key: seg.k});
+        }
+        angle = seg.a1 + seg.g * 360;
+    });
+
+    // Build thumbnail lookup by directory key (supports both major and career paths)
+    var thumbMap = {};
+    thumbs.forEach(function(thumb) {
+        var src = thumb.getAttribute('data-src');
+        var m = src.match(/dashboard_images\/(?:majors|careers)\/([^\/]+)\//);
+        if (m) thumbMap[m[1]] = thumb;
+    });
+
+    // ── Core functions ──
+    function setImage(src, title, tag, count, instant) {
+        if (src === currentSrc) {
+            updateText(title, tag, count);
+            return;
+        }
+        currentSrc = src;
+        if (instant) {
+            bigImg.src = src;
+            bigImg.style.opacity = '1';
+        } else {
+            bigImg.style.opacity = '0.3';
+            var target = src;
+            setTimeout(function() {
+                if (currentSrc === target) {
+                    bigImg.src = target;
+                    bigImg.onload = function() { bigImg.style.opacity = '1'; };
+                }
+            }, 80);
+        }
+        updateText(title, tag, count);
+    }
+
+    function updateText(title, tag, count) {
+        if (tag) {
+            titleEl.innerHTML = title + ' <span class="cluster-tag ' + tag + '">' + count + ' graduates</span>';
+        } else {
+            titleEl.innerHTML = title;
+        }
+        var isCareer = tag === 'tag-career';
+        if (count && tag) {
+            statsEl.textContent = count + (isCareer ? ' graduates entered this career' : ' graduates from this major');
+        } else {
+            statsEl.textContent = '25 majors \u00b7 13 career fields \u00b7 856 graduates \u00b7 120 connections';
+        }
+    }
+
+    function clearActive() {
+        thumbs.forEach(function(t) { t.classList.remove('active'); });
+        compBtn.classList.remove('active');
+    }
+
+    function showTooltip(e, title, count) {
+        tooltip.innerHTML = title + '<span class="tooltip-count">(' + count + ' graduates)</span>';
+        tooltip.style.display = 'block';
+        positionTooltip(e);
+    }
+
+    function positionTooltip(e) {
+        tooltip.style.left = e.clientX + 'px';
+        tooltip.style.top = e.clientY + 'px';
+    }
+
+    function hideTooltip() { tooltip.style.display = 'none'; }
+
+    function showComp(instant) {
+        setImage(compilationSrc, 'All Majors - Compilation', null, null, instant);
+    }
+
+    // ── Zone detection on the big image ──
+    function getZone(e) {
+        var rect = bigImg.getBoundingClientRect();
+        var cx = rect.width / 2, cy = rect.height / 2;
+        var dx = e.clientX - rect.left - cx;
+        var dy = e.clientY - rect.top - cy;
+        var dist = Math.sqrt(dx * dx + dy * dy);
+        if (dist < 25 || dist > cx * 0.98) return null;
+        var a = Math.atan2(dx, -dy) * 180 / Math.PI;
+        if (a < 0) a += 360;
+        for (var i = 0; i < hoverZones.length; i++) {
+            if (a >= hoverZones[i].start && a < hoverZones[i].end) return hoverZones[i];
+        }
+        return null;
+    }
+
+    // ── Big image hover ──
+    var imgHoveredKey = null;
+
+    bigImg.addEventListener('mousemove', function(e) {
+        var zone = getZone(e);
+        if (zone) {
+            var th = thumbMap[zone.key];
+            if (th) {
+                showTooltip(e, th.getAttribute('data-title'), th.getAttribute('data-count'));
+                bigImg.style.cursor = 'pointer';
+                if (!locked && imgHoveredKey !== zone.key) {
+                    imgHoveredKey = zone.key;
+                    setImage(th.getAttribute('data-src'), th.getAttribute('data-title'),
+                             th.getAttribute('data-tag'), th.getAttribute('data-count'), true);
+                }
+            }
+        } else {
+            hideTooltip();
+            bigImg.style.cursor = 'default';
+            if (!locked && imgHoveredKey !== null) {
+                imgHoveredKey = null;
+                showComp(true);
+            }
+        }
+    });
+
+    bigImg.addEventListener('mouseleave', function() {
+        hideTooltip();
+        bigImg.style.cursor = 'default';
+        if (!locked) { imgHoveredKey = null; showComp(true); }
+    });
+
+    bigImg.addEventListener('click', function(e) {
+        var zone = getZone(e);
+        if (zone) {
+            var th = thumbMap[zone.key];
+            if (th) {
+                clearActive();
+                th.classList.add('active');
+                locked = th.getAttribute('data-src');
+                setImage(locked, th.getAttribute('data-title'),
+                         th.getAttribute('data-tag'), th.getAttribute('data-count'), false);
+            }
+        }
+    });
+
+    // ── Compilation button ──
+    window.showCompilation = function() {
+        locked = null;
+        imgHoveredKey = null;
+        clearActive();
+        compBtn.classList.add('active');
+        showComp(false);
+    };
+
+    // ── Thumbnail events ──
+    thumbs.forEach(function(thumb) {
+        thumb.addEventListener('mouseenter', function(e) {
+            showTooltip(e, this.getAttribute('data-title'), this.getAttribute('data-count'));
+            if (locked) return;
+            imgHoveredKey = null;
+            setImage(this.getAttribute('data-src'), this.getAttribute('data-title'),
+                     this.getAttribute('data-tag'), this.getAttribute('data-count'), false);
+        });
+        thumb.addEventListener('mousemove', function(e) { positionTooltip(e); });
+        thumb.addEventListener('mouseleave', function() {
+            hideTooltip();
+            if (locked) return;
+            showComp(false);
+        });
+        thumb.addEventListener('click', function() {
+            clearActive();
+            this.classList.add('active');
+            locked = this.getAttribute('data-src');
+            setImage(locked, this.getAttribute('data-title'),
+                     this.getAttribute('data-tag'), this.getAttribute('data-count'), false);
+        });
+    });
+
+    // ── Preload all individual images ──
+    thumbs.forEach(function(thumb) {
+        var img = new Image();
+        img.src = thumb.getAttribute('data-src');
+    });
+})();
+</script>
+
+</body>
+</html>

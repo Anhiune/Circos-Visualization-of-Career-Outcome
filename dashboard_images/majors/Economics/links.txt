@@ -1,0 +1,5 @@
+m_Economics 0 2 j_Accounting_AND_Audit 0 2 color=cm5
+m_Economics 2 3 j_Sales_AND_Marketing 0 1 color=cm5
+m_Economics 3 5 j_Software_AND_Data 0 2 color=cm5
+m_Economics 5 7 j_Management_AND_Operations 0 2 color=cm5
+m_Economics 7 17 j_Finance_AND_Investment 0 10 color=cm5
