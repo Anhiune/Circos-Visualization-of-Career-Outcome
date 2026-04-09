@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+.streamlit/
+.venv/
+venv/
+env/
+
+*.log
+Thumbs.db
+Desktop.ini
