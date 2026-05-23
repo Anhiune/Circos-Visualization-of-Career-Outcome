@@ -1,0 +1,12 @@
+chr - maj_arts maj_arts 0 18 #5B7FA6
+chr - maj_comm maj_comm 20 46 #4A6FA5
+chr - maj_social maj_social 48 87 #C8915F
+chr - maj_business maj_business 89 525 #C17E47
+chr - maj_education maj_education 527 572 #C99070
+chr - maj_engineering maj_engineering 574 783 #558B2F
+chr - maj_natural maj_natural 785 868 #7CB342
+chr - job_arts job_arts 870 882 #8B8B8B
+chr - job_education job_education 884 932 #8B8B8B
+chr - job_business job_business 934 1379 #8B8B8B
+chr - job_tech job_tech 1381 1627 #8B8B8B
+chr - job_health job_health 1629 1734 #8B8B8B

@@ -1,0 +1,8 @@
+m_Humanities_AND_Liberal_Arts 0 1 j_Management_AND_Operations 314 315 color=cm7_a
+m_Humanities_AND_Liberal_Arts 1 4 j_Leadership_General 173 176 color=cm7_a
+m_Humanities_AND_Liberal_Arts 4 7 j_Sales_AND_Marketing 178 181 color=cm7_a
+m_Humanities_AND_Liberal_Arts 7 8 j_Education 11 12 color=cm7_a
+m_Humanities_AND_Liberal_Arts 8 10 j_Research_AND_Science 32 34 color=cm7_a
+m_Humanities_AND_Liberal_Arts 10 14 j_Clinical_Care 43 47 color=cm7_a
+m_Humanities_AND_Liberal_Arts 14 21 j_Social_Service 34 41 color=cm7_a
+m_Humanities_AND_Liberal_Arts 21 23 j_Legal_AND_Policy 37 39 color=cm7_a

@@ -1,0 +1,13 @@
+m_Finance_AND_Accounting 337 341 j_Legal_AND_Policy 0 4 color=cm0_a
+m_General_Business 315 321 j_Legal_AND_Policy 4 10 color=cm1_a
+m_Operations_AND_Analytics 139 141 j_Legal_AND_Policy 10 12 color=cm3_a
+m_Specialized_Business 76 93 j_Legal_AND_Policy 12 29 color=cm4_a
+m_Social_Sciences 91 98 j_Legal_AND_Policy 29 36 color=cm5_a
+m_Economics 50 51 j_Legal_AND_Policy 36 37 color=cm6_a
+m_Humanities_AND_Liberal_Arts 21 23 j_Legal_AND_Policy 37 39 color=cm7_a
+m_International_Studies 6 7 j_Legal_AND_Policy 39 40 color=cm8_a
+m_Social_Work 95 96 j_Legal_AND_Policy 40 41 color=cm9_a
+m_Creative_Writing 5 6 j_Legal_AND_Policy 41 42 color=cm15_a
+m_Arts_AND_Theology 29 30 j_Legal_AND_Policy 42 43 color=cm16_a
+m_Biological_Sciences 97 98 j_Legal_AND_Policy 43 44 color=cm19_a
+m_Environmental_Sciences 6 7 j_Legal_AND_Policy 44 45 color=cm22_a

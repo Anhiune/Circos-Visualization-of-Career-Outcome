@@ -1,0 +1,10 @@
+m_Marketing_AND_Communication 0 63 j_Management_AND_Operations 142 205 color=cm2_a
+m_Marketing_AND_Communication 63 64 j_Engineering 14 15 color=cm2_a
+m_Marketing_AND_Communication 64 85 j_Leadership_General 110 131 color=cm2_a
+m_Marketing_AND_Communication 85 165 j_Sales_AND_Marketing 74 154 color=cm2_a
+m_Marketing_AND_Communication 165 176 j_Finance_AND_Investment 175 186 color=cm2_a
+m_Marketing_AND_Communication 176 177 j_Software_AND_Data 9 10 color=cm2_a
+m_Marketing_AND_Communication 177 181 j_Research_AND_Science 11 15 color=cm2_a
+m_Marketing_AND_Communication 181 183 j_Clinical_Care 2 4 color=cm2_a
+m_Marketing_AND_Communication 183 184 j_Accounting_AND_Audit 103 104 color=cm2_a
+m_Marketing_AND_Communication 184 185 j_IT_AND_Infrastructure 7 8 color=cm2_a

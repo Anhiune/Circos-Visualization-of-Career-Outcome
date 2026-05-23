@@ -1,0 +1,10 @@
+m_Operations_AND_Analytics 0 58 j_Management_AND_Operations 205 263 color=cm3_a
+m_Operations_AND_Analytics 58 64 j_Engineering 15 21 color=cm3_a
+m_Operations_AND_Analytics 64 84 j_Leadership_General 131 151 color=cm3_a
+m_Operations_AND_Analytics 84 96 j_Sales_AND_Marketing 154 166 color=cm3_a
+m_Operations_AND_Analytics 96 106 j_Finance_AND_Investment 186 196 color=cm3_a
+m_Operations_AND_Analytics 106 126 j_Software_AND_Data 10 30 color=cm3_a
+m_Operations_AND_Analytics 126 130 j_Research_AND_Science 15 19 color=cm3_a
+m_Operations_AND_Analytics 130 137 j_Accounting_AND_Audit 104 111 color=cm3_a
+m_Operations_AND_Analytics 137 139 j_IT_AND_Infrastructure 8 10 color=cm3_a
+m_Operations_AND_Analytics 139 141 j_Legal_AND_Policy 10 12 color=cm3_a

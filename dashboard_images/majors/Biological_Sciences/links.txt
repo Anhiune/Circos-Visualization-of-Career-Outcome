@@ -1,0 +1,11 @@
+m_Biological_Sciences 0 5 j_Management_AND_Operations 345 350 color=cm19_a
+m_Biological_Sciences 5 6 j_Leadership_General 205 206 color=cm19_a
+m_Biological_Sciences 6 10 j_Sales_AND_Marketing 208 212 color=cm19_a
+m_Biological_Sciences 10 11 j_Finance_AND_Investment 221 222 color=cm19_a
+m_Biological_Sciences 11 12 j_Software_AND_Data 39 40 color=cm19_a
+m_Biological_Sciences 12 13 j_Education 146 147 color=cm19_a
+m_Biological_Sciences 13 54 j_Research_AND_Science 47 88 color=cm19_a
+m_Biological_Sciences 54 82 j_Clinical_Care 93 121 color=cm19_a
+m_Biological_Sciences 82 83 j_Accounting_AND_Audit 119 120 color=cm19_a
+m_Biological_Sciences 83 97 j_IT_AND_Infrastructure 18 32 color=cm19_a
+m_Biological_Sciences 97 98 j_Legal_AND_Policy 43 44 color=cm19_a

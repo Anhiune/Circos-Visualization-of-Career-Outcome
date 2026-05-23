@@ -1,0 +1,9 @@
+m_Economics 0 6 j_Management_AND_Operations 308 314 color=cm6_a
+m_Economics 6 10 j_Sales_AND_Marketing 174 178 color=cm6_a
+m_Economics 10 25 j_Finance_AND_Investment 203 218 color=cm6_a
+m_Economics 25 31 j_Software_AND_Data 31 37 color=cm6_a
+m_Economics 31 33 j_Research_AND_Science 30 32 color=cm6_a
+m_Economics 33 35 j_Accounting_AND_Audit 115 117 color=cm6_a
+m_Economics 35 49 j_Social_Service 20 34 color=cm6_a
+m_Economics 49 50 j_IT_AND_Infrastructure 14 15 color=cm6_a
+m_Economics 50 51 j_Legal_AND_Policy 36 37 color=cm6_a

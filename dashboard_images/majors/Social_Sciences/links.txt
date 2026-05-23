@@ -1,0 +1,9 @@
+m_Social_Sciences 0 7 j_Management_AND_Operations 301 308 color=cm5_a
+m_Social_Sciences 7 16 j_Leadership_General 164 173 color=cm5_a
+m_Social_Sciences 16 18 j_Finance_AND_Investment 201 203 color=cm5_a
+m_Social_Sciences 18 24 j_Education 5 11 color=cm5_a
+m_Social_Sciences 24 32 j_Research_AND_Science 22 30 color=cm5_a
+m_Social_Sciences 32 69 j_Clinical_Care 6 43 color=cm5_a
+m_Social_Sciences 69 88 j_Social_Service 1 20 color=cm5_a
+m_Social_Sciences 88 91 j_IT_AND_Infrastructure 11 14 color=cm5_a
+m_Social_Sciences 91 98 j_Legal_AND_Policy 29 36 color=cm5_a

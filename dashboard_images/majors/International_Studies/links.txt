@@ -1,0 +1,5 @@
+m_International_Studies 0 1 j_Sales_AND_Marketing 181 182 color=cm8_a
+m_International_Studies 1 2 j_Education 12 13 color=cm8_a
+m_International_Studies 2 4 j_Research_AND_Science 34 36 color=cm8_a
+m_International_Studies 4 6 j_Social_Service 41 43 color=cm8_a
+m_International_Studies 6 7 j_Legal_AND_Policy 39 40 color=cm8_a

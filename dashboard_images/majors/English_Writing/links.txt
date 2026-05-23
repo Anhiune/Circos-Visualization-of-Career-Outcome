@@ -1,0 +1,6 @@
+m_English_AND_Writing 0 2 j_Management_AND_Operations 341 343 color=cm17_a
+m_English_AND_Writing 2 3 j_Leadership_General 204 205 color=cm17_a
+m_English_AND_Writing 3 5 j_Sales_AND_Marketing 206 208 color=cm17_a
+m_English_AND_Writing 5 6 j_Finance_AND_Investment 220 221 color=cm17_a
+m_English_AND_Writing 6 7 j_Software_AND_Data 38 39 color=cm17_a
+m_English_AND_Writing 7 8 j_Education 145 146 color=cm17_a

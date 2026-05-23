@@ -1,0 +1,12 @@
+chr - maj_ARTS,_LANGUAGES_and_THEOLOGY ARTS, LANGUAGES & THEOLOGY 0 18 #6B9BD1
+chr - maj_COMMUNICATION_and_MEDIA COMMUNICATION & MEDIA 20 46 #5B8AC5
+chr - maj_SOCIAL_SCIENCES_and_HUMANITIES SOCIAL SCIENCES & HUMANITIES 48 87 #D4944E
+chr - maj_BUSINESS_and_MANAGEMENT BUSINESS & MANAGEMENT 89 525 #CA8844
+chr - maj_EDUCATION_and_SOCIAL_SERVICES EDUCATION & SOCIAL SERVICES 527 572 #C9956F
+chr - maj_ENGINEERING_and_TECHNOLOGY ENGINEERING & TECHNOLOGY 574 783 #558B2F
+chr - maj_NATURAL_and_HEALTH_SCIENCES NATURAL & HEALTH SCIENCES 785 868 #7CB342
+chr - job_Arts,_Media_and_Legal Arts, Media & Legal 870 882 #A9A9A9
+chr - job_Education_and_Service Education & Service 884 932 #A9A9A9
+chr - job_Business_and_Finance Business & Finance 934 1379 #A9A9A9
+chr - job_Technology_and_Engineering Technology & Engineering 1381 1627 #A9A9A9
+chr - job_Healthcare_and_Science Healthcare & Science 1629 1734 #A9A9A9

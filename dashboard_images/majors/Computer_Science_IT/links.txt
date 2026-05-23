@@ -1,0 +1,7 @@
+m_Computer_Science_AND_IT 0 12 j_Management_AND_Operations 364 376 color=cm24_a
+m_Computer_Science_AND_IT 12 40 j_Engineering 253 281 color=cm24_a
+m_Computer_Science_AND_IT 40 47 j_Leadership_General 217 224 color=cm24_a
+m_Computer_Science_AND_IT 47 48 j_Sales_AND_Marketing 219 220 color=cm24_a
+m_Computer_Science_AND_IT 48 153 j_Software_AND_Data 55 160 color=cm24_a
+m_Computer_Science_AND_IT 153 157 j_Research_AND_Science 124 128 color=cm24_a
+m_Computer_Science_AND_IT 157 167 j_IT_AND_Infrastructure 36 46 color=cm24_a

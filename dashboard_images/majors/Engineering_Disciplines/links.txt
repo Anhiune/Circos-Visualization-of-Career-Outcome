@@ -1,0 +1,8 @@
+m_Engineering_Disciplines 0 7 j_Management_AND_Operations 357 364 color=cm23_a
+m_Engineering_Disciplines 7 235 j_Engineering 25 253 color=cm23_a
+m_Engineering_Disciplines 235 240 j_Leadership_General 212 217 color=cm23_a
+m_Engineering_Disciplines 240 243 j_Sales_AND_Marketing 216 219 color=cm23_a
+m_Engineering_Disciplines 243 258 j_Software_AND_Data 40 55 color=cm23_a
+m_Engineering_Disciplines 258 269 j_Research_AND_Science 113 124 color=cm23_a
+m_Engineering_Disciplines 269 270 j_Clinical_Care 130 131 color=cm23_a
+m_Engineering_Disciplines 270 272 j_Accounting_AND_Audit 120 122 color=cm23_a

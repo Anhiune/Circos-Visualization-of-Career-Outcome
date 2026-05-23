@@ -1,0 +1,6 @@
+m_Communication_Studies 0 11 j_Management_AND_Operations 321 332 color=cm13_a
+m_Communication_Studies 11 13 j_Leadership_General 191 193 color=cm13_a
+m_Communication_Studies 13 27 j_Sales_AND_Marketing 183 197 color=cm13_a
+m_Communication_Studies 27 28 j_Finance_AND_Investment 218 219 color=cm13_a
+m_Communication_Studies 28 30 j_Research_AND_Science 38 40 color=cm13_a
+m_Communication_Studies 30 32 j_Clinical_Care 86 88 color=cm13_a

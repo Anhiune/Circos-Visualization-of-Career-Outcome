@@ -1,0 +1,15 @@
+m_Finance_AND_Accounting 246 247 j_Clinical_Care 0 1 color=cm0_a
+m_General_Business 293 294 j_Clinical_Care 1 2 color=cm1_a
+m_Marketing_AND_Communication 181 183 j_Clinical_Care 2 4 color=cm2_a
+m_Specialized_Business 69 71 j_Clinical_Care 4 6 color=cm4_a
+m_Social_Sciences 32 69 j_Clinical_Care 6 43 color=cm5_a
+m_Humanities_AND_Liberal_Arts 10 14 j_Clinical_Care 43 47 color=cm7_a
+m_Social_Work 20 56 j_Clinical_Care 47 83 color=cm9_a
+m_Teacher_Education 55 58 j_Clinical_Care 83 86 color=cm10_a
+m_Communication_Studies 30 32 j_Clinical_Care 86 88 color=cm13_a
+m_Journalism_AND_Media 15 17 j_Clinical_Care 88 90 color=cm14_a
+m_Arts_AND_Theology 25 27 j_Clinical_Care 90 92 color=cm16_a
+m_Languages 2 3 j_Clinical_Care 92 93 color=cm18_a
+m_Biological_Sciences 54 82 j_Clinical_Care 93 121 color=cm19_a
+m_Health_AND_Wellness 25 34 j_Clinical_Care 121 130 color=cm20_a
+m_Engineering_Disciplines 269 270 j_Clinical_Care 130 131 color=cm23_a
