@@ -1,0 +1,10 @@
+# Python dependencies for the Career Outcome Visualization pipeline
+#
+# Install with: pip install -r requirements.txt
+# Python 3.10 or newer is required.
+#
+# These packages are used by the 10 pipeline scripts.
+# Circos (a Perl tool) is a separate dependency — see CIRCOS_SETUP.md.
+
+pandas>=2.0.0
+openpyxl>=3.1.0

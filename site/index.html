@@ -1,0 +1,767 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Major to Career Path - Ordered Circos Dashboard</title>
+    <link rel="stylesheet" href="dashboard_docs.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #f5f5f5;
+            --panel: #ffffff;
+            --text: #333333;
+            --muted: #6b6b6b;
+            --border: #dddddd;
+            --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            --business: rgb(39, 95, 155);
+            --stem: rgb(34, 126, 82);
+            --social: rgb(209, 120, 9);
+            --humanities: rgb(145, 84, 145);
+            --career: rgb(110, 110, 110);
+            --panel-top-offset: 20px;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .header {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0 36px;
+        }
+
+        .header .inner,
+        .dashboard {
+            max-width: 1720px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .header .inner {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.18;
+            max-width: 1320px;
+            margin: 0 auto 16px;
+            text-wrap: balance;
+        }
+
+        .header p {
+            font-size: 17px;
+            line-height: 1.74;
+            color: var(--muted);
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .header-actions {
+            margin-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .header-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 10px 18px;
+            border: 2px solid var(--humanities);
+            border-radius: 999px;
+            color: var(--humanities);
+            background: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .header-link:hover {
+            background: var(--humanities);
+            color: #fff;
+        }
+
+        .dashboard {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .main-display {
+            flex: 0 0 auto;
+            background: var(--panel);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 24px;
+            position: sticky;
+            top: var(--panel-top-offset);
+            max-height: calc(100vh - (var(--panel-top-offset) * 2));
+            overflow: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+        }
+
+        .main-display h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.24;
+            margin-bottom: 18px;
+            min-height: 38px;
+        }
+
+        .cluster-tag {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            color: #fff;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .tag-business { background: var(--business); }
+        .tag-stem { background: var(--stem); }
+        .tag-social { background: var(--social); }
+        .tag-humanities { background: var(--humanities); }
+        .tag-career { background: var(--career); }
+
+        #big-image {
+            display: block;
+            width: 860px;
+            height: 860px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 4px;
+            transition: opacity 0.15s ease;
+        }
+
+        .stats {
+            font-size: 17px;
+            line-height: 1.55;
+            color: #7a7a7a;
+            margin-top: 14px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 0;
+            position: sticky;
+            top: var(--panel-top-offset);
+            max-height: calc(100vh - (var(--panel-top-offset) * 2));
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+            padding-right: 8px;
+        }
+
+        .info {
+            font-size: 15px;
+            line-height: 1.65;
+            color: #7a7a7a;
+            margin-bottom: 18px;
+        }
+
+        .compilation-btn {
+            display: inline-block;
+            cursor: pointer;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 6px;
+            min-height: 44px;
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .compilation-btn:hover,
+        .compilation-btn.active {
+            background: #333;
+            color: #fff;
+        }
+
+        .thumb-group {
+            margin-bottom: 42px;
+        }
+
+        .thumb-group h3 {
+            font-size: 19px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            line-height: 1.35;
+            padding: 8px 0;
+            margin-bottom: 18px;
+            border-bottom: 3px solid var(--border);
+        }
+
+        .group-business h3 { color: var(--business); border-color: var(--business); }
+        .group-stem h3 { color: var(--stem); border-color: var(--stem); }
+        .group-social h3 { color: var(--social); border-color: var(--social); }
+        .group-humanities h3 { color: var(--humanities); border-color: var(--humanities); }
+        .group-careers h3 { color: var(--career); border-color: var(--career); }
+
+        .thumb-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 26px;
+        }
+
+        .thumb {
+            cursor: pointer;
+            text-align: center;
+            width: 168px;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border-radius: 6px;
+            padding: 10px 10px 14px;
+            border: 2px solid transparent;
+        }
+
+        .thumb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            background: #fff;
+        }
+
+        .thumb.active {
+            border-color: #333;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .thumb img {
+            width: 96px;
+            height: 96px;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .thumb label {
+            display: block;
+            font-size: 16px;
+            line-height: 1.45;
+            color: #555;
+            margin-top: 12px;
+            overflow-wrap: normal;
+            word-break: normal;
+            hyphens: manual;
+        }
+
+        .doc-link {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+
+        .doc-link:hover {
+            color: #1f1f1f;
+        }
+
+        .doc-heading {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 3px solid #ccc;
+            margin: 38px 0 28px;
+        }
+
+        .section-label {
+            font-size: 24px;
+            font-weight: 700;
+            color: #444;
+            line-height: 1.24;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 1180px) {
+            .header {
+                padding: 28px 0 30px;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .header p {
+                font-size: 16px;
+                max-width: 980px;
+            }
+
+            .header-link {
+                font-size: 15px;
+            }
+
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .main-display,
+            .sidebar {
+                position: static;
+                max-height: none;
+                overflow: visible;
+                padding-right: 0;
+            }
+
+            .main-display {
+                width: 100%;
+            }
+
+            #big-image {
+                width: 100%;
+                height: auto;
+                max-width: 860px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .header .inner,
+            .dashboard {
+                padding: 0 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .header p {
+                font-size: 15px;
+            }
+
+            .header-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-link {
+                width: 100%;
+            }
+
+            .main-display h2 {
+                font-size: 24px;
+                min-height: 0;
+            }
+
+            .stats {
+                font-size: 16px;
+            }
+
+            .thumb-grid {
+                gap: 18px;
+            }
+
+            .thumb {
+                width: min(100%, 176px);
+            }
+
+            .thumb label {
+                font-size: 15px;
+            }
+
+            .section-label {
+                font-size: 22px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="inner">
+        <h1>Impact of Major on Career Path - 2682 Graduates</h1>
+        <p>This ordered dashboard shows 13 majors inside 4 major families and 8 career destinations. The colors, counts, and thumbnails follow the same clustering and ordering used throughout this dashboard set.</p>
+        <div class="header-actions">
+            <a class="header-link" href="incoming_grad_grouped.html">Major Sort by Industry</a>
+            <a class="header-link" href="incoming_grad_grouped_college.html">Grouped by College</a>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="main-display">
+        <h2 id="title">All Majors - Ordered Compilation</h2>
+        <img id="big-image" src="v3_ordered_images/main.svg?v=20260507normalized1" alt="Ordered Circos Diagram">
+        <p class="stats" id="stats">13 majors &middot; 8 career fields &middot; 2682 graduates &middot; 97 connections</p>
+    </div>
+
+    <div class="sidebar">
+        <div class="thumb-group group-business" data-doc-key="business">
+            <h3><a class="doc-link doc-heading" href="#family-business-management">Business &amp; Management</a></h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-key="major_Finance_Accounting" data-src="v3_ordered_images/majors/Finance_Accounting.svg?v=20260430exact1" data-title="Finance &amp; Accounting" data-tag="tag-business" data-count="409">
+                    <img src="v3_ordered_images/majors/Finance_Accounting.svg?v=20260430exact1" alt="Finance &amp; Accounting"><label><a class="doc-link" href="#major-finance-accounting">Finance/<wbr>Accounting</a></label>
+                </div>
+                <div class="thumb" data-key="major_General_Business" data-src="v3_ordered_images/majors/General_Business.svg?v=20260430exact1" data-title="General Business" data-tag="tag-business" data-count="389">
+                    <img src="v3_ordered_images/majors/General_Business.svg?v=20260430exact1" alt="General Business"><label><a class="doc-link" href="#major-general-business">General Business</a></label>
+                </div>
+                <div class="thumb" data-key="major_Operations_Analytics" data-src="v3_ordered_images/majors/Operations_Analytics.svg?v=20260430exact1" data-title="Operations &amp; Analytics" data-tag="tag-business" data-count="165">
+                    <img src="v3_ordered_images/majors/Operations_Analytics.svg?v=20260430exact1" alt="Operations &amp; Analytics"><label><a class="doc-link" href="#major-operations-analytics">Operations/<wbr>Analytics</a></label>
+                </div>
+                <div class="thumb" data-key="major_Specialized_Business" data-src="v3_ordered_images/majors/Specialized_Business.svg?v=20260430exact1" data-title="Specialized Business" data-tag="tag-business" data-count="118">
+                    <img src="v3_ordered_images/majors/Specialized_Business.svg?v=20260430exact1" alt="Specialized Business"><label><a class="doc-link" href="#major-specialized-business">Specialized Business</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="thumb-group group-humanities" data-doc-key="humanities">
+            <h3><a class="doc-link doc-heading" href="#family-humanities-communication">Humanities &amp; Communication</a></h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-key="major_Languages_Arts_Humanities" data-src="v3_ordered_images/majors/Languages_Arts_Humanities.svg?v=20260430exact1" data-title="Languages, Arts &amp; Humanities" data-tag="tag-humanities" data-count="71">
+                    <img src="v3_ordered_images/majors/Languages_Arts_Humanities.svg?v=20260430exact1" alt="Languages, Arts &amp; Humanities"><label><a class="doc-link" href="#major-languages-arts-humanities">Languages/<wbr>Arts/<wbr>Humanities</a></label>
+                </div>
+                <div class="thumb" data-key="major_Marketing_Communication" data-src="v3_ordered_images/majors/Marketing_Communication.svg?v=20260430exact1" data-title="Marketing &amp; Communication" data-tag="tag-humanities" data-count="340">
+                    <img src="v3_ordered_images/majors/Marketing_Communication.svg?v=20260430exact1" alt="Marketing &amp; Communication"><label><a class="doc-link" href="#major-marketing-communication">Marketing/<wbr>Communication</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="thumb-group group-social" data-doc-key="social">
+            <h3><a class="doc-link doc-heading" href="#family-social-sciences-education">Social Sciences &amp; Education</a></h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-key="major_Economics" data-src="v3_ordered_images/majors/Economics.svg?v=20260430exact1" data-title="Economics" data-tag="tag-social" data-count="64">
+                    <img src="v3_ordered_images/majors/Economics.svg?v=20260430exact1" alt="Economics"><label><a class="doc-link" href="#major-economics">Economics</a></label>
+                </div>
+                <div class="thumb" data-key="major_Social_Sciences_Humanities" data-src="v3_ordered_images/majors/Social_Sciences_Humanities.svg?v=20260430exact1" data-title="Social Sciences &amp; Humanities" data-tag="tag-social" data-count="179">
+                    <img src="v3_ordered_images/majors/Social_Sciences_Humanities.svg?v=20260430exact1" alt="Social Sciences &amp; Humanities"><label><a class="doc-link" href="#major-social-sciences-humanities">Social Sci/<wbr>Humanities</a></label>
+                </div>
+                <div class="thumb" data-key="major_Education_Social_Services" data-src="v3_ordered_images/majors/Education_Social_Services.svg?v=20260430exact1" data-title="Education &amp; Social Services" data-tag="tag-social" data-count="242">
+                    <img src="v3_ordered_images/majors/Education_Social_Services.svg?v=20260430exact1" alt="Education &amp; Social Services"><label><a class="doc-link" href="#major-education-social-services">Education/<wbr>Social</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div class="thumb-group group-stem" data-doc-key="stem">
+            <h3><a class="doc-link doc-heading" href="#family-engineering-science-technology">Engineering, Science &amp; Technology</a></h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-key="major_Physical_Environmental_Sciences" data-src="v3_ordered_images/majors/Physical_Environmental_Sciences.svg?v=20260430exact1" data-title="Physical &amp; Environmental Sciences" data-tag="tag-stem" data-count="31">
+                    <img src="v3_ordered_images/majors/Physical_Environmental_Sciences.svg?v=20260430exact1" alt="Physical &amp; Environmental Sciences"><label><a class="doc-link" href="#major-physical-environmental-sciences">Physical/<wbr>Environmental</a></label>
+                </div>
+                <div class="thumb" data-key="major_Biological_Health_Sciences" data-src="v3_ordered_images/majors/Biological_Health_Sciences.svg?v=20260430exact1" data-title="Biological &amp; Health Sciences" data-tag="tag-stem" data-count="198">
+                    <img src="v3_ordered_images/majors/Biological_Health_Sciences.svg?v=20260430exact1" alt="Biological &amp; Health Sciences"><label><a class="doc-link" href="#major-biological-health-sciences">Biological/<wbr>Health</a></label>
+                </div>
+                <div class="thumb" data-key="major_Computer_Science_IT" data-src="v3_ordered_images/majors/Computer_Science_IT.svg?v=20260430exact1" data-title="Computer Science &amp; IT" data-tag="tag-stem" data-count="186">
+                    <img src="v3_ordered_images/majors/Computer_Science_IT.svg?v=20260430exact1" alt="Computer Science &amp; IT"><label><a class="doc-link" href="#major-computer-science-it">Computer Science/<wbr>IT</a></label>
+                </div>
+                <div class="thumb" data-key="major_Engineering" data-src="v3_ordered_images/majors/Engineering.svg?v=20260430exact1" data-title="Engineering" data-tag="tag-stem" data-count="290">
+                    <img src="v3_ordered_images/majors/Engineering.svg?v=20260430exact1" alt="Engineering"><label><a class="doc-link" href="#major-engineering">Engineering</a></label>
+                </div>
+            </div>
+        </div>
+
+        <hr class="section-divider">
+        <p class="section-label">Career Destinations</p>
+
+        <div class="thumb-group group-careers" data-doc-key="careers">
+            <h3><a class="doc-link doc-heading" href="#career-clusters">Career Fields (8)</a></h3>
+            <div class="thumb-grid">
+                <div class="thumb" data-key="career_Finance_Accounting" data-src="v3_ordered_images/careers/Finance_Accounting.svg?v=20260430exact1" data-title="Finance &amp; Accounting (Career)" data-tag="tag-career" data-count="387">
+                    <img src="v3_ordered_images/careers/Finance_Accounting.svg?v=20260430exact1" alt="Finance &amp; Accounting"><label><a class="doc-link" href="#career-finance-accounting">Finance/<wbr>Accounting</a></label>
+                </div>
+                <div class="thumb" data-key="career_Management_Ops" data-src="v3_ordered_images/careers/Management_Ops.svg?v=20260430exact1" data-title="Management &amp; Ops" data-tag="tag-career" data-count="840">
+                    <img src="v3_ordered_images/careers/Management_Ops.svg?v=20260430exact1" alt="Management &amp; Ops"><label><a class="doc-link" href="#career-management-ops">Management/<wbr>Ops</a></label>
+                </div>
+                <div class="thumb" data-key="career_Sales_Marketing" data-src="v3_ordered_images/careers/Sales_Marketing.svg?v=20260430exact1" data-title="Sales &amp; Marketing" data-tag="tag-career" data-count="285">
+                    <img src="v3_ordered_images/careers/Sales_Marketing.svg?v=20260430exact1" alt="Sales &amp; Marketing"><label><a class="doc-link" href="#career-sales-marketing">Sales/<wbr>Marketing</a></label>
+                </div>
+                <div class="thumb" data-key="career_Legal_Policy" data-src="v3_ordered_images/careers/Legal_Policy.svg?v=20260430exact1" data-title="Legal &amp; Policy" data-tag="tag-career" data-count="47">
+                    <img src="v3_ordered_images/careers/Legal_Policy.svg?v=20260430exact1" alt="Legal &amp; Policy"><label><a class="doc-link" href="#career-legal-policy">Legal/<wbr>Policy</a></label>
+                </div>
+                <div class="thumb" data-key="career_Education_Social_Service" data-src="v3_ordered_images/careers/Education_Social_Service.svg?v=20260430exact1" data-title="Education &amp; Social Service" data-tag="tag-career" data-count="255">
+                    <img src="v3_ordered_images/careers/Education_Social_Service.svg?v=20260430exact1" alt="Education &amp; Social Service"><label><a class="doc-link" href="#career-education-social-service">Education/<wbr>Social</a></label>
+                </div>
+                <div class="thumb" data-key="career_Health_Science_Research" data-src="v3_ordered_images/careers/Health_Science_Research.svg?v=20260430exact1" data-title="Health &amp; Science Research" data-tag="tag-career" data-count="316">
+                    <img src="v3_ordered_images/careers/Health_Science_Research.svg?v=20260430exact1" alt="Health &amp; Science Research"><label><a class="doc-link" href="#career-health-science-research">Health/<wbr>Science</a></label>
+                </div>
+                <div class="thumb" data-key="career_Software_Data" data-src="v3_ordered_images/careers/Software_Data.svg?v=20260430exact1" data-title="Software &amp; Data" data-tag="tag-career" data-count="245">
+                    <img src="v3_ordered_images/careers/Software_Data.svg?v=20260430exact1" alt="Software &amp; Data"><label><a class="doc-link" href="#career-software-data">Software/<wbr>Data</a></label>
+                </div>
+                <div class="thumb" data-key="career_Engineering" data-src="v3_ordered_images/careers/Engineering.svg?v=20260430exact1" data-title="Engineering (Career)" data-tag="tag-career" data-count="307">
+                    <img src="v3_ordered_images/careers/Engineering.svg?v=20260430exact1" alt="Engineering"><label><a class="doc-link" href="#career-engineering">Engineering</a></label>
+                </div>
+            </div>
+        </div>
+
+        <div id="methodology-notes"></div>
+    </div>
+</div>
+
+<script src="dashboard_docs_data.js"></script>
+<script src="dashboard_docs.js"></script>
+<script>
+(function () {
+    var bigImg = document.getElementById("big-image");
+    var titleEl = document.getElementById("title");
+    var statsEl = document.getElementById("stats");
+    var thumbs = document.querySelectorAll(".thumb");
+    var docsData = window.DASHBOARD_DOCS_DATA.career;
+    var locked = null;
+    var assetVersion = "20260507normalized1";
+    var compilationSrc = "v3_ordered_images/main.svg?v=" + assetVersion;
+    var currentSrc = compilationSrc;
+    var sectionAccentVars = {
+        business: "var(--business)",
+        humanities: "var(--humanities)",
+        social: "var(--social)",
+        stem: "var(--stem)",
+        careers: "var(--career)"
+    };
+
+    function withAssetVersion(src) {
+        return src.replace(/\?v=[^"'&]+/, "?v=" + assetVersion);
+    }
+
+    var segments = [
+        { type: "career", size: 387, gap: 0.004, key: "career_Finance_Accounting" },
+        { type: "career", size: 840, gap: 0.004, key: "career_Management_Ops" },
+        { type: "career", size: 285, gap: 0.004, key: "career_Sales_Marketing" },
+        { type: "career", size: 47, gap: 0.004, key: "career_Legal_Policy" },
+        { type: "career", size: 255, gap: 0.004, key: "career_Education_Social_Service" },
+        { type: "career", size: 316, gap: 0.004, key: "career_Health_Science_Research" },
+        { type: "career", size: 245, gap: 0.004, key: "career_Software_Data" },
+        { type: "career", size: 307, gap: 0.004, key: "career_Engineering" },
+        { type: "major", size: 290, gap: 0.004, key: "major_Engineering" },
+        { type: "major", size: 186, gap: 0.004, key: "major_Computer_Science_IT" },
+        { type: "major", size: 198, gap: 0.004, key: "major_Biological_Health_Sciences" },
+        { type: "major", size: 31, gap: 0.004, key: "major_Physical_Environmental_Sciences" },
+        { type: "major", size: 242, gap: 0.004, key: "major_Education_Social_Services" },
+        { type: "major", size: 179, gap: 0.004, key: "major_Social_Sciences_Humanities" },
+        { type: "major", size: 64, gap: 0.004, key: "major_Economics" },
+        { type: "major", size: 340, gap: 0.004, key: "major_Marketing_Communication" },
+        { type: "major", size: 71, gap: 0.004, key: "major_Languages_Arts_Humanities" },
+        { type: "major", size: 118, gap: 0.004, key: "major_Specialized_Business" },
+        { type: "major", size: 165, gap: 0.004, key: "major_Operations_Analytics" },
+        { type: "major", size: 389, gap: 0.004, key: "major_General_Business" },
+        { type: "major", size: 409, gap: 0.004, key: "major_Finance_Accounting" }
+    ];
+
+    var totalSize = 0;
+    var totalGapFrac = 0;
+    var hoverZones = [];
+
+    segments.forEach(function (segment) {
+        totalSize += segment.size;
+        totalGapFrac += segment.gap;
+    });
+
+    var degreesPerUnit = (360 - totalGapFrac * 360) / totalSize;
+    var angle = 0;
+
+    segments.forEach(function (segment) {
+        var span = segment.size * degreesPerUnit;
+        segment.start = angle;
+        segment.end = angle + span;
+        hoverZones.push({ start: segment.start, end: segment.end, key: segment.key });
+        angle = segment.end + segment.gap * 360;
+    });
+
+    var thumbMap = {};
+    thumbs.forEach(function (thumb) {
+        thumb.dataset.src = withAssetVersion(thumb.dataset.src);
+        var previewImg = thumb.querySelector("img");
+        if (previewImg) {
+            previewImg.src = withAssetVersion(previewImg.getAttribute("src") || "");
+        }
+        thumbMap[thumb.dataset.key] = thumb;
+    });
+
+    function getSectionTotal(section) {
+        var total = 0;
+        section.querySelectorAll(".thumb").forEach(function (thumb) {
+            total += Number(thumb.dataset.count || "0");
+        });
+        return total;
+    }
+
+    function cloneDocItem(source, accentVar, note) {
+        return {
+            id: source.id,
+            title: source.title,
+            tag: source.tag,
+            note: note,
+            rule: source.rule,
+            listTitle: source.listTitle,
+            list: source.list,
+            accentVar: accentVar
+        };
+    }
+
+    function renderSectionDocs() {
+        Object.keys(docsData.sections).forEach(function (sectionKey) {
+            var section = document.querySelector('.thumb-group[data-doc-key="' + sectionKey + '"]');
+            var sectionConfig = docsData.sections[sectionKey];
+            if (!section || !sectionConfig) {
+                return;
+            }
+
+            var accentVar = sectionAccentVars[sectionKey];
+            var items = [];
+            var sectionTotal = getSectionTotal(section);
+            var summaryLabel = sectionKey === "careers" ? "career fields" : "small clusters";
+            var summaryList = sectionConfig.list || window.DashboardDocs.uniqueFlatten(sectionConfig.groupKeys, docsData.items, "list");
+
+            items.push({
+                id: sectionConfig.id,
+                title: "About " + sectionConfig.title,
+                tag: sectionConfig.tag,
+                note: sectionConfig.groupKeys.length + " " + summaryLabel + " \u00b7 " + sectionTotal + " graduates",
+                rule: sectionConfig.rule,
+                listTitle: sectionConfig.listTitle || "Actual majors in this family",
+                list: summaryList,
+                accentVar: accentVar
+            });
+
+            sectionConfig.groupKeys.forEach(function (groupKey) {
+                var source = docsData.items[groupKey];
+                var thumb = thumbMap[groupKey];
+                if (!source || !thumb) {
+                    return;
+                }
+
+                items.push(cloneDocItem(source, accentVar, thumb.dataset.count + " graduates"));
+            });
+
+            var host = document.createElement("div");
+            section.appendChild(host);
+            window.DashboardDocs.renderSectionDocs(host, items);
+        });
+
+        window.DashboardDocs.renderDocsPanel(document.getElementById("methodology-notes"), {
+            title: "Methodology & Group Notes",
+            intro: docsData.methodologyIntro,
+            items: docsData.methodology
+        });
+    }
+
+    renderSectionDocs();
+    window.DashboardDocs.setupInlineDocLinks(document);
+    window.DashboardDocs.openHashTarget(window.location.hash);
+
+    function setSelection(thumb) {
+        thumbs.forEach(function (node) {
+            node.classList.remove("active");
+        });
+
+        if (!thumb) {
+            currentSrc = compilationSrc;
+            bigImg.src = compilationSrc;
+            titleEl.innerHTML = "All Majors - Ordered Compilation";
+            statsEl.innerHTML = "13 majors &middot; 8 career fields &middot; 2682 graduates &middot; 97 connections";
+            return;
+        }
+
+        thumb.classList.add("active");
+        currentSrc = thumb.dataset.src;
+        bigImg.src = currentSrc;
+        titleEl.innerHTML = thumb.dataset.title + '<span class="cluster-tag ' + thumb.dataset.tag + '">' + thumb.dataset.count + " graduates</span>";
+        statsEl.textContent = thumb.dataset.title + " | " + thumb.dataset.count + " graduates";
+    }
+
+    thumbs.forEach(function (thumb) {
+        thumb.addEventListener("mouseenter", function () {
+            if (!locked) {
+                setSelection(thumb);
+            }
+        });
+
+        thumb.addEventListener("mouseleave", function () {
+            if (!locked) {
+                setSelection(null);
+            }
+        });
+
+        thumb.addEventListener("click", function () {
+            if (locked === thumb) {
+                locked = null;
+                setSelection(null);
+                return;
+            }
+            locked = thumb;
+            setSelection(thumb);
+        });
+    });
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".thumb") || event.target.closest("#big-image")) {
+            return;
+        }
+        locked = null;
+        setSelection(null);
+    });
+
+    bigImg.addEventListener("mousemove", function (event) {
+        if (locked) {
+            return;
+        }
+
+        var rect = bigImg.getBoundingClientRect();
+        var x = event.clientX - rect.left - rect.width / 2;
+        var y = event.clientY - rect.top - rect.height / 2;
+        var radius = Math.sqrt(x * x + y * y);
+        var imageSize = Math.min(rect.width, rect.height);
+        var outer = imageSize * 0.445;
+        var inner = imageSize * 0.355;
+
+        if (radius < inner || radius > outer) {
+            setSelection(null);
+            return;
+        }
+
+        var angleDeg = (Math.atan2(y, x) * 180 / Math.PI + 90 + 360) % 360;
+        var matched = null;
+
+        for (var i = 0; i < hoverZones.length; i += 1) {
+            if (angleDeg >= hoverZones[i].start && angleDeg <= hoverZones[i].end) {
+                matched = hoverZones[i];
+                break;
+            }
+        }
+
+        if (!matched || !thumbMap[matched.key]) {
+            setSelection(null);
+            return;
+        }
+
+        var thumb = thumbMap[matched.key];
+        setSelection(thumb);
+    });
+
+    bigImg.addEventListener("mouseleave", function () {
+        if (!locked) {
+            setSelection(null);
+        }
+    });
+
+    setSelection(null);
+})();
+</script>
+
+</body>
+</html>
+

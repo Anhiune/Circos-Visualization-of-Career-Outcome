@@ -1,0 +1,926 @@
+﻿UST ID,CPF Major Fall 2022,CPF Major Code, Declared Major Spring 2026,Declared Second Major Spring 2026,Declared minor Spring 2026,Declared Minor 2 spring 2026
+214,Actuarial Science,ACSC,ACSC,0,0,0
+266,Actuarial Science,ACSC,ACSC,0,MATH,0
+412,Actuarial Science,ACSC,ACSC,0,0,0
+432,Actuarial Science,ACSC,ACSC,0,MATH,MAST
+781,Actuarial Science,ACSC,ACSC,0,MATH,0
+909,Actuarial Science,ACSC,ACSC,STAT,PHIL,0
+904,Bus Admin - Business Analytics,BUBA,ACSC,0,STAT,MATH
+410,Exercise Science,EXSC,ACSC,0,MATH,PHIL
+40,Mathematics,MATH,ACSC,0,MAST,0
+131,Psychology,PSWK,ARTH,THEO,PHLP,0
+578,Bus Admin - Entrepreneurship,BUEN,BABA,0,BMKT,0
+508,Physics,PHYS,BABA,0,BFIN,0
+724,Psychology,PSWK,BABA,0,BUHC,BSOM
+252,Undecided,UNDC,BABA,0,0,0
+261,Undecided,UNDC,BABA,0,0,0
+74,Biochemistry,BCH1,BCH1,0,0,0
+637,Biochemistry,BCH1,BCH1,0,0,0
+765,Biochemistry,BCH1,BCH1,0,0,0
+848,Biochemistry,BCH1,BCH1,0,ENNM,0
+919,Biochemistry,BCH1,BCH1,0,0,0
+34,Biology,BIOL,BCH1,0,PHIL,0
+213,Biology,BIOL,BCH1,0,PHIL,0
+685,Chemistry,CHEM,BCH1,0,MATH,0
+263,Undecided,UNDC,BCH1,0,0,0
+797,Biochemistry,BCH1,BIOL,0,0,0
+2,Biology,BIOL,BIOL,0,SUST,0
+142,Biology,BIOL,BIOL,0,BUHC,0
+159,Biology,BIOL,BIOL,0,SPAN,THEO
+332,Biology,BIOL,BIOL,0,PSYC,0
+348,Biology,BIOL,BIOL,0,0,0
+779,Biology,BIOL,BIOL,0,BUAD,0
+584,Exercise Science,EXSC,BIOL,0,0,0
+246,Nursing,NRSG,BIOL,0,NUTR,0
+593,Nursing,NRSG,BIOL,0,0,0
+686,Undecided,UNDC,BIOL,0,0,0
+330,Biochemistry,BCH1,BIOS,0,SOCJ,0
+549,Biochemistry,BCH1,BIOS,0,PHIL,0
+838,Biochemistry,BCH1,BIOS,0,0,0
+32,Biology,BIOL,BIOS,0,BUAD,0
+38,Biology,BIOL,BIOS,0,0,0
+100,Biology,BIOL,BIOS,0,0,0
+237,Biology,BIOL,BIOS,0,BUAD,THEO
+264,Biology,BIOL,BIOS,0,0,0
+336,Biology,BIOL,BIOS,0,0,0
+368,Biology,BIOL,BIOS,0,0,0
+380,Biology,BIOL,BIOS,0,SUST,PSYC
+392,Biology,BIOL,BIOS,0,THEO,0
+438,Biology,BIOL,BIOS,0,0,0
+523,Biology,BIOL,BIOS,0,CHEM,SPHP
+590,Biology,BIOL,BIOS,0,COMM,FILM
+696,Biology,BIOL,BIOS,0,0,0
+762,Biology,BIOL,BIOS,0,PSYC,THEO
+813,Biology,BIOL,BIOS,0,PHIL,0
+819,Biology,BIOL,BIOS,0,0,0
+850,Biology,BIOL,BIOS,0,0,0
+648,Civil Engineering,CEGR,BIOS,0,PSYC,0
+148,Nursing,NRSG,BIOS,0,THEO,0
+536,Nursing,NRSG,BIOS,0,CATH,0
+634,Neuroscience,NSCI,BIOS,0,SUST,0
+830,Undecided,UNDC,BIOS,0,BUAD,0
+116,Pre-Dentistry,XDEN,BIOS,0,THE2,PSYC
+58,Chemistry,CHEM,BOGH,0,SPAN,0
+163,Actuarial Science,ACSC,BSAC,0,0,0
+548,Actuarial Science,ACSC,BSAC,0,THEO,0
+340,Art History,ARTH,BSAC,0,BFIN,BSLC
+104,Biochemistry,BCH1,BSAC,0,ACSC,0
+227,Biology,BIOL,BSAC,0,0,0
+4,Bus Admin - Accounting,BUAC,BSAC,0,0,0
+41,Bus Admin - Accounting,BUAC,BSAC,0,0,0
+46,Bus Admin - Accounting,BUAC,BSAC,BSFI,0,0
+121,Bus Admin - Accounting,BUAC,BSAC,0,0,0
+122,Bus Admin - Accounting,BUAC,BSAC,0,BUAM,0
+134,Bus Admin - Accounting,BUAC,BSAC,0,0,0
+203,Bus Admin - Accounting,BUAC,BSAC,0,0,0
+229,Bus Admin - Accounting,BUAC,BSAC,0,BUAM,BSLM
+301,Bus Admin - Accounting,BUAC,BSAC,0,BUAM,ECON
+406,Bus Admin - Accounting,BUAC,BSAC,0,BUAM,0
+555,Bus Admin - Accounting,BUAC,BSAC,0,0,0
+586,Bus Admin - Accounting,BUAC,BSAC,0,0,0
+610,Bus Admin - Accounting,BUAC,BSAC,0,BUAM,0
+615,Bus Admin - Accounting,BUAC,BSAC,0,BUAM,THEO
+646,Bus Admin - Accounting,BUAC,BSAC,0,BUAM,THEO
+734,Bus Admin - Accounting,BUAC,BSAC,0,BFIN,0
+132,Bus Admin - Entrepreneurship,BUEN,BSAC,0,0,0
+140,Bus Admin - Financial Mgmt,BUFI,BSAC,0,BFIN,0
+420,Bus Admin - Financial Mgmt,BUFI,BSAC,BSFI,0,0
+463,Bus Admin - Financial Mgmt,BUFI,BSAC,0,0,0
+491,Bus Admin - Financial Mgmt,BUFI,BSAC,0,BUAM,0
+567,Bus Admin - Financial Mgmt,BUFI,BSAC,0,BFIN,0
+601,Bus Admin - Financial Mgmt,BUFI,BSAC,0,BFIN,0
+689,Bus Admin - Financial Mgmt,BUFI,BSAC,0,BUEN,0
+783,Bus Admin - Financial Mgmt,BUFI,BSAC,0,ECON,BFIN
+922,Bus Admin - Gen Business Mgmt,BUGB,BSAC,0,BFIN,0
+326,Bus Admin - Intl Business,BUIB,BSAC,0,THEO,BMKT
+357,Bus Admin - Intl Business,BUIB,BSAC,BSLC,PHIL,SUST
+473,Bus Admin - Intl Business,BUIB,BSAC,0,BFIN,THEO
+501,Bus Admin - Intl Business,BUIB,BSAC,0,BUAM,0
+906,Bus Admin - Intl Business,BUIB,BSAC,0,ACSC,0
+182,Bus Admin - Marketing Mgmt,BUMK,BSAC,0,CATH,0
+799,Bus Admin - Marketing Mgmt,BUMK,BSAC,0,BUAM,0
+891,Bus Admin - Marketing Mgmt,BUMK,BSAC,BSFI,BUAM,0
+215,Bus Adm - Real Estate Studies,BURE,BSAC,0,0,0
+570,Mechanical Engineering,EGM1,BSAC,0,0,0
+81,Mathematics,MATH,BSAC,0,ACSC,THEO
+530,Undecided,UNDC,BSAC,0,0,0
+664,Undecided,UNDC,BSAC,0,0,0
+714,Undecided,UNDC,BSAC,0,0,0
+785,Undecided,UNDC,BSAC,0,0,0
+808,Undecided,UNDC,BSAC,0,BFIN,0
+655,Bus Admin - Communication,BUBC,BSBC,0,LGST,0
+416,Bus Admin - Gen Business Mgmt,BUGB,BSBC,0,BUHC,0
+820,Criminal Justice,CJWK,BSBC,0,0,0
+444,Economics,ECON,BSBC,0,THEO,0
+867,Actuarial Science,ACSC,BSDA,0,ECON,ACSC
+129,Data Analytics,BSDA,BSDA,ECB1,APST,PHIL
+661,Data Analytics,BSDA,BSDA,ECB1,APST,CSIA
+895,Bus Admin - Business Analytics,BUBA,BSDA,0,0,0
+545,Bus Admin - Financial Mgmt,BUFI,BSDA,0,CSIA,APST
+270,Computer Science (BS),CSBS,BSDA,0,0,0
+388,Computer Science (BS),CSBS,BSDA,0,0,0
+68,Undecided,UNDC,BSDA,0,CSIA,0
+256,Undecided,UNDC,BSDA,0,PUBH,0
+338,Bus Admin - Accounting,BUAC,BSEN,0,0,0
+516,Bus Admin - Communication,BUBC,BSEN,0,0,0
+24,Bus Admin - Entrepreneurship,BUEN,BSEN,0,SUST,0
+28,Bus Admin - Entrepreneurship,BUEN,BSEN,BSOM,BUAM,0
+60,Bus Admin - Entrepreneurship,BUEN,BSEN,0,DMAT,0
+173,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+240,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+254,Bus Admin - Entrepreneurship,BUEN,BSEN,0,FILM,SUST
+280,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+289,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+291,Bus Admin - Entrepreneurship,BUEN,BSEN,0,MIND,BSLM
+360,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+365,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+415,Bus Admin - Entrepreneurship,BUEN,BSEN,BSMK,0,0
+540,Bus Admin - Entrepreneurship,BUEN,BSEN,0,CSIA,0
+541,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+571,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+628,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+776,Bus Admin - Entrepreneurship,BUEN,BSEN,BSMK,BFIN,0
+835,Bus Admin - Entrepreneurship,BUEN,BSEN,0,0,0
+815,Bus Admin - Human Resc Mgmt,BUHR,BSEN,BSHR,0,0
+699,Bus Admin - Intl Business,BUIB,BSEN,0,0,0
+583,Bus Admin - Marketing Mgmt,BUMK,BSEN,BSAC,0,0
+594,Bus Admin - Marketing Mgmt,BUMK,BSEN,0,THEO,COMM
+721,Bus Admin - Marketing Mgmt,BUMK,BSEN,0,BFIN,0
+369,Bus Adm - Real Estate Studies,BURE,BSEN,BSFI,0,0
+857,Digital Media Arts,DMAT,BSEN,0,0,0
+147,Undecided,UNDC,BSEN,0,0,0
+745,Undecided,UNDC,BSEN,0,BUHC,0
+805,Undecided,UNDC,BSEN,0,BFIN,0
+912,Undecided,UNDC,BSEN,0,BMKT,0
+915,Undecided,UNDC,BSEN,0,BFIN,0
+435,Actuarial Science,ACSC,BSFI,0,MATH,MAST
+493,Biochemistry,BCH1,BSFI,0,0,0
+788,Biochemistry,BCH1,BSFI,0,0,0
+257,Biology,BIOL,BSFI,0,BSAC,0
+443,Biology,BIOL,BSFI,0,FREN,0
+286,Data Analytics,BSDA,BSFI,BSEN,COMM,BSAC
+323,Bus Admin - Accounting,BUAC,BSFI,0,0,0
+564,Bus Admin - Accounting,BUAC,BSFI,0,BUAM,0
+749,Bus Admin - Accounting,BUAC,BSFI,0,0,0
+665,Bus Admin - Business Analytics,BUBA,BSFI,0,BUAM,0
+268,Bus Admin - Communication,BUBC,BSFI,0,BMKT,0
+31,Bus Admin - Entrepreneurship,BUEN,BSFI,0,BUAM,0
+73,Bus Admin - Entrepreneurship,BUEN,BSFI,0,0,0
+117,Bus Admin - Entrepreneurship,BUEN,BSFI,0,0,0
+552,Bus Admin - Entrepreneurship,BUEN,BSFI,0,BUAM,0
+574,Bus Admin - Entrepreneurship,BUEN,BSFI,0,0,0
+703,Bus Admin - Entrepreneurship,BUEN,BSFI,0,0,0
+828,Bus Admin - Entrepreneurship,BUEN,BSFI,0,BUAM,0
+53,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,0
+57,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,0
+78,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+136,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+168,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+186,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+189,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+196,Bus Admin - Financial Mgmt,BUFI,BSFI,BSAC,BUAM,0
+221,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,0
+232,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+247,Bus Admin - Financial Mgmt,BUFI,BSFI,0,THEO,0
+253,Bus Admin - Financial Mgmt,BUFI,BSFI,0,THEO,BSAC
+319,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+321,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+334,Bus Admin - Financial Mgmt,BUFI,BSFI,0,ACSC,0
+350,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+373,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+399,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+400,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+417,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+425,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,0
+458,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+467,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+475,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,0
+486,Bus Admin - Financial Mgmt,BUFI,BSFI,BSAC,THEO,0
+488,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+568,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,THEO
+569,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+587,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+620,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,SUST
+632,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+640,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+644,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+650,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+651,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+668,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+706,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+709,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,THEO
+710,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+717,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,0
+719,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+739,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSAC,THEO
+740,Bus Admin - Financial Mgmt,BUFI,BSFI,BSAC,THEO,0
+741,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+744,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+756,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+801,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,THEO
+863,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BSLC,0
+865,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,BUSM
+870,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,BSAC
+880,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+890,Bus Admin - Financial Mgmt,BUFI,BSFI,BSAC,BUAM,0
+903,Bus Admin - Financial Mgmt,BUFI,BSFI,0,0,0
+913,Bus Admin - Financial Mgmt,BUFI,BSFI,0,BUAM,0
+37,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,BSOM,0
+174,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,0,0
+178,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,BSAC,0
+222,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,0,0
+329,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,POLS,0
+341,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,BUAM,0
+471,Bus Admin - Gen Business Mgmt,BUGB,BSFI,BSAC,THEO,0
+489,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,0,0
+636,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,PHLP,0
+638,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,BUAM,0
+645,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,BSAC,0
+728,Bus Admin - Gen Business Mgmt,BUGB,BSFI,0,0,0
+150,Bus Admin - Intl Business,BUIB,BSFI,0,BSAC,0
+76,Bus Admin - Marketing Mgmt,BUMK,BSFI,0,BUAM,0
+514,Bus Admin - Marketing Mgmt,BUMK,BSFI,0,BUAM,BSAC
+711,Bus Admin - Marketing Mgmt,BUMK,BSFI,0,BUAM,0
+810,Bus Admin - Marketing Mgmt,BUMK,BSFI,0,BSAC,0
+653,Bus Adm - Real Estate Studies,BURE,BSFI,0,0,0
+662,Bus Adm - Real Estate Studies,BURE,BSFI,0,0,0
+154,Computer Science (BS),CSBS,BSFI,0,BSAC,0
+669,Computer Science (BS),CSBS,BSFI,0,THEO,BSLC
+764,Computer Science (BS),CSBS,BSFI,0,0,0
+105,Economics,ECON,BSFI,0,BUAM,0
+184,Economics,ECON,BSFI,0,MATH,0
+316,Economics,ECON,BSFI,0,0,0
+370,Mechanical Engineering,EGM1,BSFI,0,PHIL,0
+528,Mechanical Engineering,EGM1,BSFI,0,0,0
+452,Neuroscience,NSCI,BSFI,0,THE2,BSAC
+633,Neuroscience,NSCI,BSFI,0,CATH,0
+72,Undecided,UNDC,BSFI,0,0,0
+242,Undecided,UNDC,BSFI,0,0,0
+298,Undecided,UNDC,BSFI,BSAC,0,0
+597,Undecided,UNDC,BSFI,0,0,0
+833,Undecided,UNDC,BSFI,0,0,0
+565,Pre-Medicine,XMED,BSFI,0,0,0
+518,Pre-Physician Assistant,XPPA,BSFI,0,BUAM,BSLC
+61,Bus Admin - Human Resc Mgmt,BUHR,BSHR,0,BUHC,BSLC
+119,Bus Admin - Human Resc Mgmt,BUHR,BSHR,0,SPAN,BSLM
+202,Bus Admin - Human Resc Mgmt,BUHR,BSHR,BSLM,THEO,0
+219,Bus Admin - Human Resc Mgmt,BUHR,BSHR,0,ECON,0
+281,Bus Admin - Human Resc Mgmt,BUHR,BSHR,0,PSYC,BSLC
+449,Bus Admin - Human Resc Mgmt,BUHR,BSHR,0,0,0
+872,Bus Admin - Human Resc Mgmt,BUHR,BSHR,0,AERO,0
+910,Bus Admin - Human Resc Mgmt,BUHR,BSHR,0,0,0
+881,Bus Admin - Intl Business,BUIB,BSHR,0,BSLM,BUSM
+451,Bus Admin - Leadership& Mgmt,BULM,BSHR,0,BSLM,0
+112,Psychology,PSWK,BSHR,0,BMKT,0
+506,Undecided,UNDC,BSHR,0,THEO,0
+66,Bus Admin - Gen Business Mgmt,BUGB,BSIB,0,GERM,0
+92,Bus Admin - Gen Business Mgmt,BUGB,BSIB,0,0,0
+899,Bus Admin - Gen Business Mgmt,BUGB,BSIB,0,BUSM,THEO
+166,Bus Admin - Intl Business,BUIB,BSIB,0,0,0
+510,Bus Admin - Intl Business,BUIB,BSIB,0,0,0
+691,Bus Admin - Intl Business,BUIB,BSIB,BSLM,GERM,BSOM
+761,Bus Admin - Intl Business,BUIB,BSIB,0,GERM,BSLC
+778,Bus Admin - Intl Business,BUIB,BSIB,0,BSLC,0
+847,Bus Admin - Intl Business,BUIB,BSIB,BSLM,PSYC,0
+854,Bus Admin - Intl Business,BUIB,BSIB,BSFI,0,0
+816,Bus Admin - Marketing Mgmt,BUMK,BSIB,0,BUAM,0
+305,English,ENGL,BSIB,0,0,0
+453,Bus Admin - Accounting,BUAC,BSLC,BSAC,0,0
+836,Bus Admin - Gen Business Mgmt,BUGB,BSLC,0,0,0
+692,Neuroscience,NSCI,BSLC,0,0,0
+358,Psychology,PSWK,BSLC,0,FAST,0
+598,Pre-Law,XLAW,BSLC,0,BUHC,0
+725,Bus Admin - Entrepreneurship,BUEN,BSLM,0,BUAM,BSRE
+206,Bus Admin - Financial Mgmt,BUFI,BSLM,BSFI,0,0
+35,Bus Admin - Gen Business Mgmt,BUGB,BSLM,0,COMM,BUSM
+446,Bus Admin - Gen Business Mgmt,BUGB,BSLM,0,0,0
+591,Bus Admin - Gen Business Mgmt,BUGB,BSLM,0,COMM,0
+715,Bus Admin - Gen Business Mgmt,BUGB,BSLM,0,BUAM,PHIL
+418,Bus Admin - Human Resc Mgmt,BUHR,BSLM,0,PUBH,BSHR
+352,Bus Admin - Leadership& Mgmt,BULM,BSLM,BSOM,BUAM,0
+433,Bus Admin - Leadership& Mgmt,BULM,BSLM,0,0,0
+599,Bus Admin - Leadership& Mgmt,BULM,BSLM,0,BUAM,BUSM
+625,Bus Admin - Leadership& Mgmt,BULM,BSLM,0,BFIN,THEO
+920,Computer Engineering,COEG,BSLM,BSMK,0,0
+485,Electrical Engineering,EEE1,BSLM,0,BUHC,0
+427,Undecided,UNDC,BSLM,BSHR,0,0
+582,Undecided,UNDC,BSLM,0,BMKT,0
+207,Biology,BIOL,BSMK,0,0,0
+355,Biology,BIOL,BSMK,0,DMAT,0
+26,Bus Admin - Communication,BUBC,BSMK,0,0,0
+216,Bus Admin - Communication,BUBC,BSMK,0,BUEN,0
+97,Bus Admin - Entrepreneurship,BUEN,BSMK,0,BUAM,0
+161,Bus Admin - Entrepreneurship,BUEN,BSMK,0,BUAM,0
+287,Bus Admin - Entrepreneurship,BUEN,BSMK,0,0,0
+476,Bus Admin - Entrepreneurship,BUEN,BSMK,0,BUSM,COMM
+560,Bus Admin - Entrepreneurship,BUEN,BSMK,0,0,0
+681,Bus Admin - Entrepreneurship,BUEN,BSMK,0,0,0
+787,Bus Admin - Entrepreneurship,BUEN,BSMK,0,BUAM,0
+818,Bus Admin - Entrepreneurship,BUEN,BSMK,0,0,0
+447,Bus Admin - Financial Mgmt,BUFI,BSMK,0,0,0
+474,Bus Admin - Financial Mgmt,BUFI,BSMK,0,0,0
+718,Bus Admin - Financial Mgmt,BUFI,BSMK,0,BFIN,0
+807,Bus Admin - Financial Mgmt,BUFI,BSMK,0,0,0
+878,Bus Admin - Financial Mgmt,BUFI,BSMK,0,BUSM,0
+29,Bus Admin - Gen Business Mgmt,BUGB,BSMK,0,0,0
+95,Bus Admin - Gen Business Mgmt,BUGB,BSMK,0,BUAM,0
+103,Bus Admin - Gen Business Mgmt,BUGB,BSMK,0,0,0
+676,Bus Admin - Gen Business Mgmt,BUGB,BSMK,0,BUSM,0
+896,Bus Admin - Gen Business Mgmt,BUGB,BSMK,0,CATH,0
+54,Bus Admin - Intl Business,BUIB,BSMK,0,ENGL,0
+623,Bus Adm - Law & Compliance,BULC,BSMK,0,THE2,0
+36,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BUAM,BUSM
+51,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,SPAN,0
+86,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+89,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+109,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,SUST,THEO
+152,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+177,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,COMM,0
+190,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+198,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+201,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+228,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+234,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BUAM,0
+235,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,STCM,0
+243,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,SPAN,0
+274,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,STCM,0
+313,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+359,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+367,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BUSM,0
+430,Bus Admin - Marketing Mgmt,BUMK,BSMK,BSBC,STCM,BUAM
+440,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,NUTR,STCM
+547,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+551,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BIOL,0
+581,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+603,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BUAM,0
+604,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BUHC,0
+613,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+627,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BUSM,0
+660,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BUSM,0
+677,Bus Admin - Marketing Mgmt,BUMK,BSMK,BSLC,0,0
+700,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,SUST,THEO
+737,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,BFIN,0
+769,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,STCM,0
+802,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+856,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+858,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,COMM,0
+868,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+873,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+879,Bus Admin - Marketing Mgmt,BUMK,BSMK,0,0,0
+658,Bus Adm - Real Estate Studies,BURE,BSMK,0,BUAM,0
+736,Bus Adm - Real Estate Studies,BURE,BSMK,0,BSLM,BUSM
+864,Bus Adm - Real Estate Studies,BURE,BSMK,0,THEO,0
+512,Communication Studies,COMM,BSMK,0,0,0
+160,Exercise Science,EXSC,BSMK,0,STCM,0
+251,Exercise Science,EXSC,BSMK,0,0,0
+405,Exercise Science,EXSC,BSMK,0,0,0
+509,Exercise Science,EXSC,BSMK,0,0,0
+702,Exercise Science,EXSC,BSMK,0,0,0
+96,Film Studies,FILM,BSMK,0,BUAM,0
+839,Film Studies,FILM,BSMK,0,0,0
+156,Nursing,NRSG,BSMK,0,BUHC,0
+210,Psychology,PSWK,BSMK,0,STCM,0
+495,Psychology,PSWK,BSMK,0,THEO,0
+626,Psychology,PSWK,BSMK,0,0,0
+90,Undecided,UNDC,BSMK,0,0,0
+408,Undecided,UNDC,BSMK,0,BUAM,0
+445,Undecided,UNDC,BSMK,0,BUHC,0
+472,Undecided,UNDC,BSMK,0,0,0
+557,Undecided,UNDC,BSMK,BSFI,0,0
+693,Undecided,UNDC,BSMK,0,COMM,0
+705,Undecided,UNDC,BSMK,0,0,0
+720,Undecided,UNDC,BSMK,0,0,0
+727,Undecided,UNDC,BSMK,0,FREN,BUAM
+763,Undecided,UNDC,BSMK,0,BUHC,0
+531,Biology,BIOL,BSOM,0,BUAM,0
+199,Bus Admin - Communication,BUBC,BSOM,0,BUAM,0
+223,Bus Admin - Entrepreneurship,BUEN,BSOM,0,BUEN,0
+43,Bus Admin - Financial Mgmt,BUFI,BSOM,0,BUAM,0
+671,Bus Admin - Financial Mgmt,BUFI,BSOM,0,BUAM,0
+716,Bus Admin - Financial Mgmt,BUFI,BSOM,0,CATH,BUAM
+212,Bus Admin - Gen Business Mgmt,BUGB,BSOM,0,0,0
+414,Bus Admin - Gen Business Mgmt,BUGB,BSOM,0,0,0
+629,Bus Admin - Gen Business Mgmt,BUGB,BSOM,0,BUAM,0
+698,Bus Admin - Gen Business Mgmt,BUGB,BSOM,0,BUAM,0
+747,Bus Admin - Gen Business Mgmt,BUGB,BSOM,0,BUAM,THEO
+780,Bus Admin - Gen Business Mgmt,BUGB,BSOM,0,BUAM,0
+849,Bus Admin - Gen Business Mgmt,BUGB,BSOM,0,BUAM,0
+462,Bus Admin - Leadership& Mgmt,BULM,BSOM,0,BUAM,BSLM
+513,Bus Admin - Leadership& Mgmt,BULM,BSOM,0,0,0
+17,Bus Admin - Op&Supl Chain Mgmt,BUOM,BSOM,0,BUAM,0
+278,Bus Admin - Op&Supl Chain Mgmt,BUOM,BSOM,0,BUAM,BSLM
+372,Bus Admin - Op&Supl Chain Mgmt,BUOM,BSOM,0,BUAM,HIST
+647,Bus Admin - Op&Supl Chain Mgmt,BUOM,BSOM,0,BUAM,0
+99,Bus Adm - Real Estate Studies,BURE,BSOM,0,BUAM,0
+111,Computer Science (BS),CSBS,BSOM,0,0,0
+59,Electrical Engineering,EEE1,BSOM,0,0,0
+827,Electrical Engineering,EEE1,BSOM,0,BUAM,0
+225,Mechanical Engineering,EGM1,BSOM,0,CATH,BUAM
+169,Psychology,PSWK,BSOM,0,BSLC,BUAM
+79,Undecided,UNDC,BSOM,0,BUAM,0
+704,Bus Admin - Entrepreneurship,BUEN,BUEN,0,0,0
+157,Bus Admin - Financial Mgmt,BUFI,BUFI,0,0,0
+713,Biology,BIOL,BUGB,0,0,0
+639,Bus Admin - Business Analytics,BUBA,BUGB,0,0,0
+303,Bus Admin - Entrepreneurship,BUEN,BUGB,0,BFIN,0
+901,Bus Admin - Entrepreneurship,BUEN,BUGB,0,CSIA,0
+48,Bus Admin - Financial Mgmt,BUFI,BUGB,0,0,0
+469,Bus Admin - Financial Mgmt,BUFI,BUGB,0,COMM,BMKT
+82,Bus Admin - Gen Business Mgmt,BUGB,BUGB,0,0,0
+383,Bus Admin - Gen Business Mgmt,BUGB,BUGB,0,BUSM,0
+521,Bus Admin - Gen Business Mgmt,BUGB,BUGB,0,BUSM,0
+612,Bus Admin - Gen Business Mgmt,BUGB,BUGB,0,0,0
+767,Bus Admin - Gen Business Mgmt,BUGB,BUGB,0,COMM,0
+773,Bus Admin - Gen Business Mgmt,BUGB,BUGB,0,0,0
+423,Bus Admin - Human Resc Mgmt,BUHR,BUGB,0,0,0
+27,Bus Admin - Intl Business,BUIB,BUGB,0,BSLC,0
+457,Bus Admin - Leadership& Mgmt,BULM,BUGB,0,0,0
+317,Bus Admin - Marketing Mgmt,BUMK,BUGB,0,FILM,STCM
+21,Bus Adm - Real Estate Studies,BURE,BUGB,0,0,0
+30,Civil Engineering,CEGR,BUGB,0,BFIN,0
+670,Civil Engineering,CEGR,BUGB,0,BUEN,0
+151,Computer Science (BS),CSBS,BUGB,0,0,0
+283,Computer Science (BS),CSBS,BUGB,0,0,0
+831,Electrical Engineering,EEE1,BUGB,0,BUSM,0
+784,Exercise Science,EXSC,BUGB,0,THEO,0
+885,Journalism,JOUR,BUGB,0,0,0
+310,Nursing,NRSG,BUGB,0,0,0
+318,Psychology,PSWK,BUGB,0,0,0
+20,Undecided,UNDC,BUGB,0,BFIN,0
+204,Undecided,UNDC,BUGB,0,BUHC,0
+771,Undecided,UNDC,BUGB,0,PSYC,0
+853,Undecided,UNDC,BUGB,0,BMKT,0
+537,Bus Admin - Accounting,BUAC,BUMK,0,0,0
+562,Bus Admin - Marketing Mgmt,BUMK,BUMK,0,0,0
+840,Bus Admin - Marketing Mgmt,BUMK,BUMK,0,0,0
+162,Bus Admin - Entrepreneurship,BUEN,BURE,0,BFIN,0
+230,Bus Admin - Entrepreneurship,BUEN,BURE,0,0,0
+821,Bus Admin - Intl Business,BUIB,BURE,0,BFIN,0
+845,Bus Admin - Marketing Mgmt,BUMK,BURE,0,BUAM,0
+470,Bus Adm - Real Estate Studies,BURE,BURE,0,BSAC,BFIN
+730,Bus Adm - Real Estate Studies,BURE,BURE,0,0,0
+911,Bus Adm - Real Estate Studies,BURE,BURE,0,0,0
+384,Undecided,UNDC,BURE,0,0,0
+311,Bus Admin - Financial Mgmt,BUFI,CATH,0,0,0
+67,Philosophy,PHIL,CATH,PHIL,0,0
+275,Philosophy,PHIL,CATH,PHIL,0,0
+307,Philosophy,PHIL,CATH,PHIL,0,0
+394,Philosophy,PHIL,CATH,PHIL,ENGL,0
+454,Philosophy,PHIL,CATH,PHIL,0,0
+525,Philosophy,PHIL,CATH,PHIL,0,0
+869,Philosophy,PHIL,CATH,PHIL,CLAC,0
+874,Philosophy,PHIL,CATH,PHIL,0,0
+71,Civil Engineering,CEGR,CENG,0,MATH,THEO
+84,Civil Engineering,CEGR,CENG,0,COMM,JPPE
+93,Civil Engineering,CEGR,CENG,0,0,0
+102,Civil Engineering,CEGR,CENG,0,THEO,0
+167,Civil Engineering,CEGR,CENG,0,0,0
+292,Civil Engineering,CEGR,CENG,0,SUST,0
+293,Civil Engineering,CEGR,CENG,0,0,0
+308,Civil Engineering,CEGR,CENG,0,0,0
+411,Civil Engineering,CEGR,CENG,0,SPAN,0
+442,Civil Engineering,CEGR,CENG,0,ESCI,SUST
+478,Civil Engineering,CEGR,CENG,0,0,0
+483,Civil Engineering,CEGR,CENG,0,0,0
+556,Civil Engineering,CEGR,CENG,0,0,0
+652,Civil Engineering,CEGR,CENG,0,THEO,0
+843,Civil Engineering,CEGR,CENG,0,0,0
+861,Civil Engineering,CEGR,CENG,0,THEO,0
+482,Computer Engineering,COEG,CENG,0,0,0
+85,Electrical Engineering,EEE1,CENG,0,0,0
+285,Mechanical Engineering,EGM1,CENG,0,CATH,0
+403,Mechanical Engineering,EGM1,CENG,0,0,0
+908,Environmental Studies,ENVR,CENG,0,SUST,0
+295,Exercise Science,EXSC,CENG,0,BUAD,0
+217,Chemistry,CHEM,CHE1,0,PSYC,THEO
+385,Chemistry,CHEM,CHE1,0,APST,0
+428,Chemistry,CHEM,CHE1,0,0,0
+631,Chemistry,CHEM,CHE1,0,0,0
+803,Chemistry,CHEM,CHE1,0,PHYS,MSEN
+94,Elementary Education (K-6),ELED,CHEM,0,0,0
+114,Computer Engineering,COEG,COEN,0,0,0
+171,Computer Engineering,COEG,COEN,0,MATH,0
+245,Computer Engineering,COEG,COEN,0,0,0
+439,Computer Engineering,COEG,COEN,0,0,0
+465,Computer Engineering,COEG,COEN,0,0,0
+533,Computer Engineering,COEG,COEN,0,0,0
+575,Computer Engineering,COEG,COEN,0,EBIO,SUST
+738,Computer Engineering,COEG,COEN,0,0,0
+774,Computer Engineering,COEG,COEN,0,0,0
+789,Computer Engineering,COEG,COEN,0,CSIA,0
+916,Computer Engineering,COEG,COEN,0,CSIA,MATH
+750,Computer Science (BS),CSBS,COEN,0,0,0
+141,Undecided,UNDC,COEN,0,CSIA,0
+191,Communication Studies,COMM,COMM,0,LACS,WGSS
+479,English,ENGL,COMM,0,0,0
+185,Exercise Science,EXSC,COMM,0,0,0
+351,Psychology,PSWK,COMM,0,BUAD,0
+382,Undecided,UNDC,COMM,0,BUSM,0
+791,Bus Admin - Entrepreneurship,BUEN,CSBS,0,SUST,0
+23,Bus Admin - Marketing Mgmt,BUMK,CSBS,0,BUAD,0
+387,Computer Engineering,COEG,CSBS,0,THEO,0
+13,Communication Studies,COMM,CSBS,0,DSCI,0
+15,Computer Science (BS),CSBS,CSBS,0,DSCI,0
+64,Computer Science (BS),CSBS,CSBS,0,DSCI,0
+164,Computer Science (BS),CSBS,CSBS,0,PHIL,BUAM
+211,Computer Science (BS),CSBS,CSBS,MABS,0,0
+231,Computer Science (BS),CSBS,CSBS,0,DSCI,0
+241,Computer Science (BS),CSBS,CSBS,DSCI,0,0
+248,Computer Science (BS),CSBS,CSBS,0,CATH,0
+314,Computer Science (BS),CSBS,CSBS,0,ARTH,DSCI
+342,Computer Science (BS),CSBS,CSBS,DSCI,PHIL,0
+354,Computer Science (BS),CSBS,CSBS,0,DMGD,DMAT
+381,Computer Science (BS),CSBS,CSBS,0,DSCI,0
+386,Computer Science (BS),CSBS,CSBS,0,BUDA,DSCI
+505,Computer Science (BS),CSBS,CSBS,0,DSCI,0
+527,Computer Science (BS),CSBS,CSBS,0,THEO,0
+618,Computer Science (BS),CSBS,CSBS,DSCI,0,0
+690,Computer Science (BS),CSBS,CSBS,BSDA,ECON,0
+742,Computer Science (BS),CSBS,CSBS,0,DSCI,PHAR
+804,Computer Science (BS),CSBS,CSBS,0,APST,BUAD
+902,Computer Science (BS),CSBS,CSBS,0,MATH,0
+918,Computer Science (BS),CSBS,CSBS,0,0,0
+923,Computer Science (BS),CSBS,CSBS,0,BUAD,0
+924,Computer Science (BS),CSBS,CSBS,0,APST,0
+817,Mechanical Engineering,EGM1,CSBS,0,APST,0
+921,Mathematics,MATH,CSBS,0,BUEN,0
+19,Undecided,UNDC,CSBS,0,APST,0
+273,Undecided,UNDC,CSBS,DSCI,0,0
+484,Undecided,UNDC,CSBS,0,DSCI,0
+519,Undecided,UNDC,CSBS,0,DSCI,0
+758,Undecided,UNDC,CSBS,0,DMGD,0
+841,Pre-Medicine,XMED,CSBS,MABS,0,0
+657,Computer Science (BS),CSBS,CSIM,DSCI,SPAN,APST
+898,Computer Science (BS),CSBS,CSIM,MABS,0,0
+258,Bus Admin - Entrepreneurship,BUEN,DMAT,0,0,0
+772,Catholic Studies,CATH,DMAT,CATH,0,0
+375,Digital Media Arts,DMAT,DMAT,0,DMGD,SUST
+729,Digital Media Arts,DMAT,DMAT,0,STCM,0
+832,Digital Media Arts,DMAT,DMAT,0,ARTH,FILM
+871,Film Studies,FILM,DMAT,0,FILM,0
+209,Undecided,UNDC,DMAT,STCM,0,0
+353,Undecided,UNDC,DMAT,0,0,0
+499,Undecided,UNDC,DMAT,0,PSYC,0
+573,Undecided,UNDC,DMAT,0,STCM,0
+208,Data Analytics,BSDA,DSCI,MABS,0,0
+18,Computer Science (BS),CSBS,DSCI,0,0,0
+260,Computer Science (BS),CSBS,DSCI,0,0,0
+502,Computer Science (BS),CSBS,DSCI,CSBS,DMGD,0
+917,Computer Science (BS),CSBS,DSCI,0,BUAD,0
+796,Statistics,STAT,DSCI,0,MUSC,BUAM
+124,Undecided,UNDC,DSCI,0,0,0
+504,Undecided,UNDC,DSCI,0,0,0
+617,Bus Admin - Accounting,BUAC,ECB1,0,BFIN,BSAC
+180,Bus Admin - Financial Mgmt,BUFI,ECB1,0,THEO,BUAD
+851,Bus Adm - Law & Compliance,BULC,ECB1,0,BUAM,BUAD
+255,Computer Science (BS),CSBS,ECB1,0,SUST,PHIL
+429,Economics,ECON,ECB1,BSDA,APST,0
+884,Mechanical Engineering,EGM1,ECB1,0,0,0
+829,Exercise Science,EXSC,ECB1,0,BIOL,0
+80,Undecided,UNDC,ECB1,0,SUST,0
+422,Undecided,UNDC,ECB1,0,0,0
+448,Undecided,UNDC,ECB1,0,BUAM,0
+477,Undecided,UNDC,ECB1,0,0,0
+170,Economics,ECON,ECM1,0,PHIL,0
+837,Statistics,STAT,ECM1,0,MAST,PHIL
+589,Bus Admin - Financial Mgmt,BUFI,ECON,0,BFIN,THEO
+842,Bus Admin - Marketing Mgmt,BUMK,ECON,0,0,0
+855,Bus Admin - Marketing Mgmt,BUMK,ECON,0,THEO,BUAD
+883,Economics,ECON,ECON,0,0,0
+897,Economics,ECON,ECON,0,0,0
+500,Economics,ECON,ECP1,0,0,0
+181,Neuroscience,NSCI,ECP1,0,SUST,PHIL
+456,Public Health,PUBH,ECP1,0,PHIL,0
+69,Bus Admin - Accounting,BUAC,EEE1,0,EBIO,THEO
+733,Chemistry,CHEM,EEE1,0,PHYS,0
+893,Computer Engineering,COEG,EEE1,0,PHYS,0
+88,Electrical Engineering,EEE1,EEE1,0,0,0
+244,Electrical Engineering,EEE1,EEE1,0,0,0
+259,Electrical Engineering,EEE1,EEE1,0,PHYS,0
+343,Electrical Engineering,EEE1,EEE1,0,PHYS,THE2
+371,Electrical Engineering,EEE1,EEE1,0,PHYS,0
+426,Electrical Engineering,EEE1,EEE1,0,PHYS,0
+538,Electrical Engineering,EEE1,EEE1,0,PHYS,0
+643,Electrical Engineering,EEE1,EEE1,0,PHYS,THEO
+667,Electrical Engineering,EEE1,EEE1,0,PHYS,0
+866,Electrical Engineering,EEE1,EEE1,0,PHYS,0
+339,Mechanical Engineering,EGM1,EEE1,0,0,0
+376,Physics,PHYS,EEE1,0,PHYS,0
+608,Undecided,UNDC,EEE1,0,PSYC,PHYS
+56,Biology,BIOL,EGM1,0,GERM,0
+905,Bus Admin - Intl Business,BUIB,EGM1,0,0,0
+328,Civil Engineering,CEGR,EGM1,0,EBIO,0
+8,Computer Science (BS),CSBS,EGM1,0,0,0
+812,Computer Science (BS),CSBS,EGM1,0,0,0
+622,Economics,ECON,EGM1,0,EBIO,0
+892,Electrical Engineering,EEE1,EGM1,0,0,0
+894,Electrical Engineering,EEE1,EGM1,0,EBIO,MATH
+42,Mechanical Engineering,EGM1,EGM1,0,0,0
+47,Mechanical Engineering,EGM1,EGM1,0,0,0
+63,Mechanical Engineering,EGM1,EGM1,0,0,0
+98,Mechanical Engineering,EGM1,EGM1,0,THE2,0
+106,Mechanical Engineering,EGM1,EGM1,0,EEE1,0
+145,Mechanical Engineering,EGM1,EGM1,0,0,0
+153,Mechanical Engineering,EGM1,EGM1,0,BUAD,0
+158,Mechanical Engineering,EGM1,EGM1,0,0,0
+176,Mechanical Engineering,EGM1,EGM1,0,0,0
+195,Mechanical Engineering,EGM1,EGM1,0,0,0
+197,Mechanical Engineering,EGM1,EGM1,0,0,0
+220,Mechanical Engineering,EGM1,EGM1,0,0,0
+226,Mechanical Engineering,EGM1,EGM1,0,0,0
+269,Mechanical Engineering,EGM1,EGM1,0,0,0
+276,Mechanical Engineering,EGM1,EGM1,0,0,0
+277,Mechanical Engineering,EGM1,EGM1,0,MSEN,0
+296,Mechanical Engineering,EGM1,EGM1,0,0,0
+331,Mechanical Engineering,EGM1,EGM1,0,0,0
+390,Mechanical Engineering,EGM1,EGM1,0,PHYS,MSEN
+424,Mechanical Engineering,EGM1,EGM1,0,EBIO,0
+515,Mechanical Engineering,EGM1,EGM1,0,0,0
+526,Mechanical Engineering,EGM1,EGM1,0,GERM,0
+529,Mechanical Engineering,EGM1,EGM1,0,0,0
+558,Mechanical Engineering,EGM1,EGM1,0,0,0
+559,Mechanical Engineering,EGM1,EGM1,0,0,0
+577,Mechanical Engineering,EGM1,EGM1,0,EBIO,0
+588,Mechanical Engineering,EGM1,EGM1,0,0,0
+592,Mechanical Engineering,EGM1,EGM1,0,AERO,0
+596,Mechanical Engineering,EGM1,EGM1,0,CATH,0
+600,Mechanical Engineering,EGM1,EGM1,0,EBIO,0
+609,Mechanical Engineering,EGM1,EGM1,0,0,0
+694,Mechanical Engineering,EGM1,EGM1,0,CSIA,0
+746,Mechanical Engineering,EGM1,EGM1,0,0,0
+755,Mechanical Engineering,EGM1,EGM1,0,0,0
+782,Mechanical Engineering,EGM1,EGM1,0,0,0
+811,Mechanical Engineering,EGM1,EGM1,0,0,0
+602,Mathematics,MATH,EGM1,0,0,0
+75,Undecided,UNDC,EGM1,0,0,0
+363,Undecided,UNDC,EGM1,0,0,0
+777,Undecided,UNDC,EGM1,0,EBIO,MSEN
+437,Biology,BIOL,ELEM,0,0,0
+824,Bus Admin - Marketing Mgmt,BUMK,ELEM,0,SPAN,0
+144,Elementary Education (K-6),ELED,ELEM,0,PSYC,0
+205,Elementary Education (K-6),ELED,ELEM,0,BUAD,0
+441,Elementary Education (K-6),ELED,ELEM,0,JPST,0
+798,Elementary Education (K-6),ELED,ELEM,0,0,0
+143,Nursing,NRSG,ELEM,0,0,0
+672,Nursing,NRSG,ELEM,0,0,0
+120,Education-Elementary Education,XELE,ELEM,0,0,0
+126,Education-Elementary Education,XELE,ELEM,0,THEO,0
+673,Education-Elementary Education,XELE,ELEM,0,SPAN,0
+335,English - Creative Writing,ENWR,ENGL,0,CLAC,0
+907,English - Creative Writing,ENWR,ENGL,FILM,0,0
+712,Undecided,UNDC,ENGL,0,JOUR,THEO
+419,Environmental Science,ESCI,ENVR,0,ENGL,0
+193,Political Science,POLS,ENVR,GGIS,ESCI,0
+39,Bus Admin - Entrepreneurship,BUEN,ENWR,0,FILM,0
+914,English - Creative Writing,ENWR,ENWR,0,MUSC,CATH
+250,Biology,BIOL,ESCI,0,SUST,0
+70,Environmental Science,ESCI,ESCI,0,ENCW,0
+294,Environmental Science,ESCI,ESCI,0,SUST,GEOL
+852,Environmental Science,ESCI,ESCI,0,SUST,LABM
+889,Environmental Science,ESCI,ESCI,0,SUST,0
+732,Instrumental Music (K-12),MEIN,ESME,MEIN,0,0
+688,Vocal Music (K-12),MEVO,ESME,MEVO,0,0
+524,Biology,BIOL,EXSC,0,0,0
+876,Civil Engineering,CEGR,EXSC,0,0,0
+539,Computer Engineering,COEG,EXSC,0,0,0
+532,Mechanical Engineering,EGM1,EXSC,0,0,0
+654,Environmental Science,ESCI,EXSC,0,0,0
+50,Exercise Science,EXSC,EXSC,0,0,0
+108,Exercise Science,EXSC,EXSC,0,0,0
+128,Exercise Science,EXSC,EXSC,0,LABM,0
+130,Exercise Science,EXSC,EXSC,0,PSYC,0
+337,Exercise Science,EXSC,EXSC,0,0,0
+409,Exercise Science,EXSC,EXSC,0,0,0
+421,Exercise Science,EXSC,EXSC,0,0,0
+431,Exercise Science,EXSC,EXSC,0,NUTR,0
+434,Exercise Science,EXSC,EXSC,0,0,0
+464,Exercise Science,EXSC,EXSC,0,NUTR,0
+563,Exercise Science,EXSC,EXSC,0,NUTR,0
+579,Exercise Science,EXSC,EXSC,0,NUTR,0
+595,Exercise Science,EXSC,EXSC,0,0,0
+635,Exercise Science,EXSC,EXSC,0,PSYC,0
+675,Exercise Science,EXSC,EXSC,0,0,0
+224,Nursing,NRSG,EXSC,0,0,0
+496,Nursing,NRSG,EXSC,0,PSYC,0
+834,Nursing,NRSG,EXSC,0,0,0
+614,Neuroscience,NSCI,EXSC,0,BIOL,0
+544,Undecided,UNDC,EXSC,0,0,0
+566,Undecided,UNDC,EXSC,0,NUTR,0
+875,Undecided,UNDC,EXSC,0,NUTR,0
+708,Pre-Physical Therapy,XPPT,EXSC,0,BUHC,0
+503,Biology,BIOL,FAST,0,THEO,SWEL
+680,Psychology,PSWK,FAST,0,THEO,0
+770,Digital Media Arts,DMAT,FILM,0,DMAT,0
+288,Film Studies,FILM,FILM,0,BUAD,0
+585,Film Studies,FILM,FILM,DMAT,0,0
+546,Art History,ARTH,GEOL,0,0,0
+542,Civil Engineering,CEGR,GEOL,0,0,0
+683,Economics,ECON,GEOL,0,0,0
+133,Electrical Engineering,EEE1,GERE,0,0,0
+800,Mechanical Engineering,EGM1,GERE,0,0,0
+480,Undecided,UNDC,GERE,0,0,0
+786,Electrical Engineering,EEE1,GERF,0,0,0
+83,Political Science,POLS,GERM,POLS,SPAN,0
+315,Undecided,UNDC,GGIS,ENVR,0,0
+302,History,HIST,HIST,ENGL,LESK,0
+356,History,HIST,HIST,ENGL,0,0
+823,Criminal Justice,CJWK,INTP,0,LESK,ECON
+188,International Studies,INTS,INTP,0,SPAN,0
+300,Political Science,POLS,INTP,0,0,0
+490,Journalism,JOUR,JOUR,STCM,DMAT,FILM
+561,Journalism,JOUR,JOUR,0,STCM,SPST
+682,Journalism,JOUR,JOUR,DMAT,0,0
+707,Journalism,JOUR,JOUR,0,PSYC,DMAT
+814,Journalism,JOUR,JOUR,DMAT,0,0
+187,Political Science,POLS,JOUR,0,POLS,DMAT
+324,Mathematics,MATH,MABS,STAT,0,0
+290,Middle/Secondary Education,MSED,MABS,0,MAST,THEO
+22,Undecided,UNDC,MABS,0,PHIL,CSIA
+172,Computer Science (BS),CSBS,MATH,0,DMGD,0
+481,Middle/Secondary Education,MSED,MSED,MSCL,COMM,0
+262,Political Science,POLS,MSED,MSPO,POLS,0
+265,Education-Secondary Education,XMSE,MSED,MSHI,0,0
+218,Mechanical Engineering,EGM1,MTHE,0,STAT,0
+726,Bus Admin - Gen Business Mgmt,BUGB,MUBA,0,0,0
+379,Computer Engineering,COEG,MUBA,0,0,0
+459,Exercise Science,EXSC,MUBA,0,0,0
+304,Journalism,JOUR,MUBA,0,0,0
+45,Music - Performance,MUPE,MUBA,0,BUAM,MUS6
+25,Biology,BIOL,NRSG,0,PSYC,0
+397,Biology,BIOL,NRSG,0,BUHC,THEO
+239,Music,MUSC,NRSG,0,0,0
+1,Nursing,NRSG,NRSG,0,0,0
+3,Nursing,NRSG,NRSG,0,THE2,0
+6,Nursing,NRSG,NRSG,0,0,0
+11,Nursing,NRSG,NRSG,0,0,0
+44,Nursing,NRSG,NRSG,0,PUBH,0
+113,Nursing,NRSG,NRSG,0,0,0
+115,Nursing,NRSG,NRSG,0,0,0
+118,Nursing,NRSG,NRSG,0,0,0
+125,Nursing,NRSG,NRSG,0,THE2,PSYC
+135,Nursing,NRSG,NRSG,0,0,0
+146,Nursing,NRSG,NRSG,0,COMM,ENNM
+200,Nursing,NRSG,NRSG,0,0,0
+297,Nursing,NRSG,NRSG,0,0,0
+325,Nursing,NRSG,NRSG,0,0,0
+347,Nursing,NRSG,NRSG,0,0,0
+361,Nursing,NRSG,NRSG,0,0,0
+364,Nursing,NRSG,NRSG,0,0,0
+396,Nursing,NRSG,NRSG,0,THEO,0
+401,Nursing,NRSG,NRSG,0,0,0
+455,Nursing,NRSG,NRSG,0,0,0
+572,Nursing,NRSG,NRSG,0,0,0
+606,Nursing,NRSG,NRSG,0,THEO,0
+611,Nursing,NRSG,NRSG,0,PUBH,0
+619,Nursing,NRSG,NRSG,0,0,0
+621,Nursing,NRSG,NRSG,0,0,0
+649,Nursing,NRSG,NRSG,0,0,0
+656,Nursing,NRSG,NRSG,0,0,0
+674,Nursing,NRSG,NRSG,0,PHIL,0
+697,Nursing,NRSG,NRSG,0,AERO,0
+701,Nursing,NRSG,NRSG,0,0,0
+743,Nursing,NRSG,NRSG,0,PSYC,0
+748,Nursing,NRSG,NRSG,0,0,0
+753,Nursing,NRSG,NRSG,0,0,0
+760,Nursing,NRSG,NRSG,0,0,0
+792,Nursing,NRSG,NRSG,0,0,0
+825,Nursing,NRSG,NRSG,0,THEO,0
+826,Nursing,NRSG,NRSG,0,THEO,0
+877,Nursing,NRSG,NRSG,0,0,0
+888,Nursing,NRSG,NRSG,0,0,0
+192,Pre-Physician Assistant,XPPA,NRSG,0,0,0
+5,Biology,BIOL,NSCI,0,THEO,SUST
+194,Chemistry,CHEM,NSCI,0,PSYC,THEO
+497,Criminal Justice,CJWK,NSCI,0,0,0
+768,Exercise Science,EXSC,NSCI,0,PSYC,0
+886,Nursing,NRSG,NSCI,0,BIOL,ARTH
+14,Neuroscience,NSCI,NSCI,0,BUEN,0
+33,Neuroscience,NSCI,NSCI,0,0,0
+271,Neuroscience,NSCI,NSCI,0,0,0
+322,Neuroscience,NSCI,NSCI,0,PHIL,0
+494,Neuroscience,NSCI,NSCI,0,0,0
+374,Psychology,PSWK,NSCI,0,PSYC,0
+550,Undecided,UNDC,NSCI,0,MATH,MAST
+395,Pre-Medicine,XMED,NSCI,0,SMDS,BIOL
+666,Pre-Medicine,XMED,NSCI,0,0,0
+684,Catholic Studies,CATH,PHIL,CATH,0,0
+155,Philosophy,PHIL,PHIL,CATH,0,0
+362,Philosophy,PHIL,PHIL,CATH,CLAC,0
+511,Philosophy,PHIL,PHIL,CATH,0,0
+522,Philosophy,PHIL,PHIL,CATH,0,0
+580,Philosophy,PHIL,PHIL,CATH,0,0
+659,Philosophy,PHIL,PHIL,0,MUS6,FREN
+723,Philosophy,PHIL,PHIL,CATH,0,0
+751,Philosophy,PHIL,PHIL,CATH,0,0
+793,Philosophy,PHIL,PHIL,CATH,0,0
+809,Philosophy,PHIL,PHIL,CATH,0,0
+238,Mechanical Engineering,EGM1,PHYS,0,0,0
+731,Criminal Justice,CJWK,POLS,SPCL,COMM,0
+436,Computer Science (BS),CSBS,POLS,0,PUBH,0
+616,Journalism,JOUR,POLS,STCM,0,0
+279,Political Science,POLS,POLS,PHIL,LGST,HIST
+487,Political Science,POLS,POLS,HIST,0,0
+607,Political Science,POLS,POLS,ECON,SUST,0
+790,Political Science,POLS,POLS,0,JOUR,0
+860,Political Science,POLS,POLS,SPCL,LACS,AMCD
+752,Undecided,UNDC,POLS,0,PHLP,0
+795,Undecided,UNDC,POLS,INTP,0,0
+722,Biology,BIOL,PSYC,0,BIOL,0
+859,Biology,BIOL,PSYC,0,SPAN,FAST
+12,Bus Admin - Intl Business,BUIB,PSYC,0,BUAD,0
+55,Elementary Education (K-6),ELED,PSYC,0,EDUC,0
+87,Elementary Education (K-6),ELED,PSYC,0,COMM,BUSM
+822,Elementary Education (K-6),ELED,PSYC,SPLL,0,0
+507,Exercise Science,EXSC,PSYC,FAST,THEO,0
+554,Exercise Science,EXSC,PSYC,0,SPST,0
+138,Music - Business,MUBA,PSYC,MUBA,0,0
+333,Neuroscience,NSCI,PSYC,0,SOCI,0
+576,Health Promotion & Wellness,PEH1,PSYC,0,EXSC,0
+101,Psychology,PSWK,PSYC,0,LGST,PHIL
+107,Psychology,PSWK,PSYC,0,SWEL,FAST
+110,Psychology,PSWK,PSYC,0,SOCJ,0
+123,Psychology,PSWK,PSYC,0,APST,0
+137,Psychology,PSWK,PSYC,FAST,0,0
+139,Psychology,PSWK,PSYC,0,BUAD,0
+165,Psychology,PSWK,PSYC,0,SPAN,FAST
+179,Psychology,PSWK,PSYC,FAST,0,0
+249,Psychology,PSWK,PSYC,CATH,PHIL,0
+272,Psychology,PSWK,PSYC,0,FAST,0
+282,Psychology,PSWK,PSYC,0,COMM,0
+312,Psychology,PSWK,PSYC,0,0,0
+377,Psychology,PSWK,PSYC,SOCJ,0,0
+389,Psychology,PSWK,PSYC,0,SOCI,0
+404,Psychology,PSWK,PSYC,0,0,0
+492,Psychology,PSWK,PSYC,0,BUAD,0
+517,Psychology,PSWK,PSYC,0,0,0
+520,Psychology,PSWK,PSYC,0,0,0
+534,Psychology,PSWK,PSYC,0,FAST,0
+535,Psychology,PSWK,PSYC,SPLL,SOCJ,0
+663,Psychology,PSWK,PSYC,0,THEO,0
+687,Psychology,PSWK,PSYC,0,0,0
+735,Psychology,PSWK,PSYC,0,CATH,0
+766,Psychology,PSWK,PSYC,0,0,0
+794,Psychology,PSWK,PSYC,0,FAST,0
+806,Psychology,PSWK,PSYC,BIOL,PHIL,0
+844,Psychology,PSWK,PSYC,0,CATH,0
+925,Psychology,PSWK,PSYC,0,CATH,0
+862,Sociology,SCWK,PSYC,0,0,0
+7,Undecided,UNDC,PSYC,0,0,0
+52,Undecided,UNDC,PSYC,0,THEO,COMM
+284,Undecided,UNDC,PSYC,0,0,0
+309,Undecided,UNDC,PSYC,0,0,0
+393,Undecided,UNDC,PSYC,0,BIOL,0
+407,Undecided,UNDC,PSYC,0,CATH,0
+624,Undecided,UNDC,PSYC,0,0,0
+754,Undecided,UNDC,PSYC,0,BUAD,0
+882,Undecided,UNDC,PSYC,0,SOCI,0
+461,Biology,BIOL,PUBH,0,NUTR,0
+887,Biology,BIOL,PUBH,0,0,0
+175,Chemistry,CHEM,PUBH,0,BUHC,0
+77,Nursing,NRSG,PUBH,0,0,0
+306,Nursing,NRSG,PUBH,0,0,0
+398,Nursing,NRSG,PUBH,0,BUHC,0
+466,Political Science,POLS,PUBH,0,0,0
+900,Psychology,PSWK,PUBH,0,EXSC,0
+16,Public Health,PUBH,PUBH,0,BUHC,0
+183,Public Health,PUBH,PUBH,0,0,0
+349,Undecided,UNDC,PUBH,0,0,0
+679,Undecided,UNDC,PUBH,0,0,0
+236,Bus Admin - Communication,BUBC,SCBU,0,0,0
+345,Bus Admin - Entrepreneurship,BUEN,SCBU,0,0,0
+327,Criminal Justice,CJWK,SOCI,SOCJ,0,0
+450,Nursing,NRSG,SOCI,SOCJ,PSYC,0
+553,Sociology,SCWK,SOCI,0,0,0
+402,Education-Elementary Education,XELE,SOCI,HIST,0,0
+759,Bus Admin - Communication,BUBC,SOCJ,0,PSYC,0
+62,Bus Admin - Intl Business,BUIB,SOCJ,0,BUAD,THEO
+49,Bus Adm - Law & Compliance,BULC,SOCJ,0,LGST,THEO
+344,Criminal Justice,CJWK,SOCJ,0,PSYC,BUAD
+695,Criminal Justice,CJWK,SOCJ,0,SOCI,0
+630,Journalism,JOUR,SOCJ,0,PSYC,JPST
+757,Nursing,NRSG,SOCJ,0,LGST,SOCI
+775,Nursing,NRSG,SOCJ,0,SOCI,0
+468,Health Promotion & Wellness,PEH1,SOCJ,0,PSYC,0
+346,Political Science,POLS,SOCJ,POLS,LGST,BSLC
+267,Undecided,UNDC,SOCJ,0,SPAN,0
+9,Elementary Education (K-6),ELED,SOPS,0,0,0
+498,Psychology,PSWK,SOPS,0,FAST,0
+320,Nursing,NRSG,SOWJ,0,SOCI,0
+641,Social Work,SOPS,SOWJ,0,0,0
+127,Bus Admin - Communication,BUBC,SOWK,0,FAST,0
+846,Bus Admin - Financial Mgmt,BUFI,SOWK,0,0,0
+91,Criminal Justice,CJWK,SOWK,0,0,0
+10,Digital Media Arts,DMAT,SOWK,0,STCM,0
+366,Political Science,POLS,SOWK,0,0,0
+413,Social Work,SOPS,SOWK,0,FAST,0
+543,Biology,BIOL,SOWS,0,0,0
+65,Neuroscience,NSCI,STAT,0,BIOL,0
+460,Statistics,STAT,STAT,CSBS,PHIL,0
+678,Statistics,STAT,STAT,BSDA,PUBH,THEO
+299,Bus Admin - Gen Business Mgmt,BUGB,STCM,DMAT,BUAD,0
+642,Bus Admin - Marketing Mgmt,BUMK,STCM,0,BUAD,DMAT
+149,Computer Science (BS),CSBS,STCM,0,BUAM,0
+233,Journalism,JOUR,STCM,0,JOUR,0
+378,Theology,MTHL,THEO,0,EDUC,CATH
+605,Music,MUSC,THEO,PHIL,0,0
+391,Women/Gender/Sexuality Studies,WGSS,WGSS,SOCI,AMCD,FAST

@@ -1,0 +1,113 @@
+﻿majorname,majorcode,college,group
+Accounting,BSAC,OCB,Acct/Fin/Ops
+Bus Adm - Real Estate Studies,BURE,OCB,Acct/Fin/Ops
+Bus Admin - Accounting,BUAC,OCB,Acct/Fin/Ops
+Bus Admin - Business Analytics,BUBA,OCB,Acct/Fin/Ops
+Bus Admin - Financial Mgmt,BUFI,OCB,Acct/Fin/Ops
+Bus Admin - Op&Supl Chain Mgmt,BUOM,OCB,Acct/Fin/Ops
+Financial Management,BSFI,OCB,Acct/Fin/Ops
+Operations & Supply Chain Mgmt,BSOM,OCB,Acct/Fin/Ops
+Exercise Science,EXSC,COH,COH
+Nursing,NRSG,COH,COH
+Health Promotion & Wellness,PEH1,COH,COH
+Public Health,PUBH,COH,COH
+Social Work,SOPS,COH,COH
+Social Work,SOWJ,COH,COH
+Social Work,SOWK,COH,COH
+Social Work,SOWS,COH,COH
+Communication Studies,COMM,CAS,Writing/Comm
+Digital Media Arts,DMAT,CAS,Writing/Comm
+Strategic Comm: Ad and PR,SCBU,CAS,Writing/Comm
+Strategic Comm: Ad and PR,STCM,CAS,Writing/Comm
+Journalism,JOUR,CAS,Writing/Comm
+Actuarial Science,ACSC,CAS,CS/DS/DA/Math/Stat
+Data Analytics,BSDA,CAS,CS/DS/DA/Math/Stat
+Computer Science (BS),CSBS,CAS,CS/DS/DA/Math/Stat
+Comp Science BS (Master Track),CSIM,CAS,CS/DS/DA/Math/Stat
+Data Science,DSCI,CAS,CS/DS/DA/Math/Stat
+Mathematics (B.S.),MABS,CAS,CS/DS/DA/Math/Stat
+Mathematics,MATH,CAS,CS/DS/DA/Math/Stat
+Mathematics (Education Track),MTHE,CAS,CS/DS/DA/Math/Stat
+Statistics,STAT,CAS,CS/DS/DA/Math/Stat
+Comm. Arts & Lit (5-12),MSCL,CAS + EDUC,EDUC
+Elementary Education (K-6),ELED,EDUC,EDUC
+Elementary Education (K-6),ELEM,EDUC,EDUC
+Middle/Secondary Education,MSED,EDUC,EDUC
+K-12 Music Education,ESME,CAS + EDUC,EDUC
+Instrumental Music (K-12),MEIN,CAS + EDUC,EDUC
+Vocal Music (K-12),MEVO,CAS + EDUC,EDUC
+Soc Studies (5-12) - History,MSHI,CAS + EDUC,EDUC
+Soc Studies (5-12) - Pol. Sci.,MSPO,CAS + EDUC,EDUC
+Civil Engineering,CEGR,SOE,Engineering
+Civil Engineering,CENG,SOE,Engineering
+Computer Engineering,COEG,SOE,Engineering
+Computer Engineering,COEN,SOE,Engineering
+Electrical Engineering,EEE1,SOE,Engineering
+Mechanical Engineering,EGM1,SOE,Engineering
+English,ENGL,CAS,Writing/Comm
+English - Creative Writing,ENWR,CAS,Writing/Comm
+German (IEP),GERE,CAS,Lang
+German (IEP),GERF,CAS,Lang
+German,GERM,CAS,Lang
+Spanish Cultural/Literary St.,SPCL,CAS,Lang
+Spanish Linguistics/Lang. St.,SPLL,CAS,Lang
+Bus Admin - Gen Business Mgmt,BUGB,OCB,Mgmt
+Bus Admin - Human Resc Mgmt,BUHR,OCB,Mgmt
+Bus Admin - Leadership& Mgmt,BULM,OCB,Mgmt
+Business Administration,BABA,OCB,Mgmt
+Human Resources Management,BSHR,OCB,Mgmt
+Leadership & Management,BSLM,OCB,Mgmt
+Bus Admin - Marketing Mgmt,BUMK,OCB,Mktg
+Marketing Management,BSMK,OCB,Mktg
+Undecided,UNDC,Other,Other
+Pre-Dentistry,XDEN,Other,Other
+Education-Elementary Education,XELE,Other,Other
+Pre-Law,XLAW,Other,Other
+Pre-Medicine,XMED,Other,Other
+Education-Secondary Education,XMSE,Other,Other
+Pre-Physician Assistant,XPPA,Other,Other
+Pre-Physical Therapy,XPPT,Other,Other
+Bus Adm - Law & Compliance,BULC,OCB,OtherBusiness
+Bus Admin - Communication,BUBC,OCB,OtherBusiness
+Bus Admin - Entrepreneurship,BUEN,OCB,OtherBusiness
+Bus Admin - Intl Business,BUIB,OCB,OtherBusiness
+Business Communication,BSBC,OCB,OtherBusiness
+Entrepreneurship,BSEN,OCB,OtherBusiness
+International Business,BSIB,OCB,OtherBusiness
+Law & Compliance,BSLC,OCB,OtherBusiness
+Biochemistry,BCH1,CAS,Science
+Biology,BIOL,CAS,Science
+Biology (BS),BIOS,CAS,Science
+Biology of Global Health,BOGH,CAS,Science
+Chemistry (ACS Certified),CHE1,CAS,Science
+Chemistry,CHEM,CAS,Science
+Environmental Science,ESCI,CAS,Science
+Geology,GEOL,CAS,Science
+Neuroscience,NSCI,CAS,Science
+Physics,PHYS,CAS,Science
+Criminal Justice,CJWK,CAS,Social
+Economics - Business,ECB1,CAS,Social
+Economics - Mathematical,ECM1,CAS,Social
+Economics,ECON,CAS,Social
+Economics - Public Policy,ECP1,CAS,Social
+Environmental Studies,ENVR,CAS,Social
+Family Studies,FAST,CAS,Social
+Geography - Geo Info Sys (GIS),GGIS,CAS,Social
+Intl Studies - Pol Sci,INTP,CAS,Social
+International Studies,INTS,CAS,Social
+Political Science,POLS,CAS,Social
+Psychology,PSWK,CAS,Social
+Psychology,PSYC,CAS,Social
+Sociology,SCWK,CAS,Social
+Sociology,SOCI,CAS,Social
+Criminal Justice,SOCJ,CAS,Social
+Catholic Studies,CATH,CAS,Humanities
+Theology,MTHL,CAS,Humanities
+Philosophy,PHIL,CAS,Humanities
+Art History,ARTH,CAS,Humanities
+Film Studies,FILM,CAS,Humanities
+History,HIST,CAS,Humanities
+Music - Business,MUBA,CAS,Humanities
+Music - Performance,MUPE,CAS,Humanities
+Music,MUSC,CAS,Humanities
+Women/Gender/Sexuality Studies,WGSS,CAS,Humanities

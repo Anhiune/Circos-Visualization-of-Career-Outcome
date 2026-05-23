@@ -1,0 +1,850 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incoming Grouped Major to Graduating Grouped Major Dashboard - Grouped by College</title>
+    <link rel="stylesheet" href="dashboard_docs.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #f5f5f5;
+            --panel: #ffffff;
+            --text: #333333;
+            --muted: #6b6b6b;
+            --border: #dddddd;
+            --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            --ocb: rgb(0, 82, 128);
+            --cas: rgb(119, 81, 156);
+            --educ: rgb(230, 159, 0);
+            --coh: rgb(213, 94, 0);
+            --soe: rgb(0, 109, 79);
+            --other-college: rgb(120, 120, 120);
+            --section-neutral: #5a5a5a;
+            --section-border: #bcbcbc;
+            --panel-top-offset: 20px;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .header {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0 36px;
+        }
+
+        .header .inner,
+        .dashboard {
+            max-width: 1720px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .header .inner {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.18;
+            max-width: 1320px;
+            margin: 0 auto 16px;
+            text-wrap: balance;
+        }
+
+        .header p {
+            font-size: 17px;
+            line-height: 1.74;
+            color: var(--muted);
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .header-actions {
+            margin-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .header-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 10px 18px;
+            border: 2px solid var(--educ);
+            border-radius: 999px;
+            color: var(--educ);
+            background: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .header-link:hover {
+            background: var(--educ);
+            color: #fff;
+        }
+
+        .dashboard {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .main-display {
+            flex: 0 0 auto;
+            background: var(--panel);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 24px;
+            position: sticky;
+            top: var(--panel-top-offset);
+            max-height: calc(100vh - (var(--panel-top-offset) * 2));
+            overflow: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+        }
+
+        .main-display h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.24;
+            margin-bottom: 18px;
+            min-height: 38px;
+        }
+
+        .cluster-tag {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            color: #fff;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .tag-ocb { background: var(--ocb); }
+        .tag-cas { background: var(--cas); }
+        .tag-educ { background: var(--educ); color: #2f2400; }
+        .tag-coh { background: var(--coh); }
+        .tag-soe { background: var(--soe); }
+        .tag-other { background: var(--other-college); }
+
+        #big-image {
+            display: block;
+            width: 860px;
+            height: 860px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 4px;
+            transition: opacity 0.15s ease;
+        }
+
+        .stats {
+            font-size: 17px;
+            line-height: 1.55;
+            color: #7a7a7a;
+            margin-top: 14px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 0;
+            position: sticky;
+            top: var(--panel-top-offset);
+            max-height: calc(100vh - (var(--panel-top-offset) * 2));
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+            padding-right: 8px;
+        }
+
+        .info {
+            font-size: 15px;
+            line-height: 1.65;
+            color: #7a7a7a;
+            margin-bottom: 18px;
+        }
+
+        .source-note {
+            background: #fffbf0;
+            border: 1px solid #e8d08a;
+            border-radius: 6px;
+            padding: 16px 20px;
+            font-size: 14px;
+            color: #5a4a00;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .source-note code {
+            background: #f0e88a;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .compilation-btn {
+            display: inline-block;
+            cursor: pointer;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 6px;
+            min-height: 44px;
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .compilation-btn:hover,
+        .compilation-btn.active {
+            background: #333;
+            color: #fff;
+        }
+
+        .thumb-group {
+            margin-bottom: 42px;
+        }
+
+        .thumb-group h3 {
+            font-size: 19px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            line-height: 1.35;
+            padding: 8px 0;
+            margin-bottom: 18px;
+            border-bottom: 3px solid var(--border);
+        }
+
+        .college-heading {
+            cursor: pointer;
+            transition: color 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+            border-radius: 4px;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+
+        .college-heading:hover,
+        .college-heading.active {
+            background: rgba(0, 0, 0, 0.035);
+        }
+
+        .group-ocb h3 { color: var(--ocb); border-color: color-mix(in srgb, var(--ocb) 45%, white); }
+        .group-cas h3 { color: var(--cas); border-color: color-mix(in srgb, var(--cas) 45%, white); }
+        .group-educ h3 { color: #9c6700; border-color: color-mix(in srgb, var(--educ) 52%, white); }
+        .group-coh h3 { color: var(--coh); border-color: color-mix(in srgb, var(--coh) 45%, white); }
+        .group-soe h3 { color: var(--soe); border-color: color-mix(in srgb, var(--soe) 45%, white); }
+        .group-other h3 { color: var(--section-neutral); border-color: var(--section-border); }
+
+        .thumb-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 26px;
+        }
+
+        .thumb {
+            cursor: pointer;
+            text-align: center;
+            width: 168px;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border-radius: 6px;
+            padding: 10px 10px 14px;
+            border: 2px solid transparent;
+        }
+
+        .thumb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            background: #fff;
+        }
+
+        .thumb.active {
+            border-color: #333;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .thumb img {
+            width: 96px;
+            height: 96px;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .thumb label {
+            display: block;
+            font-size: 16px;
+            line-height: 1.45;
+            color: #555;
+            margin-top: 12px;
+            overflow-wrap: normal;
+            word-break: normal;
+            hyphens: manual;
+        }
+
+        .doc-link {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+
+        .doc-link:hover {
+            color: #1f1f1f;
+        }
+
+        .doc-heading {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 3px solid #ccc;
+            margin: 38px 0 28px;
+        }
+
+        .section-label {
+            font-size: 24px;
+            font-weight: 700;
+            color: #444;
+            line-height: 1.24;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 1180px) {
+            .header {
+                padding: 28px 0 30px;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .header p {
+                font-size: 16px;
+                max-width: 980px;
+            }
+
+            .header-link {
+                font-size: 15px;
+            }
+
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .main-display,
+            .sidebar {
+                position: static;
+                max-height: none;
+                overflow: visible;
+                padding-right: 0;
+            }
+
+            .main-display {
+                width: 100%;
+            }
+
+            #big-image {
+                width: 100%;
+                height: auto;
+                max-width: 860px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .header .inner,
+            .dashboard {
+                padding: 0 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .header p {
+                font-size: 15px;
+            }
+
+            .header-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-link {
+                width: 100%;
+            }
+
+            .main-display h2 {
+                font-size: 24px;
+                min-height: 0;
+            }
+
+            .stats {
+                font-size: 16px;
+            }
+
+            .thumb-grid {
+                gap: 18px;
+            }
+
+            .thumb {
+                width: min(100%, 176px);
+            }
+
+            .thumb label {
+                font-size: 15px;
+            }
+
+            .section-label {
+                font-size: 22px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="inner">
+        <h1>Incoming Grouped Major &rarr; Graduating Grouped Major - Grouped by College</h1>
+        <p>
+            This grouped dashboard keeps the same grouped-major categories but organizes them by college so
+            same-college groups stay clustered together around the circle.
+        </p>
+        <div class="header-actions">
+            <a class="header-link" href="incoming_grad_grouped.html">Major Sort by Industry</a>
+            <a class="header-link" href="index.html">Career Dashboard</a>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="main-display">
+        <h2 id="title">All Grouped Majors - Grouped by College</h2>
+        <img id="big-image" src="incoming_grad_grouped_college_dashboard_images/main.svg?v=20260507college6" alt="Incoming grouped-major to graduating grouped-major Circos diagram grouped by college">
+        <p class="stats" id="stats">13 incoming groups &middot; 13 graduating groups &middot; 925 students &middot; 116 grouped connections</p>
+    </div>
+
+    <div class="sidebar">
+        <p class="section-label">Incoming Groups</p>
+        <div id="incoming-sections"></div>
+
+        <hr class="section-divider">
+        <p class="section-label">Graduating Groups</p>
+        <div id="graduating-sections"></div>
+
+        <div id="methodology-notes"></div>
+    </div>
+</div>
+
+<script src="dashboard_docs_data.js"></script>
+<script src="dashboard_docs.js"></script>
+<script>
+(function () {
+    var bigImg = document.getElementById("big-image");
+    var titleEl = document.getElementById("title");
+    var statsEl = document.getElementById("stats");
+    var incomingContainer = document.getElementById("incoming-sections");
+    var graduatingContainer = document.getElementById("graduating-sections");
+    var docsData = window.DASHBOARD_DOCS_DATA.groupedCollege;
+    var locked = null;
+    var compilationSrc = "incoming_grad_grouped_college_dashboard_images/main.svg?v=20260507college6";
+    var currentSrc = compilationSrc;
+
+    var sectionMeta = {
+        ocb: { heading: "Opus College of Business", groupClass: "group-ocb", tagClass: "tag-ocb" },
+        cas: { heading: "College of Arts and Sciences", groupClass: "group-cas", tagClass: "tag-cas" },
+        other: { heading: "Other / Undeclared", groupClass: "group-other", tagClass: "tag-other" },
+        educ: { heading: "School of Education", groupClass: "group-educ", tagClass: "tag-educ" },
+        coh: { heading: "Morrison Family College of Health", groupClass: "group-coh", tagClass: "tag-coh" },
+        soe: { heading: "School of Engineering", groupClass: "group-soe", tagClass: "tag-soe" }
+    };
+    var collegeAccentVars = {
+        ocb: "var(--ocb)",
+        cas: "var(--cas)",
+        other: "var(--other-college)",
+        educ: "var(--educ)",
+        coh: "var(--coh)",
+        soe: "var(--soe)"
+    };
+
+    var incomingGroups = [
+        { key: "inc_Acct_Fin_Ops", slug: "Acct_Fin_Ops", label: "Accounting/Finance/Ops", college: "ocb", count: 246 },
+        { key: "inc_Mgmt", slug: "Mgmt", label: "Management", college: "ocb", count: 122 },
+        { key: "inc_OtherBusiness", slug: "OtherBusiness", label: "Specialized Business", college: "ocb", count: 158 },
+        { key: "inc_Mktg", slug: "Mktg", label: "Marketing", college: "ocb", count: 116 },
+        { key: "inc_Writing_Comm", slug: "Writing_Comm", label: "Writing/Communication", college: "cas", count: 48 },
+        { key: "inc_Humanities", slug: "Humanities", label: "Humanities", college: "cas", count: 70 },
+        { key: "inc_Social", slug: "Social", label: "Social Sciences", college: "cas", count: 156 },
+        { key: "inc_Science", slug: "Science", label: "Natural Sciences", college: "cas", count: 176 },
+        { key: "inc_CS_DS_DA_Math_Stat", slug: "CS_DS_DA_Math_Stat", label: "Computing/Data/Math/Stats", college: "cas", count: 132 },
+        { key: "inc_Other", slug: "Other", label: "Pre-Professional/Undeclared", college: "other", count: 196 },
+        { key: "inc_EDUC", slug: "EDUC", label: "Education", college: "educ", count: 26 },
+        { key: "inc_COH", slug: "COH", label: "Health Sciences", college: "coh", count: 190 },
+        { key: "inc_Engineering", slug: "Engineering", label: "Engineering", college: "soe", count: 214 }
+    ];
+
+    var graduatingGroups = [
+        { key: "grad_Acct_Fin_Ops", slug: "Acct_Fin_Ops", label: "Accounting/Finance/Ops", college: "ocb", count: 386 },
+        { key: "grad_Mgmt", slug: "Mgmt", label: "Management", college: "ocb", count: 124 },
+        { key: "grad_OtherBusiness", slug: "OtherBusiness", label: "Specialized Business", college: "ocb", count: 102 },
+        { key: "grad_Mktg", slug: "Mktg", label: "Marketing", college: "ocb", count: 180 },
+        { key: "grad_Writing_Comm", slug: "Writing_Comm", label: "Writing/Communication", college: "cas", count: 66 },
+        { key: "grad_Humanities", slug: "Humanities", label: "Humanities", college: "cas", count: 71 },
+        { key: "grad_Lang", slug: "Lang", label: "Languages", college: "cas", count: 13 },
+        { key: "grad_Social", slug: "Social", label: "Social Sciences", college: "cas", count: 198 },
+        { key: "grad_Science", slug: "Science", label: "Natural Sciences", college: "cas", count: 153 },
+        { key: "grad_CS_DS_DA_Math_Stat", slug: "CS_DS_DA_Math_Stat", label: "Computing/Data/Math/Stats", college: "cas", count: 139 },
+        { key: "grad_EDUC", slug: "EDUC", label: "Education", college: "educ", count: 32 },
+        { key: "grad_COH", slug: "COH", label: "Health Sciences", college: "coh", count: 188 },
+        { key: "grad_Engineering", slug: "Engineering", label: "Engineering", college: "soe", count: 198 }
+    ];
+
+    function collegeGroupSummary(groups, collegeKey) {
+        var matching = groups.filter(function (group) {
+            return group.college === collegeKey;
+        });
+        return {
+            totalCount: matching.reduce(function (sum, group) {
+                return sum + group.count;
+            }, 0),
+            groupedMajorCount: matching.length
+        };
+    }
+
+    function buildSegments(groups, type) {
+        return groups.map(function (group) {
+            return { type: type, size: group.count, gap: 0.004, key: group.key };
+        });
+    }
+
+    var segments = buildSegments(graduatingGroups, "grad").concat(
+        buildSegments(incomingGroups.slice().reverse(), "inc")
+    );
+
+    function kindPrefix(kind) {
+        return kind === "incoming" ? "incoming" : "graduating";
+    }
+
+    function groupDocHref(slug, kind) {
+        return "#" + kindPrefix(kind) + "-" + docsData.groups[slug].baseId;
+    }
+
+    function formatThumbLabel(label, kind) {
+        var wrappedLabel = label
+            .replace(/\//g, "/<wbr>")
+            .replace(/-/g, "-<wbr>");
+        return wrappedLabel + "<br>(" + kind + ")";
+    }
+
+    function buildThumb(group, kind) {
+        var college = sectionMeta[group.college];
+        var summary = collegeGroupSummary(kind === "incoming" ? incomingGroups : graduatingGroups, group.college);
+        var previewKey = kind + "_college_" + group.college;
+        var thumb = document.createElement("div");
+        thumb.className = "thumb college-" + group.college;
+        thumb.dataset.key = group.key;
+        thumb.dataset.previewKey = previewKey;
+        thumb.dataset.college = group.college;
+        thumb.dataset.src = "incoming_grad_grouped_college_dashboard_images/" + kind + "_colleges/" + group.college + ".svg?v=20260507college6";
+        thumb.dataset.title = (kind === "incoming" ? "Incoming College: " : "Graduating College: ") + college.heading;
+        thumb.dataset.tag = college.tagClass;
+        thumb.dataset.count = String(summary.totalCount);
+        thumb.dataset.metric = "weighted ribbon units across " + summary.groupedMajorCount + " grouped majors";
+
+        var img = document.createElement("img");
+        img.src = thumb.dataset.src;
+        img.alt = thumb.dataset.title;
+
+        var label = document.createElement("label");
+        label.innerHTML = '<a class="doc-link" href="' + groupDocHref(group.slug, kind) + '">' + formatThumbLabel(group.label, kind) + "</a>";
+
+        thumb.appendChild(img);
+        thumb.appendChild(label);
+        return thumb;
+    }
+
+    function sectionOrderForGroups(groups) {
+        var collegeOrder = [];
+        groups.forEach(function (group) {
+            if (collegeOrder.indexOf(group.college) === -1) {
+                collegeOrder.push(group.college);
+            }
+        });
+        return collegeOrder;
+    }
+
+    function buildDocItem(source, accentVar, note, id) {
+        return {
+            id: id,
+            title: source.title,
+            tag: source.tag,
+            note: note,
+            rule: source.rule,
+            listTitle: source.listTitle,
+            list: source.majors,
+            accentVar: accentVar
+        };
+    }
+
+    function buildCollegeDocItems(collegeKey, collegeGroups, kind) {
+        var collegeDoc = docsData.colleges[collegeKey];
+        var accentVar = collegeAccentVars[collegeKey];
+        var totalCount = 0;
+
+        collegeGroups.forEach(function (group) {
+            totalCount += group.count;
+        });
+
+        var items = [{
+            id: kindPrefix(kind) + "-" + collegeDoc.baseId,
+            title: "About " + sectionMeta[collegeKey].heading,
+            tag: collegeDoc.tag,
+            note: collegeGroups.length + " grouped buckets \u00b7 " + totalCount + " weighted ribbon units",
+            rule: collegeDoc.rule,
+            listTitle: "Actual majors in these grouped buckets",
+            list: window.DashboardDocs.uniqueFlatten(collegeGroups.map(function (group) {
+                return group.slug;
+            }), docsData.groups, "majors"),
+            accentVar: accentVar
+        }];
+
+        collegeGroups.forEach(function (group) {
+            items.push(buildDocItem(
+                docsData.groups[group.slug],
+                accentVar,
+                group.count + " weighted ribbon units on the " + kind + " side",
+                kindPrefix(kind) + "-" + docsData.groups[group.slug].baseId
+            ));
+        });
+
+        return items;
+    }
+
+    function renderSections(container, groups, kind) {
+        sectionOrderForGroups(groups).forEach(function (collegeKey) {
+            var collegeGroups = groups.filter(function (group) {
+                return group.college === collegeKey;
+            });
+
+            if (!collegeGroups.length) {
+                return;
+            }
+
+            var meta = sectionMeta[collegeKey];
+            var section = document.createElement("div");
+            section.className = "thumb-group " + meta.groupClass;
+
+            var heading = document.createElement("h3");
+            var summary = collegeGroupSummary(groups, collegeKey);
+            heading.textContent = (kind === "incoming" ? "Incoming - " : "Graduating - ") + meta.heading;
+            heading.className = "college-heading";
+            heading.tabIndex = 0;
+            heading.dataset.key = kind + "_college_" + collegeKey;
+            heading.dataset.previewKey = heading.dataset.key;
+            heading.dataset.src = "incoming_grad_grouped_college_dashboard_images/" + kind + "_colleges/" + collegeKey + ".svg?v=20260507college6";
+            heading.dataset.title = (kind === "incoming" ? "Incoming College: " : "Graduating College: ") + meta.heading;
+            heading.dataset.tag = meta.tagClass;
+            heading.dataset.count = String(summary.totalCount);
+            heading.dataset.metric = "weighted ribbon units across " + summary.groupedMajorCount + " grouped majors";
+            section.appendChild(heading);
+
+            var grid = document.createElement("div");
+            grid.className = "thumb-grid";
+
+            collegeGroups.forEach(function (group) {
+                grid.appendChild(buildThumb(group, kind));
+            });
+
+            section.appendChild(grid);
+            var docsHost = document.createElement("div");
+            section.appendChild(docsHost);
+            window.DashboardDocs.renderSectionDocs(docsHost, buildCollegeDocItems(collegeKey, collegeGroups, kind));
+            container.appendChild(section);
+        });
+    }
+
+    renderSections(incomingContainer, incomingGroups, "incoming");
+    renderSections(graduatingContainer, graduatingGroups, "graduating");
+    window.DashboardDocs.renderDocsPanel(document.getElementById("methodology-notes"), {
+        title: "Methodology & Group Notes",
+        intro: docsData.methodologyIntro,
+        items: docsData.methodology
+    });
+    window.DashboardDocs.setupInlineDocLinks(document);
+    window.DashboardDocs.openHashTarget(window.location.hash);
+
+    var thumbs = document.querySelectorAll(".thumb");
+    var collegeHeadings = document.querySelectorAll(".college-heading");
+    var interactiveTargets = document.querySelectorAll(".thumb, .college-heading");
+    var thumbMap = {};
+    thumbs.forEach(function (thumb) {
+        thumbMap[thumb.dataset.key] = thumb;
+    });
+
+    function setSelection(target) {
+        interactiveTargets.forEach(function (node) {
+            node.classList.remove("active");
+        });
+
+        if (!target) {
+            currentSrc = compilationSrc;
+            bigImg.src = currentSrc;
+            titleEl.innerHTML = "All Grouped Majors - Grouped by College";
+            statsEl.innerHTML = "13 incoming groups &middot; 13 graduating groups &middot; 925 students &middot; 116 grouped connections";
+            return;
+        }
+
+        interactiveTargets.forEach(function (node) {
+            if (node.dataset.previewKey === target.dataset.previewKey) {
+                node.classList.add("active");
+            }
+        });
+        currentSrc = target.dataset.src;
+        bigImg.src = currentSrc;
+        titleEl.innerHTML = target.dataset.title + '<span class="cluster-tag ' + target.dataset.tag + '">' + target.dataset.count + " weighted ribbon units</span>";
+        statsEl.textContent = target.dataset.title + " | " + target.dataset.count + " " + target.dataset.metric;
+    }
+
+    interactiveTargets.forEach(function (target) {
+        target.addEventListener("mouseenter", function () {
+            if (!locked) {
+                setSelection(target);
+            }
+        });
+
+        target.addEventListener("mouseleave", function () {
+            if (!locked) {
+                setSelection(null);
+            }
+        });
+
+        target.addEventListener("click", function () {
+            if (locked === target) {
+                locked = null;
+                setSelection(null);
+                return;
+            }
+            locked = target;
+            setSelection(target);
+        });
+    });
+
+    collegeHeadings.forEach(function (heading) {
+        heading.addEventListener("keydown", function (event) {
+            if (event.key !== "Enter" && event.key !== " ") {
+                return;
+            }
+            event.preventDefault();
+            if (locked === heading) {
+                locked = null;
+                setSelection(null);
+                return;
+            }
+            locked = heading;
+            setSelection(heading);
+        });
+    });
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".thumb") || event.target.closest(".college-heading") || event.target.closest("#big-image")) {
+            return;
+        }
+        locked = null;
+        setSelection(null);
+    });
+
+    var totalSize = 0;
+    var totalGapFrac = 0;
+    var hoverZones = [];
+
+    segments.forEach(function (segment) {
+        totalSize += segment.size;
+        totalGapFrac += segment.gap;
+    });
+
+    var degreesPerUnit = (360 - totalGapFrac * 360) / totalSize;
+    var angle = 0;
+
+    segments.forEach(function (segment) {
+        var span = segment.size * degreesPerUnit;
+        segment.start = angle;
+        segment.end = angle + span;
+        hoverZones.push({ start: segment.start, end: segment.end, key: segment.key });
+        angle = segment.end + segment.gap * 360;
+    });
+
+    bigImg.addEventListener("mousemove", function (event) {
+        if (locked) {
+            return;
+        }
+
+        var rect = bigImg.getBoundingClientRect();
+        var x = event.clientX - rect.left - rect.width / 2;
+        var y = event.clientY - rect.top - rect.height / 2;
+        var radius = Math.sqrt(x * x + y * y);
+        var imageSize = Math.min(rect.width, rect.height);
+        var outer = imageSize * 0.445;
+        var inner = imageSize * 0.355;
+
+        if (radius < inner || radius > outer) {
+            setSelection(null);
+            return;
+        }
+
+        var angleDeg = (Math.atan2(y, x) * 180 / Math.PI + 90 + 360) % 360;
+        var matched = null;
+
+        for (var i = 0; i < hoverZones.length; i += 1) {
+            if (angleDeg >= hoverZones[i].start && angleDeg <= hoverZones[i].end) {
+                matched = hoverZones[i];
+                break;
+            }
+        }
+
+        if (!matched || !thumbMap[matched.key]) {
+            setSelection(null);
+            return;
+        }
+
+        var thumb = thumbMap[matched.key];
+        setSelection(thumb);
+    });
+
+    bigImg.addEventListener("mouseleave", function () {
+        if (!locked) {
+            setSelection(null);
+        }
+    });
+
+    setSelection(null);
+})();
+</script>
+
+</body>
+</html>

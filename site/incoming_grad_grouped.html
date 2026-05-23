@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Incoming Grouped Major to Graduating Grouped Major Dashboard</title>
+    <link rel="stylesheet" href="dashboard_docs.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #f5f5f5;
+            --panel: #ffffff;
+            --text: #333333;
+            --muted: #6b6b6b;
+            --border: #dddddd;
+            --shadow: 0 1px 4px rgba(0, 0, 0, 0.08);
+            --humanities: rgb(204, 121, 167);
+            --business: rgb(0, 114, 178);
+            --stem: rgb(0, 158, 115);
+            --social: rgb(230, 159, 0);
+            --panel-top-offset: 20px;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+        }
+
+        .header {
+            background: var(--panel);
+            border-bottom: 1px solid var(--border);
+            padding: 32px 0 36px;
+        }
+
+        .header .inner,
+        .dashboard {
+            max-width: 1720px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+
+        .header .inner {
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 34px;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.18;
+            max-width: 1320px;
+            margin: 0 auto 16px;
+            text-wrap: balance;
+        }
+
+        .header p {
+            font-size: 17px;
+            line-height: 1.74;
+            color: var(--muted);
+            max-width: 1240px;
+            margin: 0 auto;
+        }
+
+        .header-actions {
+            margin-top: 22px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 14px;
+        }
+
+        .header-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 10px 18px;
+            border: 2px solid var(--social);
+            border-radius: 999px;
+            color: var(--social);
+            background: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 1.3;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .header-link:hover {
+            background: var(--social);
+            color: #fff;
+        }
+
+        .dashboard {
+            display: flex;
+            gap: 28px;
+            align-items: flex-start;
+            margin-top: 24px;
+            margin-bottom: 24px;
+        }
+
+        .main-display {
+            flex: 0 0 auto;
+            background: var(--panel);
+            border-radius: 8px;
+            box-shadow: var(--shadow);
+            padding: 24px;
+            position: sticky;
+            top: var(--panel-top-offset);
+            max-height: calc(100vh - (var(--panel-top-offset) * 2));
+            overflow: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+        }
+
+        .main-display h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: var(--text);
+            line-height: 1.24;
+            margin-bottom: 18px;
+            min-height: 38px;
+        }
+
+        .cluster-tag {
+            display: inline-block;
+            font-size: 15px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 12px;
+            color: #fff;
+            margin-left: 10px;
+            vertical-align: middle;
+        }
+
+        .tag-business { background: var(--business); }
+        .tag-stem { background: var(--stem); }
+        .tag-social { background: var(--social); }
+        .tag-humanities { background: var(--humanities); }
+
+        #big-image {
+            display: block;
+            width: 860px;
+            height: 860px;
+            object-fit: contain;
+            background: #fff;
+            border-radius: 4px;
+            transition: opacity 0.15s ease;
+        }
+
+        .stats {
+            font-size: 17px;
+            line-height: 1.55;
+            color: #7a7a7a;
+            margin-top: 14px;
+        }
+
+        .sidebar {
+            flex: 1;
+            min-width: 0;
+            position: sticky;
+            top: var(--panel-top-offset);
+            max-height: calc(100vh - (var(--panel-top-offset) * 2));
+            overflow-y: auto;
+            overscroll-behavior: contain;
+            scrollbar-gutter: stable;
+            padding-right: 8px;
+        }
+
+        .info {
+            font-size: 15px;
+            line-height: 1.65;
+            color: #7a7a7a;
+            margin-bottom: 18px;
+        }
+
+        .source-note {
+            background: #fffbf0;
+            border: 1px solid #e8d08a;
+            border-radius: 6px;
+            padding: 16px 20px;
+            font-size: 14px;
+            color: #5a4a00;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .source-note code {
+            background: #f0e88a;
+            padding: 1px 5px;
+            border-radius: 3px;
+            font-size: 12px;
+        }
+
+        .compilation-btn {
+            display: inline-block;
+            cursor: pointer;
+            background: #fff;
+            border: 2px solid #333;
+            border-radius: 6px;
+            min-height: 44px;
+            padding: 10px 18px;
+            font-size: 15px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            transition: background 0.15s, color 0.15s;
+        }
+
+        .compilation-btn:hover,
+        .compilation-btn.active {
+            background: #333;
+            color: #fff;
+        }
+
+        .thumb-group {
+            margin-bottom: 42px;
+        }
+
+        .thumb-group h3 {
+            font-size: 19px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.7px;
+            line-height: 1.35;
+            padding: 8px 0;
+            margin-bottom: 18px;
+            border-bottom: 3px solid var(--border);
+        }
+
+        .group-business h3 { color: var(--business); border-color: var(--business); }
+        .group-stem h3 { color: var(--stem); border-color: var(--stem); }
+        .group-social h3 { color: var(--social); border-color: var(--social); }
+        .group-humanities h3 { color: var(--humanities); border-color: var(--humanities); }
+
+        .thumb-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 26px;
+        }
+
+        .thumb {
+            cursor: pointer;
+            text-align: center;
+            width: 168px;
+            transition: transform 0.15s, box-shadow 0.15s;
+            border-radius: 6px;
+            padding: 10px 10px 14px;
+            border: 2px solid transparent;
+        }
+
+        .thumb:hover {
+            transform: scale(1.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+            background: #fff;
+        }
+
+        .thumb.active {
+            border-color: #333;
+            background: #fff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        .thumb img {
+            width: 96px;
+            height: 96px;
+            border-radius: 4px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .thumb label {
+            display: block;
+            font-size: 16px;
+            line-height: 1.45;
+            color: #555;
+            margin-top: 12px;
+            overflow-wrap: normal;
+            word-break: normal;
+            hyphens: manual;
+        }
+
+        .doc-link {
+            color: inherit;
+            text-decoration: underline;
+            text-decoration-thickness: 1px;
+            text-underline-offset: 2px;
+        }
+
+        .doc-link:hover {
+            color: #1f1f1f;
+        }
+
+        .doc-heading {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .section-divider {
+            border: none;
+            border-top: 3px solid #ccc;
+            margin: 38px 0 28px;
+        }
+
+        .section-label {
+            font-size: 24px;
+            font-weight: 700;
+            color: #444;
+            line-height: 1.24;
+            margin-bottom: 20px;
+            letter-spacing: 0.3px;
+        }
+
+        @media (max-width: 1180px) {
+            .header {
+                padding: 28px 0 30px;
+            }
+
+            .header h1 {
+                font-size: 30px;
+            }
+
+            .header p {
+                font-size: 16px;
+                max-width: 980px;
+            }
+
+            .header-link {
+                font-size: 15px;
+            }
+
+            .dashboard {
+                flex-direction: column;
+            }
+
+            .main-display,
+            .sidebar {
+                position: static;
+                max-height: none;
+                overflow: visible;
+                padding-right: 0;
+            }
+
+            .main-display {
+                width: 100%;
+            }
+
+            #big-image {
+                width: 100%;
+                height: auto;
+                max-width: 860px;
+                margin: 0 auto;
+            }
+        }
+
+        @media (max-width: 720px) {
+            .header .inner,
+            .dashboard {
+                padding: 0 20px;
+            }
+
+            .header h1 {
+                font-size: 26px;
+            }
+
+            .header p {
+                font-size: 15px;
+            }
+
+            .header-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .header-link {
+                width: 100%;
+            }
+
+            .main-display h2 {
+                font-size: 24px;
+                min-height: 0;
+            }
+
+            .stats {
+                font-size: 16px;
+            }
+
+            .thumb-grid {
+                gap: 18px;
+            }
+
+            .thumb {
+                width: min(100%, 176px);
+            }
+
+            .thumb label {
+                font-size: 15px;
+            }
+
+            .section-label {
+                font-size: 22px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+    <div class="inner">
+        <h1>Incoming Grouped Major &rarr; Graduating Grouped Major - Class of 2026</h1>
+        <p>
+            This grouped dashboard shows how incoming grouped majors connect to graduating grouped majors
+            for the Class of 2026. The labels on this page use the cleaned grouped-major display names
+            used throughout this dashboard set.
+        </p>
+        <div class="header-actions">
+            <a class="header-link" href="index.html">Career Dashboard</a>
+            <a class="header-link" href="incoming_grad_grouped_college.html">Grouped by College</a>
+        </div>
+    </div>
+</div>
+
+<div class="dashboard">
+    <div class="main-display">
+        <h2 id="title">All Grouped Majors - Incoming &rarr; Graduating</h2>
+        <img id="big-image" src="incoming_grad_grouped_dashboard_images/main.svg?v=20260507dashboard1" alt="Incoming grouped-major to graduating grouped-major Circos diagram">
+        <p class="stats" id="stats">13 incoming groups &middot; 13 graduating groups &middot; 925 students &middot; 116 grouped connections</p>
+    </div>
+
+    <div class="sidebar">
+        <p class="section-label">Incoming Groups</p>
+        <div id="incoming-sections"></div>
+
+        <hr class="section-divider">
+        <p class="section-label">Graduating Groups</p>
+        <div id="graduating-sections"></div>
+
+        <div id="methodology-notes"></div>
+    </div>
+</div>
+
+<script src="dashboard_docs_data.js"></script>
+<script src="dashboard_docs.js"></script>
+<script>
+(function () {
+    var bigImg = document.getElementById("big-image");
+    var titleEl = document.getElementById("title");
+    var statsEl = document.getElementById("stats");
+    var incomingContainer = document.getElementById("incoming-sections");
+    var graduatingContainer = document.getElementById("graduating-sections");
+    var docsData = window.DASHBOARD_DOCS_DATA.grouped;
+    var locked = null;
+    var compilationSrc = "incoming_grad_grouped_dashboard_images/main.svg?v=20260507dashboard1";
+    var currentSrc = compilationSrc;
+
+    var familyMeta = {
+        humanities: { heading: "Humanities & Communication", groupClass: "group-humanities", tagClass: "tag-humanities" },
+        business: { heading: "Business & Management", groupClass: "group-business", tagClass: "tag-business" },
+        stem: { heading: "Engineering, Science & Health", groupClass: "group-stem", tagClass: "tag-stem" },
+        social: { heading: "Social Sciences & Education", groupClass: "group-social", tagClass: "tag-social" }
+    };
+    var familyAccentVars = {
+        humanities: "var(--humanities)",
+        business: "var(--business)",
+        stem: "var(--stem)",
+        social: "var(--social)"
+    };
+
+    var incomingGroups = [
+        { key: "inc_Acct_Fin_Ops", slug: "Acct_Fin_Ops", label: "Accounting/Finance/Ops", family: "business", count: 246 },
+        { key: "inc_Mgmt", slug: "Mgmt", label: "Management", family: "business", count: 122 },
+        { key: "inc_OtherBusiness", slug: "OtherBusiness", label: "Specialized Business", family: "business", count: 158 },
+        { key: "inc_Mktg", slug: "Mktg", label: "Marketing", family: "humanities", count: 116 },
+        { key: "inc_Writing_Comm", slug: "Writing_Comm", label: "Writing/Communication", family: "humanities", count: 48 },
+        { key: "inc_Humanities", slug: "Humanities", label: "Humanities", family: "humanities", count: 70 },
+        { key: "inc_Social", slug: "Social", label: "Social Sciences", family: "social", count: 156 },
+        { key: "inc_Other", slug: "Other", label: "Pre-Professional/Undeclared", family: "social", count: 196 },
+        { key: "inc_EDUC", slug: "EDUC", label: "Education", family: "social", count: 26 },
+        { key: "inc_COH", slug: "COH", label: "Health Sciences", family: "stem", count: 190 },
+        { key: "inc_Science", slug: "Science", label: "Natural Sciences", family: "stem", count: 176 },
+        { key: "inc_Engineering", slug: "Engineering", label: "Engineering", family: "stem", count: 214 },
+        { key: "inc_CS_DS_DA_Math_Stat", slug: "CS_DS_DA_Math_Stat", label: "Computing/Data/Math/Stats", family: "stem", count: 132 }
+    ];
+
+    var graduatingGroups = [
+        { key: "grad_Acct_Fin_Ops", slug: "Acct_Fin_Ops", label: "Accounting/Finance/Ops", family: "business", count: 386 },
+        { key: "grad_Mgmt", slug: "Mgmt", label: "Management", family: "business", count: 124 },
+        { key: "grad_OtherBusiness", slug: "OtherBusiness", label: "Specialized Business", family: "business", count: 102 },
+        { key: "grad_Mktg", slug: "Mktg", label: "Marketing", family: "humanities", count: 180 },
+        { key: "grad_Writing_Comm", slug: "Writing_Comm", label: "Writing/Communication", family: "humanities", count: 66 },
+        { key: "grad_Humanities", slug: "Humanities", label: "Humanities", family: "humanities", count: 71 },
+        { key: "grad_Lang", slug: "Lang", label: "Languages", family: "humanities", count: 13 },
+        { key: "grad_Social", slug: "Social", label: "Social Sciences", family: "social", count: 198 },
+        { key: "grad_EDUC", slug: "EDUC", label: "Education", family: "social", count: 32 },
+        { key: "grad_COH", slug: "COH", label: "Health Sciences", family: "stem", count: 188 },
+        { key: "grad_Science", slug: "Science", label: "Natural Sciences", family: "stem", count: 153 },
+        { key: "grad_Engineering", slug: "Engineering", label: "Engineering", family: "stem", count: 198 },
+        { key: "grad_CS_DS_DA_Math_Stat", slug: "CS_DS_DA_Math_Stat", label: "Computing/Data/Math/Stats", family: "stem", count: 139 }
+    ];
+
+    function buildSegments(groups, type) {
+        return groups.map(function (group) {
+            return { type: type, size: group.count, gap: 0.004, key: group.key };
+        });
+    }
+
+    var segments = buildSegments(graduatingGroups, "grad").concat(
+        buildSegments(incomingGroups.slice().reverse(), "inc")
+    );
+
+    function kindPrefix(kind) {
+        return kind === "incoming" ? "incoming" : "graduating";
+    }
+
+    function familyDocHref(family, kind) {
+        return "#" + kindPrefix(kind) + "-" + docsData.families[family].baseId;
+    }
+
+    function groupDocHref(slug, kind) {
+        return "#" + kindPrefix(kind) + "-" + docsData.groups[slug].baseId;
+    }
+
+    function formatThumbLabel(label, kind) {
+        var wrappedLabel = label
+            .replace(/\//g, "/<wbr>")
+            .replace(/-/g, "-<wbr>");
+        return wrappedLabel + "<br>(" + kind + ")";
+    }
+
+    function buildThumb(group, kind) {
+        var meta = familyMeta[group.family];
+        var thumb = document.createElement("div");
+        thumb.className = "thumb";
+        thumb.dataset.key = group.key;
+        thumb.dataset.src = "incoming_grad_grouped_dashboard_images/" + kind + "/" + group.slug + ".svg?v=20260507dashboard1";
+        thumb.dataset.title = (kind === "incoming" ? "Incoming: " : "Graduating: ") + group.label;
+        thumb.dataset.tag = meta.tagClass;
+        thumb.dataset.count = String(group.count);
+        thumb.dataset.metric = "weighted ribbon units";
+
+        var img = document.createElement("img");
+        img.src = thumb.dataset.src;
+        img.alt = thumb.dataset.title;
+
+        var label = document.createElement("label");
+        label.innerHTML = '<a class="doc-link" href="' + groupDocHref(group.slug, kind) + '">' + formatThumbLabel(group.label, kind) + "</a>";
+
+        thumb.appendChild(img);
+        thumb.appendChild(label);
+        return thumb;
+    }
+
+    function familyOrderForGroups(groups) {
+        var familyOrder = [];
+        groups.forEach(function (group) {
+            if (familyOrder.indexOf(group.family) === -1) {
+                familyOrder.push(group.family);
+            }
+        });
+        return familyOrder;
+    }
+
+    function buildDocItem(source, accentVar, note, id) {
+        return {
+            id: id,
+            title: source.title,
+            tag: source.tag,
+            note: note,
+            rule: source.rule,
+            listTitle: source.listTitle,
+            list: source.majors,
+            accentVar: accentVar
+        };
+    }
+
+    function buildFamilyDocItems(family, familyGroups, kind) {
+        var familyDoc = docsData.families[family];
+        var accentVar = familyAccentVars[family];
+        var totalCount = 0;
+
+        familyGroups.forEach(function (group) {
+            totalCount += group.count;
+        });
+
+        var items = [{
+            id: kindPrefix(kind) + "-" + familyDoc.baseId,
+            title: "About " + familyMeta[family].heading,
+            tag: familyDoc.tag,
+            note: familyGroups.length + " grouped buckets \u00b7 " + totalCount + " weighted ribbon units",
+            rule: familyDoc.rule,
+            listTitle: "Actual majors in these grouped buckets",
+            list: window.DashboardDocs.uniqueFlatten(familyGroups.map(function (group) {
+                return group.slug;
+            }), docsData.groups, "majors"),
+            accentVar: accentVar
+        }];
+
+        familyGroups.forEach(function (group) {
+            items.push(buildDocItem(
+                docsData.groups[group.slug],
+                accentVar,
+                group.count + " weighted ribbon units on the " + kind + " side",
+                kindPrefix(kind) + "-" + docsData.groups[group.slug].baseId
+            ));
+        });
+
+        return items;
+    }
+
+    function renderSections(container, groups, kind) {
+        familyOrderForGroups(groups).forEach(function (family) {
+            var familyGroups = groups.filter(function (group) {
+                return group.family === family;
+            });
+
+            if (!familyGroups.length) {
+                return;
+            }
+
+            var meta = familyMeta[family];
+            var section = document.createElement("div");
+            section.className = "thumb-group " + meta.groupClass;
+
+            var heading = document.createElement("h3");
+            heading.innerHTML = '<a class="doc-link doc-heading" href="' + familyDocHref(family, kind) + '">' + (kind === "incoming" ? "Incoming - " : "Graduating - ") + meta.heading + "</a>";
+            section.appendChild(heading);
+
+            var grid = document.createElement("div");
+            grid.className = "thumb-grid";
+
+            familyGroups.forEach(function (group) {
+                grid.appendChild(buildThumb(group, kind));
+            });
+
+            section.appendChild(grid);
+            var docsHost = document.createElement("div");
+            section.appendChild(docsHost);
+            window.DashboardDocs.renderSectionDocs(docsHost, buildFamilyDocItems(family, familyGroups, kind));
+            container.appendChild(section);
+        });
+    }
+
+    renderSections(incomingContainer, incomingGroups, "incoming");
+    renderSections(graduatingContainer, graduatingGroups, "graduating");
+    window.DashboardDocs.renderDocsPanel(document.getElementById("methodology-notes"), {
+        title: "Methodology & Group Notes",
+        intro: docsData.methodologyIntro,
+        items: docsData.methodology
+    });
+    window.DashboardDocs.setupInlineDocLinks(document);
+    window.DashboardDocs.openHashTarget(window.location.hash);
+
+    var thumbs = document.querySelectorAll(".thumb");
+    var thumbMap = {};
+    thumbs.forEach(function (thumb) {
+        thumbMap[thumb.dataset.key] = thumb;
+    });
+
+    function setSelection(thumb) {
+        thumbs.forEach(function (node) {
+            node.classList.remove("active");
+        });
+
+        if (!thumb) {
+            currentSrc = compilationSrc;
+            bigImg.src = currentSrc;
+            titleEl.innerHTML = "All Grouped Majors - Incoming &rarr; Graduating";
+            statsEl.innerHTML = "13 incoming groups &middot; 13 graduating groups &middot; 925 students &middot; 116 grouped connections";
+            return;
+        }
+
+        thumb.classList.add("active");
+        currentSrc = thumb.dataset.src;
+        bigImg.src = currentSrc;
+        titleEl.innerHTML = thumb.dataset.title + '<span class="cluster-tag ' + thumb.dataset.tag + '">' + thumb.dataset.count + " weighted ribbon units</span>";
+        statsEl.textContent = thumb.dataset.title + " | " + thumb.dataset.count + " weighted ribbon units";
+    }
+
+    thumbs.forEach(function (thumb) {
+        thumb.addEventListener("mouseenter", function () {
+            if (!locked) {
+                setSelection(thumb);
+            }
+        });
+
+        thumb.addEventListener("mouseleave", function () {
+            if (!locked) {
+                setSelection(null);
+            }
+        });
+
+        thumb.addEventListener("click", function () {
+            if (locked === thumb) {
+                locked = null;
+                setSelection(null);
+                return;
+            }
+            locked = thumb;
+            setSelection(thumb);
+        });
+    });
+
+    document.addEventListener("click", function (event) {
+        if (event.target.closest(".thumb") || event.target.closest("#big-image")) {
+            return;
+        }
+        locked = null;
+        setSelection(null);
+    });
+
+    var totalSize = 0;
+    var totalGapFrac = 0;
+    var hoverZones = [];
+
+    segments.forEach(function (segment) {
+        totalSize += segment.size;
+        totalGapFrac += segment.gap;
+    });
+
+    var degreesPerUnit = (360 - totalGapFrac * 360) / totalSize;
+    var angle = 0;
+
+    segments.forEach(function (segment) {
+        var span = segment.size * degreesPerUnit;
+        segment.start = angle;
+        segment.end = angle + span;
+        hoverZones.push({ start: segment.start, end: segment.end, key: segment.key });
+        angle = segment.end + segment.gap * 360;
+    });
+
+    bigImg.addEventListener("mousemove", function (event) {
+        if (locked) {
+            return;
+        }
+
+        var rect = bigImg.getBoundingClientRect();
+        var x = event.clientX - rect.left - rect.width / 2;
+        var y = event.clientY - rect.top - rect.height / 2;
+        var radius = Math.sqrt(x * x + y * y);
+        var imageSize = Math.min(rect.width, rect.height);
+        var outer = imageSize * 0.445;
+        var inner = imageSize * 0.355;
+
+        if (radius < inner || radius > outer) {
+            setSelection(null);
+            return;
+        }
+
+        var angleDeg = (Math.atan2(y, x) * 180 / Math.PI + 90 + 360) % 360;
+        var matched = null;
+
+        for (var i = 0; i < hoverZones.length; i += 1) {
+            if (angleDeg >= hoverZones[i].start && angleDeg <= hoverZones[i].end) {
+                matched = hoverZones[i];
+                break;
+            }
+        }
+
+        if (!matched || !thumbMap[matched.key]) {
+            setSelection(null);
+            return;
+        }
+
+        var thumb = thumbMap[matched.key];
+        setSelection(thumb);
+    });
+
+    bigImg.addEventListener("mouseleave", function () {
+        if (!locked) {
+            setSelection(null);
+        }
+    });
+
+    setSelection(null);
+})();
+</script>
+
+</body>
+</html>
